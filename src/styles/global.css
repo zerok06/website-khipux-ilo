@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+    /* Primary Orange - Khipu brand #d85120 */
+    --color-primary-50: #fef3ee;
+    --color-primary-100: #fde4d8;
+    --color-primary-200: #fbc6af;
+    --color-primary-300: #f8a07c;
+    --color-primary-400: #f47247;
+    --color-primary-500: #d85120;
+    --color-primary-600: #c24318;
+    --color-primary-700: #a13515;
+    --color-primary-800: #832c17;
+    --color-primary-900: #6c2716;
+    --color-primary-950: #3a110a;
+
+    --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Grid Pattern */
+.grid-pattern {
+    background-image:
+        linear-gradient(rgba(216, 81, 32, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 81, 32, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Focus States */
+:focus-visible {
+    outline: 2px solid #d85120;
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background-color: #d85120;
+    color: white;
+}

@@ -1,0 +1,185 @@
+---
+interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+const content = {
+    es: {
+        title: "IA para la",
+        highlight: "Comunidad Aymara",
+        description:
+            "KHIPUx Ilo es un evento híbrido diseñado para fusionar la Inteligencia Artificial con la comunidad Aymara (Perú, Bolivia, Argentina y Chile), destacando su relevancia para las comunidades nativas de América Latina.",
+        mission:
+            "Nuestro enfoque se centra en explorar cómo la IA puede ser una herramienta para la preservación de lenguas, revitalización y empoderamiento de culturas originarias, combatiendo el riesgo de marginalización tecnológica.",
+        goals: [
+            "Preservación y revitalización de lenguas indígenas mediante IA",
+            "Desarrollo de NLP para lenguas de bajos recursos",
+            "Empoderamiento tecnológico de comunidades originarias",
+        ],
+        cta1: "Síguenos",
+        cta2: "Únete a la Comunidad",
+    },
+    en: {
+        title: "AI for the",
+        highlight: "Aymara Community",
+        description:
+            "KHIPUx Ilo is a hybrid event designed to merge Artificial Intelligence with the Aymara community (Peru, Bolivia, Argentina, and Chile), highlighting its relevance for native communities in Latin America.",
+        mission:
+            "Our focus is on exploring how AI can be a tool for language preservation, revitalization, and empowerment of indigenous cultures, combating the risk of technological marginalization.",
+        goals: [
+            "Preservation and revitalization of indigenous languages through AI",
+            "NLP development for low-resource languages",
+            "Technological empowerment of indigenous communities",
+        ],
+        cta1: "Follow us",
+        cta2: "Join Community",
+    },
+};
+
+const stats = isEs
+    ? [
+          { value: "150+", label: "Presencial" },
+          { value: "100+", label: "Virtual" },
+          { value: "4", label: "Países" },
+      ]
+    : [
+          { value: "150+", label: "In-Person" },
+          { value: "100+", label: "Virtual" },
+          { value: "4", label: "Countries" },
+      ];
+
+const data = isEs ? content.es : content.en;
+---
+
+<section id="about" class="py-24 bg-primary-500 relative overflow-hidden">
+    <div
+        class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"
+    >
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"
+    >
+    </div>
+
+    <div
+        class="relative z-10"
+        style="max-width: var(--content-max-width, 70%); margin: 0 auto; padding: 0 1rem;"
+    >
+        <div
+            class="flex flex-wrap justify-center gap-8 sm:gap-16 mb-16 pb-16 border-b border-white/20"
+        >
+            {
+                stats.map((stat) => (
+                    <div class="text-center group">
+                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2 transition-transform group-hover:scale-110">
+                            {stat.value}
+                        </div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">
+                            {stat.label}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="space-y-6">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                >
+                    {data.title}
+                    <span
+                        class="text-primary-100 underline decoration-white/30 decoration-4 underline-offset-8"
+                        >{data.highlight}</span
+                    >
+                </h2>
+
+                <p class="text-primary-100 leading-relaxed text-lg">
+                    {data.description}
+                </p>
+
+                <p class="text-primary-100 leading-relaxed">
+                    {data.mission}
+                </p>
+
+                <div
+                    class="inline-flex items-center gap-3 bg-white/10 rounded-full px-4 py-2"
+                >
+                    <div
+                        class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                    >
+                        <span class="text-primary-500 font-bold text-sm">A</span
+                        >
+                    </div>
+                    <span class="text-white font-medium"
+                        >{isEs ? "Organizado por" : "Organized by"} AiMara Lab</span
+                    >
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="space-y-5">
+                    {
+                        data.goals.map((goal) => (
+                            <div class="flex items-start gap-4 group">
+                                <div class="flex-shrink-0 w-8 h-8 bg-white rounded-full flex items-center justify-center mt-0.5 transition-transform group-hover:scale-110">
+                                    <svg
+                                        class="w-5 h-5 text-primary-500"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-white text-lg">{goal}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-6">
+                    <a
+                        href="#"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 rounded-full font-semibold hover:bg-primary-50 transition-all hover:scale-105"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"
+                            ></path>
+                            <path
+                                d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z"
+                            ></path>
+                        </svg>
+                        {data.cta1}
+                    </a>
+                    <a
+                        href="#"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition-all border-2 border-white/30 hover:border-white/50"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                            ></path>
+                        </svg>
+                        {data.cta2}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

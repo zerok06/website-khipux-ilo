@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const otherLocale = locale === "es" ? "en" : "es";
+---
+
+<a
+    href={getRelativeLocaleUrl(otherLocale)}
+    class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+    aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+>
+    <span
+        class={locale === "es" ? "text-primary-400 font-bold" : "text-gray-500"}
+        >ES</span
+    >
+    <span class="text-gray-600">/</span>
+    <span
+        class={locale === "en" ? "text-primary-400 font-bold" : "text-gray-500"}
+        >EN</span
+    >
+</a>

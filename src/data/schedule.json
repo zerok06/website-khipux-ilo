@@ -1,0 +1,151 @@
+{
+    "days": [
+        {
+            "date": "2026-08-18",
+            "day_name_es": "Día 1: Fundación y Perspectivas",
+            "day_name_en": "Day 1: Foundation & Perspectives",
+            "sessions": [
+                {
+                    "time": "09:00 - 09:30",
+                    "title_es": "Sesión de Apertura y Bienvenida",
+                    "title_en": "Opening Session & Welcome",
+                    "description": "Presentación de KHIPUx Ilo y visión del KHIPU",
+                    "type": "logistics",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "09:30 - 10:30",
+                    "title_es": "El Rol de la IA en la Preservación y Revitalización de Lenguas Indígenas",
+                    "title_en": "The Role of AI in the Preservation and Revitalization of Indigenous Languages",
+                    "description": "Keynote exploring how AI technologies can help preserve and revitalize indigenous languages around the world.",
+                    "speaker_id": "1",
+                    "type": "talk",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "10:30 - 11:30",
+                    "title_es": "Panel: Desafíos y Oportunidades: Implementando IA en Contextos Culturales Nativos",
+                    "title_en": "Panel: Challenges & Opportunities: Implementing AI in Native Cultural Contexts",
+                    "description": "Discussion with researchers from the 'Neural Machine Translator for Native Language Aimara' project, and experts in Quechua and Shipibo-Conibo translation.",
+                    "type": "panel",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "11:30 - 12:00",
+                    "title_es": "Pausa para Café y Networking",
+                    "title_en": "Coffee Break & Networking",
+                    "type": "networking",
+                    "location": "Lobby"
+                },
+                {
+                    "time": "12:00 - 13:30",
+                    "title_es": "Sesiones de Charlas Técnicas: Desarrollo de PNL para Lenguas Nativas",
+                    "title_en": "Technical Talks: NLP Development for Native Languages",
+                    "description": "Presentations on data collection, AI models, and technical challenges for low-resource languages.",
+                    "type": "talk",
+                    "location": "Room A"
+                },
+                {
+                    "time": "13:30 - 14:30",
+                    "title_es": "Almuerzo",
+                    "title_en": "Lunch",
+                    "type": "networking",
+                    "location": "Dining Area"
+                },
+                {
+                    "time": "14:30 - 16:00",
+                    "title_es": "Taller: Introducción a la IA para el Lenguaje Natural",
+                    "title_en": "Workshop: Introduction to AI for Natural Language",
+                    "description": "Hands-on interactive session covering basic concepts and tools for NLP.",
+                    "type": "workshop",
+                    "location": "Workshop Room"
+                },
+                {
+                    "time": "16:00 - 17:00",
+                    "title_es": "Sesión de Pósters y Demostraciones",
+                    "title_en": "Poster Session & Prototype Demos",
+                    "description": "Including the 'Neural Machine Translator for Native Language Aimara' prototype demonstration.",
+                    "type": "workshop",
+                    "location": "Exhibition Hall"
+                },
+                {
+                    "time": "17:00 - 18:00",
+                    "title_es": "Networking Guiado",
+                    "title_en": "Guided Networking Session",
+                    "description": "Facilitated connections between researchers and community members to identify collaboration opportunities.",
+                    "type": "networking",
+                    "location": "Lobby"
+                }
+            ]
+        },
+        {
+            "date": "2026-08-19",
+            "day_name_es": "Día 2: Colaboración y Futuro",
+            "day_name_en": "Day 2: Collaboration & Future",
+            "sessions": [
+                {
+                    "time": "09:00 - 10:00",
+                    "title_es": "Ética de la IA y Soberanía de Datos en Comunidades Indígenas",
+                    "title_en": "AI Ethics and Data Sovereignty in Indigenous Communities",
+                    "description": "Invited talk exploring the ethical considerations and data rights for indigenous communities in AI development.",
+                    "speaker_id": "2",
+                    "type": "talk",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "10:00 - 11:30",
+                    "title_es": "Panel de Liderazgo Comunitario: Visión Aimara",
+                    "title_en": "Community Leadership Panel: Aymara Vision",
+                    "description": "¿Cómo la IA puede potenciar nuestro futuro? - With influential leaders and representatives of the Aymara community.",
+                    "type": "panel",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "11:30 - 12:00",
+                    "title_es": "Pausa para Café",
+                    "title_en": "Coffee Break",
+                    "type": "networking",
+                    "location": "Lobby"
+                },
+                {
+                    "time": "12:00 - 13:30",
+                    "title_es": "Taller: Identificación de Proyectos y Oportunidades de Colaboración",
+                    "title_en": "Workshop: Identifying Projects & Collaboration Opportunities",
+                    "description": "Ideation and project planning session for AI-Aymara collaborations.",
+                    "type": "workshop",
+                    "location": "Workshop Room"
+                },
+                {
+                    "time": "13:30 - 14:30",
+                    "title_es": "Almuerzo",
+                    "title_en": "Lunch",
+                    "type": "networking",
+                    "location": "Dining Area"
+                },
+                {
+                    "time": "14:30 - 16:00",
+                    "title_es": "Presentación de Propuestas de Proyectos",
+                    "title_en": "Project Proposal Presentations",
+                    "description": "Teams formed during the summit present initial ideas for collaborative projects.",
+                    "type": "talk",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "16:00 - 17:00",
+                    "title_es": "Mesa Redonda: Próximos Pasos y Construcción de Comunidad",
+                    "title_en": "Roundtable: Next Steps & Community Building",
+                    "description": "Final discussion on building the KHIPUx Aymara community and next steps.",
+                    "type": "panel",
+                    "location": "Main Hall"
+                },
+                {
+                    "time": "17:00 - 17:30",
+                    "title_es": "Cierre y Agradecimientos",
+                    "title_en": "Closing & Acknowledgments",
+                    "type": "logistics",
+                    "location": "Main Hall"
+                }
+            ]
+        }
+    ]
+}

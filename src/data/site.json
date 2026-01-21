@@ -1,0 +1,80 @@
+{
+    "name": "KHIPUx Ilo",
+    "title": "KHIPUx Ilo - Latin American Event in AI",
+    "description": "Fusionando la Inteligencia Artificial con la comunidad Aymara",
+    "event_date": "2026-08-18",
+    "event_end_date": "2026-08-19",
+    "year": "2026",
+    "location": {
+        "name": "Universidad Nacional de Moquegua",
+        "address": "Ilo, Moquegua, Perú",
+        "city": "Ilo",
+        "region": "Moquegua",
+        "country": "Perú"
+    },
+    "expected_attendees": {
+        "in_person": 150,
+        "virtual": 100
+    },
+    "nav": {
+        "es": [
+            {
+                "label": "Inicio",
+                "href": "/es"
+            },
+            {
+                "label": "Programa",
+                "href": "/es/schedule"
+            },
+            {
+                "label": "Speakers",
+                "href": "/es#speakers"
+            },
+            {
+                "label": "Nosotros",
+                "href": "/es#about"
+            }
+        ],
+        "en": [
+            {
+                "label": "Home",
+                "href": "/en"
+            },
+            {
+                "label": "Program",
+                "href": "/en/schedule"
+            },
+            {
+                "label": "Speakers",
+                "href": "/en#speakers"
+            },
+            {
+                "label": "About",
+                "href": "/en#about"
+            }
+        ]
+    },
+    "socials": {
+        "twitter": "https://twitter.com/khipuai",
+        "linkedin": "https://linkedin.com/company/khipu",
+        "youtube": "https://youtube.com/@khipu",
+        "instagram": "https://instagram.com/khipuai"
+    },
+    "organizers": [
+        {
+            "name": "Honorio Apaza Alanoca",
+            "role": "Director del Comité Organizador",
+            "affiliation": "AiMara Lab"
+        },
+        {
+            "name": "Allison Inguer Reynoso Serra",
+            "role": "Coordinador de Contenido y Programación",
+            "affiliation": "AiMara Lab"
+        },
+        {
+            "name": "Brigida Huahualuque Mamani",
+            "role": "Coordinador Outreach Comunitario",
+            "affiliation": "Líder comunitario Aimara"
+        }
+    ]
+}

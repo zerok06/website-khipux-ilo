@@ -1,0 +1,46 @@
+{
+    "en": {
+        "title": "KHIPUx Ilo",
+        "subtitle": "AI meets Aymara Community",
+        "description": "Exploring how AI can be a tool for language preservation, revitalization, and empowerment of indigenous cultures",
+        "cta_primary": "Register Now",
+        "cta_secondary": "View Program",
+        "event_type": "Hybrid Event",
+        "stats": [
+            {
+                "value": "150+",
+                "label": "In-Person"
+            },
+            {
+                "value": "100+",
+                "label": "Virtual"
+            },
+            {
+                "value": "4",
+                "label": "Countries"
+            }
+        ]
+    },
+    "es": {
+        "title": "KHIPUx Ilo",
+        "subtitle": "IA y la Comunidad Aymara",
+        "description": "Explorando cómo la IA puede ser una herramienta para la preservación de lenguas, revitalización y empoderamiento de culturas originarias",
+        "cta_primary": "Regístrate Ahora",
+        "cta_secondary": "Ver Programa",
+        "event_type": "Evento Híbrido",
+        "stats": [
+            {
+                "value": "150+",
+                "label": "Presencial"
+            },
+            {
+                "value": "100+",
+                "label": "Virtual"
+            },
+            {
+                "value": "4",
+                "label": "Países"
+            }
+        ]
+    }
+}
