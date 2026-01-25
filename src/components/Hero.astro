@@ -9,30 +9,6 @@ interface Props {
 const { locale } = Astro.props;
 const content = heroData[locale as keyof typeof heroData];
 const isEs = locale === "es";
-
-// Carousel images (auto-play only, no controls)
-const carouselImages = [
-  {
-    src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=600&fit=crop",
-    title: "AiMara Lab",
-    subtitle: isEs ? "IA para lenguas nativas" : "AI for native languages",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=600&fit=crop",
-    title: "KHIPU 2025",
-    subtitle: isEs ? "Conferencia de IA" : "AI Conference",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=600&h=600&fit=crop",
-    title: isEs ? "Comunidad Aymara" : "Aymara Community",
-    subtitle: isEs ? "Preservación cultural" : "Cultural preservation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=600&fit=crop",
-    title: "Machine Learning",
-    subtitle: isEs ? "Tecnología avanzada" : "Advanced technology",
-  },
-];
 ---
 
 <section class="relative min-h-screen h-screen pt-16 overflow-hidden bg-black">

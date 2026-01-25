@@ -2,20 +2,43 @@
 
 @theme {
     /* Primary Orange - Khipu brand #d85120 */
-    --color-primary-50: #fef3ee;
-    --color-primary-100: #fde4d8;
-    --color-primary-200: #fbc6af;
-    --color-primary-300: #f8a07c;
-    --color-primary-400: #f47247;
-    --color-primary-500: #d85120;
-    --color-primary-600: #c24318;
-    --color-primary-700: #a13515;
-    --color-primary-800: #832c17;
-    --color-primary-900: #6c2716;
-    --color-primary-950: #3a110a;
+    --color-primary-50: #fff2ec;
+    --color-primary-100: #ffe1d4;
+    --color-primary-200: #ffc0a8;
+    --color-primary-300: #ff9a73;
+    --color-primary-400: #ff743f;
+    --color-primary-500: #f15b24;
+    --color-primary-600: #d94f1f;
+    --color-primary-700: #b8411a;
+    --color-primary-800: #94351a;
+    --color-primary-900: #7a2f18;
+    --color-primary-950: #42140b;
+
 
     --font-family-sans: 'Inter', system-ui, sans-serif;
+
+    /* Global color requested */
+    --e-global-color-c9399c4: #d85120;
 }
+
+@layer utilities {
+    .chsumto {
+        --divider-border-style: zigzag_tribal;
+        --divider-color: currentColor;
+        --divider-pattern-height: 20px;
+        --divider-pattern-url: url("/pattern-line.svg");
+
+        display: block;
+        width: 100%;
+        height: var(--divider-pattern-height);
+        background-color: var(--divider-color, currentColor);
+        mask-image: var(--divider-pattern-url);
+        mask-size: auto 100%;
+        mask-repeat: repeat-x;
+        mask-position: left center;
+    }
+}
+
 
 /* Smooth scrolling */
 html {
