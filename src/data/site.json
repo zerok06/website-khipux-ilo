@@ -31,8 +31,8 @@
                 "href": "/es#speakers"
             },
             {
-                "label": "Nosotros",
-                "href": "/es#about"
+                "label": "Venue",
+                "href": "/es/venue"
             }
         ],
         "en": [
@@ -49,8 +49,8 @@
                 "href": "/en#speakers"
             },
             {
-                "label": "About",
-                "href": "/en#about"
+                "label": "Venue",
+                "href": "/en/venue"
             }
         ]
     },

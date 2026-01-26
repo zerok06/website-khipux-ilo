@@ -1,0 +1,616 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import siteData from "../../data/site.json";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+}
+
+const { lang } = Astro.params;
+const isEs = lang === "es";
+const title = isEs ? "Venue - KHIPUx Ilo 2026" : "Venue - KHIPUx Ilo 2026";
+
+// Gallery images with descriptions
+// Gallery images with descriptions
+const galleryImages = [
+  {
+    id: 1,
+    title_es: "Glorieta José Gálvez",
+    title_en: "José Gálvez Gazebo",
+    image: "/venue/5-glorieta.jpg",
+    description_es: "Símbolo icónico de Ilo. Un mirador histórico con vistas panorámicas del océano y la ciudad.",
+    description_en: "Iconic symbol of Ilo. A historic lookout with panoramic views of the ocean and the city."
+  },
+  {
+    id: 2,
+    title_es: "Malecón Costero",
+    title_en: "Coastal Boardwalk",
+    image: "/venue/4-malecon.jpg",
+    description_es: "El paseo marítimo perfecto para disfrutar del atardecer y la brisa marina.",
+    description_en: "The perfect boardwalk to enjoy the sunset and the sea breeze."
+  },
+  {
+    id: 3,
+    title_es: "Museo Chiribaya",
+    title_en: "Chiribaya Museum",
+    image: "/venue/2-museo.jpg",
+    description_es: "Descubre la historia milenaria de nuestros ancestros y la cultura Chiribaya.",
+    description_en: "Discover the millennial history of our ancestors and the Chiribaya culture."
+  },
+  {
+    id: 4,
+    title_es: "Valle de El Algarrobal",
+    title_en: "El Algarrobal Valley",
+    image: "/venue/7-algarrobal.jpg",
+    description_es: "Tierra de olivos centenarios y tradición agrícola en el corazón del desierto.",
+    description_en: "Land of century-old olive trees and agricultural tradition in the heart of the desert."
+  },
+  {
+    id: 5,
+    title_es: "Ciudad Puerto",
+    title_en: "Port City",
+    image: "/venue/3-ciudad.jpg",
+    description_es: "Modernidad y tradición se unen en este puerto estratégico del sur peruano.",
+    description_en: "Modernity and tradition come together in this strategic southern Peruvian port."
+  },
+  {
+    id: 6,
+    title_es: "Reserva Punta Coles",
+    title_en: "Punta Coles Reserve",
+    image: "/venue/1-punta-coles.jpg",
+    description_es: "Santuario natural de vida marina y aves guaneras. Un tesoro de biodiversidad frente al mar.",
+    description_en: "Natural sanctuary for marine life and guano birds. A biodiversity treasure facing the sea."
+  }
+];
+
+// Hotels with coordinates for the map
+const hotels = [
+  {
+    name: "Hotel Leyton",
+    rating: 4,
+    price: isEs ? "$60/noche" : "$60/night",
+    address: "Av. Costanera 123",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
+    lat: -17.6394,
+    lng: -71.3375
+  },
+  {
+    name: "Gran Hotel Ilo",
+    rating: 4,
+    price: isEs ? "$80/noche" : "$80/night",
+    address: "Jr. Moquegua 456",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop",
+    lat: -17.6420,
+    lng: -71.3390
+  },
+  {
+    name: "Hotel Pacific",
+    rating: 3,
+    price: isEs ? "$45/noche" : "$45/night",
+    address: "Av. Marítima 789",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=300&fit=crop",
+    lat: -17.6380,
+    lng: -71.3410
+  }
+];
+
+// Universidad location
+const universityLocation = {
+  name: "UNAM - Campus Ilo",
+  lat: -17.6450,
+  lng: -71.3350
+};
+
+// Quick facts with SVG icons instead of emojis
+const quickFacts = [
+  {
+    icon: "thermometer",
+    label: isEs ? "Clima" : "Weather",
+    value: "20-25°C",
+    description: isEs ? "Templado todo el año" : "Temperate year-round"
+  },
+  {
+    icon: "clock",
+    label: isEs ? "Zona horaria" : "Timezone",
+    value: "UTC-5",
+    description: isEs ? "Hora de Perú (PET)" : "Peru Time (PET)"
+  },
+  {
+    icon: "plane",
+    label: isEs ? "Aeropuerto" : "Airport",
+    value: "Tacna (TQM)",
+    description: isEs ? "A 2 horas en auto" : "2 hours by car"
+  },
+  {
+    icon: "waves",
+    label: isEs ? "Ubicación" : "Location",
+    value: isEs ? "Costa Sur" : "South Coast",
+    description: isEs ? "Océano Pacífico" : "Pacific Ocean"
+  }
+];
+---
+
+<Layout title={title} lang={lang || "es"}>
+  <div class="min-h-screen bg-bg text-text">
+
+    <!-- Hero Header - Estilo fotógrafo -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-3 text-primary-500 font-medium mb-4">
+            <div class="w-12 h-px bg-primary-500"></div>
+            <span class="uppercase tracking-[0.2em] text-xs">
+              {isEs ? "Sede del Evento" : "Event Venue"}
+            </span>
+            <div class="w-12 h-px bg-primary-500"></div>
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-8">
+            Ilo, <span class="text-primary-500">Moquegua</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            {isEs
+              ? "Ciudad portuaria en la costa sur del Perú, Ilo es un destino donde el desierto se encuentra con el mar. Con playas vírgenes, rica historia precolombina de la cultura Chiribaya, y una vibrante escena gastronómica, esta ciudad costera de Moquegua ofrece una experiencia única donde la tradición pesquera y la modernidad se entrelazan bajo cielos despejados casi todo el año."
+              : "A port city on Peru's southern coast, Ilo is a destination where the desert meets the sea. With pristine beaches, rich pre-Columbian history from the Chiribaya culture, and a vibrant gastronomic scene, this coastal city of Moquegua offers a unique experience where fishing tradition and modernity intertwine under clear skies almost year-round."}
+          </p>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Galería Principal - Estilo Fotógrafo con Carrusel -->
+    <section class="py-20 border-t border-gray-800/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">
+            {isEs ? "Explora " : "Explore "}<span class="text-primary-500">Ilo</span>
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto">
+            {isEs
+              ? "Descubre los paisajes y experiencias que te esperan en esta hermosa ciudad costera."
+              : "Discover the landscapes and experiences awaiting you in this beautiful coastal city."}
+          </p>
+        </div>
+
+        <!-- Carrusel con imagen grande -->
+        <div class="relative" id="gallery-carousel">
+          <!-- Imagen principal grande -->
+          <div class="relative aspect-[16/9] max-h-[700px] rounded-2xl overflow-hidden group mx-auto">
+            <img
+              id="main-gallery-image"
+              src={galleryImages[0].image}
+              alt={isEs ? galleryImages[0].title_es : galleryImages[0].title_en}
+              class="w-full h-full object-cover transition-all duration-700 ease-out"
+              style="opacity: 1;"
+            />
+
+            <!-- Overlay degradado con información -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+            <!-- Línea decorativa -->
+            <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+            <!-- Contenido del footer de imagen -->
+            <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-8 h-px bg-primary-500"></div>
+                  <span id="gallery-counter" class="text-primary-500 text-sm font-medium tracking-wider">01 / 06</span>
+                </div>
+                <h3 id="gallery-title" class="text-2xl md:text-4xl font-bold text-white mb-3 font-heading">
+                  {isEs ? galleryImages[0].title_es : galleryImages[0].title_en}
+                </h3>
+                <p id="gallery-description" class="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl">
+                  {isEs ? galleryImages[0].description_es : galleryImages[0].description_en}
+                </p>
+              </div>
+            </div>
+
+            <!-- Botones de navegación elegantes -->
+            <button
+              id="prev-btn"
+              class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group/btn"
+              aria-label="Previous"
+            >
+              <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover/btn:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              id="next-btn"
+              class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group/btn"
+              aria-label="Next"
+            >
+              <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover/btn:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Indicadores de progreso -->
+          <div class="flex justify-center gap-2 mt-6">
+            {galleryImages.map((_, idx) => (
+              <button
+                class={`gallery-dot w-2 h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-primary-500 w-8' : 'bg-gray-600 hover:bg-gray-500'}`}
+                data-index={idx}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotels Section con Mapa Interactivo -->
+    <section class="py-20 border-t border-gray-800/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+          <!-- Hotels List -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">
+              {isEs ? "Dónde " : "Where to "}<span class="text-primary-500">{isEs ? "Hospedarte" : "Stay"}</span>
+            </h2>
+            <p class="text-gray-400 mb-8">
+              {isEs
+                ? "Hoteles recomendados cerca del venue del evento."
+                : "Recommended hotels near the event venue."}
+            </p>
+
+            <div class="space-y-4">
+              {hotels.map((hotel, idx) => (
+                <div
+                  class="hotel-card group flex gap-4 p-4 bg-surface/50 border border-border rounded-xl hover:border-primary-500/30 hover:bg-surface transition-all cursor-pointer"
+                  data-lat={hotel.lat}
+                  data-lng={hotel.lng}
+                  data-index={idx}
+                >
+                  <!-- Hotel Image -->
+                  <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                    <img
+                      src={hotel.image}
+                      alt={hotel.name}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <!-- Hotel Info -->
+                  <div class="flex-grow">
+                    <div class="flex items-start justify-between">
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-bold text-white text-lg group-hover:text-primary-400 transition-colors">
+                            {hotel.name}
+                          </h4>
+                          <span class="w-5 h-5 rounded-full bg-primary-500 text-white text-xs flex items-center justify-center font-bold">
+                            {idx + 1}
+                          </span>
+                        </div>
+                        <p class="text-gray-500 text-sm">{hotel.address}</p>
+                      </div>
+                      <span class="text-primary-500 font-bold text-lg">{hotel.price}</span>
+                    </div>
+                    <!-- Rating -->
+                    <div class="flex items-center gap-1 mt-2">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          class={`w-4 h-4 ${i < hotel.rating ? 'text-amber-400' : 'text-gray-700'}`}
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <!-- Map Link -->
+                    <button
+                      class="view-on-map flex items-center gap-1 mt-2 text-xs text-primary-400 hover:text-primary-300 transition-colors"
+                      data-lat={hotel.lat}
+                      data-lng={hotel.lng}
+                      data-name={hotel.name}
+                    >
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                      </svg>
+                      <span>{isEs ? "Ver en mapa" : "View on map"}</span>
+                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p class="text-gray-500 text-sm mt-6">
+              {isEs
+                ? "* Los precios son aproximados y pueden variar según la temporada."
+                : "* Prices are approximate and may vary by season."}
+            </p>
+          </div>
+
+          <!-- Interactive Map -->
+          <div class="sticky top-24">
+            <div class="relative rounded-2xl overflow-hidden border border-border bg-surface">
+              <div id="map" class="w-full h-[500px]"></div>
+
+              <!-- Map Legend -->
+              <div class="absolute bottom-4 left-4 right-4 bg-bg/95 backdrop-blur-sm rounded-xl p-4 border border-border">
+                <h4 class="font-semibold text-white mb-3 text-sm flex items-center gap-2">
+                  <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  {isEs ? "Ubicaciones" : "Locations"}
+                </h4>
+                <div class="space-y-2">
+                  <!-- University -->
+                  <div class="flex items-center gap-2 text-sm">
+                    <div class="w-5 h-5 bg-primary-500 rounded flex items-center justify-center">
+                      <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">{universityLocation.name}</span>
+                    <span class="text-xs text-primary-400 ml-auto">{isEs ? "Venue" : "Venue"}</span>
+                  </div>
+                  <!-- Hotels -->
+                  {hotels.map((hotel, idx) => (
+                    <div class="flex items-center gap-2 text-sm hotel-legend" data-index={idx}>
+                      <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center text-white text-xs font-bold border border-white/30">
+                        {idx + 1}
+                      </div>
+                      <span class="text-gray-300">{hotel.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Info -->
+    <section class="py-20 border-t border-gray-800/50">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-3 text-primary-500 font-medium mb-6">
+          <div class="w-8 h-px bg-primary-500"></div>
+          <span class="uppercase tracking-widest text-xs">{isEs ? "Ubicación del Evento" : "Event Location"}</span>
+          <div class="w-8 h-px bg-primary-500"></div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-6">
+          {siteData.location.name}
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          {isEs
+            ? "El evento se realizará en las instalaciones de la Universidad Nacional de Moquegua, campus Ilo. Un moderno campus universitario equipado con auditorios y espacios de colaboración ideales para KHIPUx."
+            : "The event will be held at the National University of Moquegua facilities, Ilo campus. A modern university campus equipped with auditoriums and collaboration spaces ideal for KHIPUx."}
+        </p>
+        <a
+          href={`/${lang}`}
+          class="inline-flex items-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-full font-semibold transition-all group"
+        >
+          {isEs ? "Volver al inicio" : "Back to home"}
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+  /* Custom Leaflet marker styles */
+  .custom-marker {
+    background: #f15b24;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .university-marker {
+    background: #f15b24;
+    border: 3px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Dark map tiles - no filter needed for dark CartoDB tiles */
+  .leaflet-tile-pane {
+    /* Using native dark tiles */
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: #111;
+    color: white;
+    border-radius: 12px;
+    border: 1px solid #333;
+  }
+
+  .leaflet-popup-tip {
+    background: #111;
+  }
+
+  .leaflet-popup-content {
+    margin: 12px 16px;
+  }
+
+  /* Hotel card highlight */
+  .hotel-card.active {
+    border-color: rgba(241, 91, 36, 0.5);
+    background: rgba(241, 91, 36, 0.05);
+  }
+
+  .hotel-legend.active span {
+    color: #f15b24;
+  }
+</style>
+
+<script define:vars={{ galleryImages, hotels, universityLocation, isEs }}>
+  // Gallery Carousel Logic
+  let currentIndex = 0;
+  const totalImages = galleryImages.length;
+
+  const mainImage = document.getElementById('main-gallery-image');
+  const galleryTitle = document.getElementById('gallery-title');
+  const galleryDescription = document.getElementById('gallery-description');
+  const galleryCounter = document.getElementById('gallery-counter');
+  const dots = document.querySelectorAll('.gallery-dot');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  function updateGallery(index) {
+    const item = galleryImages[index];
+
+    // Fade out
+    mainImage.style.opacity = '0';
+
+    setTimeout(() => {
+      mainImage.src = item.image;
+      mainImage.alt = isEs ? item.title_es : item.title_en;
+      galleryTitle.textContent = isEs ? item.title_es : item.title_en;
+      galleryDescription.textContent = isEs ? item.description_es : item.description_en;
+      galleryCounter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(totalImages).padStart(2, '0')}`;
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('bg-primary-500', 'w-8');
+          dot.classList.remove('bg-gray-600');
+        } else {
+          dot.classList.remove('bg-primary-500', 'w-8');
+          dot.classList.add('bg-gray-600');
+        }
+      });
+
+      // Fade in
+      mainImage.style.opacity = '1';
+    }, 200);
+
+    currentIndex = index;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    const newIndex = currentIndex === 0 ? totalImages - 1 : currentIndex - 1;
+    updateGallery(newIndex);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const newIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
+    updateGallery(newIndex);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => updateGallery(index));
+  });
+
+  // Auto-advance carousel
+  let autoplayInterval = setInterval(() => {
+    const newIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
+    updateGallery(newIndex);
+  }, 6000);
+
+  // Pause autoplay on hover
+  const carousel = document.getElementById('gallery-carousel');
+  carousel?.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+  carousel?.addEventListener('mouseleave', () => {
+    autoplayInterval = setInterval(() => {
+      const newIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
+      updateGallery(newIndex);
+    }, 6000);
+  });
+
+  // Map initialization with Leaflet
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Load Leaflet
+    const L = await import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js');
+
+    // Initialize map centered on Ilo
+    const map = L.map('map', {
+      center: [-17.6410, -71.3380],
+      zoom: 15,
+      zoomControl: false
+    });
+
+    // Add zoom control to top-right
+    L.control.zoom({ position: 'topright' }).addTo(map);
+
+    // Add tile layer - Dark CartoDB tiles
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Custom icon for university
+    const universityIcon = L.divIcon({
+      className: 'university-marker',
+      html: `<div style="background:#f15b24;width:32px;height:32px;border-radius:8px;border:3px solid white;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="white">
+          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+        </svg>
+      </div>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
+    });
+
+    // Add university marker
+    const uniMarker = L.marker([universityLocation.lat, universityLocation.lng], { icon: universityIcon })
+      .addTo(map)
+      .bindPopup(`<strong>${universityLocation.name}</strong><br><span style="color:#f15b24">Venue del evento</span>`);
+
+    // Custom icons for hotels
+    const hotelMarkers = [];
+    hotels.forEach((hotel, idx) => {
+      const hotelIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div style="background:white;width:28px;height:28px;border-radius:50%;border:3px solid #f15b24;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);font-weight:bold;color:#f15b24;font-size:12px;">${idx + 1}</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14]
+      });
+
+      const marker = L.marker([hotel.lat, hotel.lng], { icon: hotelIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${hotel.name}</strong><br>${hotel.address}<br><span style="color:#f15b24">${hotel.price}</span>`);
+
+      hotelMarkers.push(marker);
+    });
+
+    // Hotel card interactions
+    const hotelCards = document.querySelectorAll('.hotel-card');
+    const hotelLegends = document.querySelectorAll('.hotel-legend');
+
+    hotelCards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        const lat = parseFloat(card.dataset.lat);
+        const lng = parseFloat(card.dataset.lng);
+        map.flyTo([lat, lng], 17, { duration: 0.5 });
+        hotelMarkers[idx].openPopup();
+
+        // Highlight active card
+        hotelCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+
+        hotelLegends.forEach(l => l.classList.remove('active'));
+        hotelLegends[idx]?.classList.add('active');
+      });
+    });
+
+    // View on map buttons
+    const viewMapBtns = document.querySelectorAll('.view-on-map');
+    viewMapBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lat = parseFloat(btn.dataset.lat);
+        const lng = parseFloat(btn.dataset.lng);
+        map.flyTo([lat, lng], 17, { duration: 0.5 });
+        hotelMarkers[idx].openPopup();
+      });
+    });
+  });
+</script>
