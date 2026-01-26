@@ -1,31 +1,37 @@
 {
-    "diamond": [
+    "strategic": [
         {
-            "name": "Universidad Nacional de Moquegua",
-            "logo": "/images/unam_logo.png"
+            "name": "AiMara Lab",
+            "logo": "https://www.aimaralab.com/logo/aimaralab25A.png"
         }
     ],
     "platinum": [
         {
-            "name": "Google",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png"
+            "name": "Meta",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/320px-Meta_Platforms_Inc._logo.svg.png"
         },
         {
-            "name": "NVIDIA Deep Learning Institute",
-            "logo": "https://upload.wikimedia.org/wikipedia/sco/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png"
+            "name": "Google",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png"
         }
     ],
-    "silver": [
+    "gold": [
         {
-            "name": "Southern Copper Peru",
+            "name": "Universidad Nacional de Moquegua",
+            "logo": "/unam.png"
+        },
+        {
+            "name": "NVIDIA",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/320px-Nvidia_logo.svg.png"
+        }
+    ],
+    "bronze": [
+        {
+            "name": "Southern Copper",
             "logo": null
         },
         {
-            "name": "Anglo American Quellaveco",
-            "logo": null
-        },
-        {
-            "name": "AiMara Lab",
+            "name": "Anglo American",
             "logo": null
         }
     ]

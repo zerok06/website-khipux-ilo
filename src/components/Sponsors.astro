@@ -1,6 +1,5 @@
 ---
 import sponsorsData from "../data/sponsors.json";
-import siteData from "../data/site.json";
 
 interface Props {
   locale: string;
@@ -10,296 +9,132 @@ const { locale } = Astro.props;
 const isEs = locale === "es";
 ---
 
-<section id="sponsors" class="py-32 bg-bg relative">
-  <!-- Andean decoration -->
-  <svg
-    class="absolute bottom-20 left-10 w-24 h-24 text-white/[0.02]"
-    viewBox="0 0 100 100"
-    fill="currentColor"
+<section id="sponsors" class="py-32 bg-black relative">
+  <div
+    style="max-width: var(--content-max-width, 75%); margin: 0 auto; padding: 0 1.5rem;"
   >
-    <path
-      d="M40 0h20v20h20v20h-20v20h20v20h-20v20h-20v-20h-20v-20h20v-20h-20v-20h20z"
-    ></path>
-  </svg>
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <!-- Sponsors Section -->
-    <div class="mb-24">
-      <div class="text-center mb-16">
+    <!-- Header with Rotated Image Separator -->
+    <div class="text-center mb-20 px-4">
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 uppercase tracking-[0.1em]"
+      >
+        Sponsors
+      </h2>
+      <div class="flex justify-center -mt-4">
         <div
-          class="inline-flex items-center gap-3 text-primary-500 font-medium mb-4 justify-center"
+          class="w-64 h-12 overflow-hidden flex items-center justify-center pointer-events-none"
         >
-          <div class="w-8 h-[2px] bg-primary-500"></div>
-          <span class="uppercase tracking-widest text-sm">
-            {isEs ? "Colaboradores" : "Partners"}
-          </span>
-          <div class="w-8 h-[2px] bg-primary-500"></div>
+          <img
+            src="/separador.png"
+            alt="Separator"
+            class="w-48 h-auto rotate-90 opacity-60 brightness-110"
+            style="filter: drop-shadow(0 0 15px rgba(216, 81, 32, 0.4));"
+          />
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-text font-heading">
-          Sponsors
-        </h2>
-      </div>
-
-      <!-- Diamond Sponsors -->
-      {
-        sponsorsData.diamond.length > 0 && (
-          <div class="mb-12 reveal">
-            <p class="text-center text-primary-500 text-sm font-semibold uppercase tracking-widest mb-6">
-              💎 Diamond
-            </p>
-            <div class="flex justify-center gap-8 flex-wrap">
-              {sponsorsData.diamond.map((sponsor) => (
-                <div class="p-8 bg-surface border-2 border-primary-500/30 rounded-2xl hover:border-primary-500 transition-all hover:scale-105">
-                  {sponsor.logo ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      class="h-45 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span class="text-text font-bold text-xl">
-                      {sponsor.name}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Platinum Sponsors -->
-      {
-        sponsorsData.platinum.length > 0 && (
-          <div class="mb-12 reveal">
-            <p class="text-center text-gray-400 text-sm font-semibold uppercase tracking-widest mb-6">
-              Platinum
-            </p>
-            <div class="flex justify-center gap-6 flex-wrap">
-              {sponsorsData.platinum.map((sponsor) => (
-                <div class="p-6 bg-surface border border-border rounded-xl hover:border-primary-500/30 transition-all hover:scale-105">
-                  {sponsor.logo ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      class="h-14 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span class="text-text-muted font-semibold">
-                      {sponsor.name}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Silver Sponsors -->
-      {
-        sponsorsData.silver.length > 0 && (
-          <div class="mb-12 reveal">
-            <p class="text-center text-gray-500 text-sm font-medium uppercase tracking-widest mb-6">
-              Silver
-            </p>
-            <div class="flex justify-center gap-4 flex-wrap">
-              {sponsorsData.silver.map((sponsor) => (
-                <div class="px-5 py-3 bg-surface border border-border rounded-lg hover:border-primary-500/20 transition-all">
-                  {sponsor.logo ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      class="h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span class="text-gray-400 font-medium text-sm">
-                      {sponsor.name}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Partner CTA - Prominent -->
-      <div class="text-center mt-16 pt-8 border-t border-gray-800/50">
-        <p class="text-gray-400 mb-4 text-sm">
-          {
-            isEs
-              ? "¿Quieres apoyar este evento?"
-              : "Want to support this event?"
-          }
-        </p>
-        <a
-          href="#"
-          class="inline-flex items-center gap-3 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:scale-105"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-              clip-rule="evenodd"></path>
-          </svg>
-          {isEs ? "¡Conviértete en Sponsor!" : "Become a Sponsor!"}
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
       </div>
     </div>
 
-    <!-- Creative Map Section -->
-    <div class="relative reveal">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left: Info -->
-        <div class="space-y-6">
-          <div
-            class="inline-flex items-center gap-3 text-primary-500 font-medium"
-          >
-            <div class="w-8 h-[2px] bg-primary-500"></div>
-            <span class="uppercase tracking-widest text-sm">
-              {isEs ? "Ubicación" : "Location"}
-            </span>
-          </div>
+    {
+      /* Support for multiple levels (strategic, platinum, gold, bronze) */
+      Object.entries(sponsorsData).map(([category, sponsors]) => {
+        if (!sponsors || sponsors.length === 0) return null;
 
-          <h3 class="text-3xl md:text-4xl font-bold text-text font-heading">
-            Ilo, <span class="text-primary-500">Perú</span>
-          </h3>
+        const config = {
+          strategic: {
+            label: isEs ? "Socio Estratégico" : "Strategic Partner",
+            hex: "#5CE1E6",
+          },
+          platinum: {
+            label: isEs ? "Sponsor Platino" : "Platinum Sponsor",
+            hex: "#E0E0E0",
+          },
+          gold: {
+            label: isEs ? "Sponsor Oro" : "Gold Sponsor",
+            hex: "#FFBD59",
+          },
+          bronze: {
+            label: isEs ? "Sponsor Bronce" : "Bronze Sponsor",
+            hex: "#B45F06",
+          },
+        }[category] || {
+          label: category.charAt(0).toUpperCase() + category.slice(1),
+          hex: "#6b7280",
+        };
 
-          <p class="text-gray-300 text-lg">
-            {
-              isEs
-                ? "En el corazón de la región Aymara, donde el sur del Perú se encuentra con la innovación."
-                : "In the heart of the Aymara region, where southern Peru meets innovation."
-            }
-          </p>
-
-          <div class="flex flex-wrap gap-4 pt-2">
-            <div class="flex items-center gap-2 text-gray-400">
-              <svg
-                class="w-5 h-5 text-primary-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        return (
+          <div class="mb-20 last:mb-0">
+            {/* Centered Category Label with Subtle Lines */}
+            <div class="flex items-center gap-6 mb-12 px-4 opacity-80">
+              <div class="h-px w-full bg-white/10" />
+              <span
+                class="text-xs font-bold tracking-[0.3em] uppercase whitespace-nowrap"
+                style={`color: ${config.hex}`}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                ></path>
-              </svg>
-              <span>{siteData.location.name}</span>
+                {config.label}
+              </span>
+              <div class="h-px w-full bg-white/10" />
+            </div>
+
+            {/* Compact Centered Flex Grid */}
+            <div class="flex flex-wrap justify-center gap-10 md:gap-16 max-w-6xl mx-auto">
+              {sponsors.map((sponsor) => (
+                <div class="group relative w-32 md:w-56 flex flex-col items-center">
+                  <div class="relative flex items-center justify-center p-4 h-28 md:h-40 w-full transition-all duration-700">
+                    {sponsor.logo ? (
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        class={`w-auto object-contain relative z-10 transition-all duration-700 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 ${
+                          sponsor.name.includes(
+                            "Universidad Nacional de Moquegua",
+                          )
+                            ? "max-h-24 md:max-h-32"
+                            : "max-h-16 md:max-h-20"
+                        }`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span class="text-xs md:text-sm font-bold text-white/30 text-center relative z-10 tracking-wide uppercase transition-colors group-hover:text-white/70">
+                        {sponsor.name}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Subtle Interaction Glow */}
+                  <div class="text-center opacity-0 group-hover:opacity-40 transition-all duration-700 transform scale-75">
+                    <div
+                      class="w-2 h-2 rounded-full mx-auto"
+                      style={`background-color: ${config.hex}; box-shadow: 0 0 15px ${config.hex}`}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        );
+      })
+    }
 
-          <a
-            href={`/${locale}/venue`}
-            class="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-full font-semibold transition-all hover:scale-105"
-          >
-            {isEs ? "Ver detalles del venue" : "View venue details"}
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Right: Creative Map Display -->
-        <div class="relative group">
-          <!-- Map Container with hover effect -->
-          <div
-            class="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary-500/5 transition-all duration-500 group-hover:shadow-primary-500/10 group-hover:border-primary-500/30"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30456.!2d-71.34!3d-17.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x914148e8d5c9c0c1%3A0x!2sIlo%2C%20Peru!5e0!3m2!1sen!2spe!4v1600000000000!5m2!1sen!2spe"
-              width="100%"
-              height="400"
-              style="border:0; filter: invert(90%) hue-rotate(180deg);"
-              loading="lazy"
-            >
-            </iframe>
-
-            <!-- Animated Pin -->
-            <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full"
-            >
-              <div class="relative">
-                <div
-                  class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center animate-bounce shadow-lg shadow-primary-500/50"
-                >
-                  <svg
-                    class="w-5 h-5 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <!-- Pulse ring -->
-                <div
-                  class="absolute inset-0 w-10 h-10 bg-primary-500/30 rounded-full animate-ping"
-                >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Decorative corners -->
-          <div
-            class="absolute -bottom-3 -right-3 w-20 h-20 border border-primary-500/20 rounded-2xl -z-10"
-          >
-          </div>
-          <div
-            class="absolute -top-3 -left-3 w-16 h-16 border border-primary-500/10 rounded-xl -z-10"
-          >
-          </div>
-        </div>
-      </div>
+    {/* Become a Sponsor - Premium CTA */}
+    <div class="text-center mt-32">
+      <a
+        href="#"
+        class="inline-flex items-center gap-4 px-12 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-full font-bold shadow-2xl shadow-primary-500/20 transition-all hover:scale-105 uppercase tracking-widest text-sm"
+      >
+        {isEs ? "Conviértete en Sponsor" : "Become a Sponsor"}
+        <svg
+          class="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
-
-<script>
-  // Scroll reveal animation
-  const revealElements = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
-</script>
