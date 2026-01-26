@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Agenda from "../../components/Agenda";
 import scheduleData from "../../data/schedule.json";
-import speakersData from "../../data/speakers.json";
 
 export function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -9,197 +9,65 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const isEs = lang === "es";
-
-// Helper to get speaker by ID
-const getSpeaker = (id: string) => speakersData.find(s => s.id === id);
-
-// Session type colors
-const typeColors = {
-  talk: "bg-amber-500",
-  workshop: "bg-purple-500",
-  logistics: "bg-gray-500",
-  panel: "bg-blue-500",
-  networking: "bg-green-500"
-};
-
-const typeLabels = {
-  talk: "Keynote",
-  workshop: "Workshop",
-  logistics: isEs ? "Logística" : "Logistics",
-  panel: "Panel",
-  networking: "Networking"
-};
-
-// Filter categories
-const categories = isEs 
-  ? ["Todas", "Keynotes", "Workshops", "Networking"]
-  : ["All Sessions", "Keynotes", "Workshops", "Networking"];
+const title = isEs
+  ? "Programa - KHIPUx Ilo 2026"
+  : "Schedule - KHIPUx Ilo 2026";
 ---
 
-<Layout title={isEs ? "Programa - KHIPUx Ilo 2026" : "Schedule - KHIPUx Ilo 2026"} lang={lang}>
-  <!-- Full black background page -->
-  <div class="min-h-screen bg-black text-white">
-    <!-- Header -->
-    <section class="pt-24 pb-12">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {isEs ? "Programa del Evento" : "Event Schedule"}
-        </h1>
-        <div class="flex items-center justify-center gap-6 text-gray-300">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            <span>{isEs ? "18-19 Agosto, 2026" : "August 18-19, 2026"}</span>
-          </div>
-          <span class="text-gray-600">•</span>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-            </svg>
-            <span>Ilo, Moquegua, Perú</span>
-          </div>
-        </div>
+<Layout title={title} lang={lang || "es"}>
+  <div class="min-h-screen bg-bg text-text">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative">
+      <!-- Andean decoration -->
+      <svg
+        class="absolute top-20 right-10 w-32 h-32 text-white/[0.02]"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+      >
+        <path
+          d="M40 0h20v20h20v20h-20v20h20v20h-20v20h-20v-20h-20v-20h20v-20h-20v-20h20z"
+        ></path>
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <Agenda days={scheduleData.days} locale={lang || "es"} client:load />
       </div>
     </section>
 
-    <!-- Filters -->
-    <section class="border-b border-gray-800 sticky top-16 z-40 bg-black/95 backdrop-blur-md">
-      <div class="max-w-5xl mx-auto px-4 py-4">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <!-- Day Tabs -->
-          <div class="flex items-center gap-2 bg-gray-900 rounded-full p-1">
-            {scheduleData.days.map((day, index) => (
-              <button 
-                class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${index === 0 ? 'bg-primary-500 text-white' : 'text-gray-400 hover:bg-gray-800'}`}
-                data-day={index}
-              >
-                {isEs ? `Día ${index + 1}` : `Day ${index + 1}`}
-              </button>
-            ))}
+    <!-- Download CTA -->
+    <section class="py-16 border-t border-gray-800">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <p class="text-gray-400 mb-6">
+          {
+            isEs
+              ? "Descarga la agenda completa para tenerla a mano durante el evento."
+              : "Download the complete schedule to have it handy during the event."
+          }
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-3 px-8 py-4 border border-border text-text hover:border-primary-500 hover:text-primary-500 rounded-xl font-bold text-lg transition-all group bg-surface"
+        >
+          <div
+            class="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-colors"
+          >
+            <svg
+              class="w-6 h-6 text-red-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
           </div>
-
-          <!-- Category Filters -->
-          <div class="flex items-center gap-2 overflow-x-auto pb-1">
-            {categories.map((cat, index) => (
-              <button 
-                class={`px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap ${index === 0 ? 'border-primary-500 text-primary-400 bg-primary-500/10' : 'border-gray-700 text-gray-400 hover:border-primary-400'}`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="py-12">
-      <div class="max-w-5xl mx-auto px-4">
-        {scheduleData.days.map((day, dayIndex) => (
-          <div class={`day-content ${dayIndex > 0 ? 'hidden' : ''}`} data-day-content={dayIndex}>
-            <!-- Day Title -->
-            <h2 class="text-2xl font-bold text-primary-400 mb-8">
-              {isEs ? day.day_name_es : day.day_name_en}
-            </h2>
-            
-            <div class="space-y-1">
-              {day.sessions.map((session) => {
-                const speaker = session.speaker_id ? getSpeaker(session.speaker_id) : null;
-                const typeColor = typeColors[session.type as keyof typeof typeColors] || typeColors.talk;
-                const typeLabel = typeLabels[session.type as keyof typeof typeLabels] || session.type;
-                const timeparts = session.time.split(' - ')[0].split(':');
-                
-                return (
-                  <div class="flex items-start gap-6 py-6 border-b border-gray-800 last:border-b-0">
-                    <!-- Time Column -->
-                    <div class="w-20 flex-shrink-0 text-right">
-                      <div class="text-2xl font-bold text-primary-500">{timeparts[0]}<span class="text-primary-300/50">:{timeparts[1]}</span></div>
-                      <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">
-                        {parseInt(timeparts[0]) < 12 ? 'AM' : 'PM'}
-                      </div>
-                    </div>
-
-                    <!-- Session Card -->
-                    <div class={`flex-1 rounded-2xl p-6 ${session.type === 'talk' || session.type === 'panel' ? 'bg-gray-900' : 'bg-gray-900/50'}`}>
-                      {/* Type Badge */}
-                      <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide text-white mb-3 ${typeColor}`}>
-                        {typeLabel}
-                      </span>
-
-                      {/* Title */}
-                      <h3 class="text-xl font-bold text-white mb-2">
-                        {isEs ? session.title_es : session.title_en}
-                      </h3>
-
-                      {/* Description (if available) */}
-                      {session.description && (
-                        <p class="text-sm text-gray-400 mb-4">
-                          {session.description}
-                        </p>
-                      )}
-
-                      {/* Footer: Speaker + Location */}
-                      <div class="flex items-center justify-between mt-4">
-                        {speaker ? (
-                          <div class="flex items-center gap-3">
-                            <img 
-                              src={speaker.image} 
-                              alt={speaker.name}
-                              class="w-10 h-10 rounded-full object-cover ring-2 ring-white/20"
-                            />
-                            <div>
-                              <p class="font-medium text-sm text-white">{speaker.name}</p>
-                              <p class="text-xs text-gray-500">{speaker.role}</p>
-                            </div>
-                          </div>
-                        ) : (
-                          <div></div>
-                        )}
-
-                        {session.location && (
-                          <div class="flex items-center gap-2 text-sm text-gray-500">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                            </svg>
-                            {session.location}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+          {isEs ? "Descargar PDF" : "Download PDF"}
+        </a>
       </div>
     </section>
   </div>
 </Layout>
-
-<script>
-  // Day tab switching
-  document.querySelectorAll('[data-day]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const day = btn.getAttribute('data-day');
-      
-      // Update active tab
-      document.querySelectorAll('[data-day]').forEach(b => {
-        b.classList.remove('bg-primary-500', 'text-white');
-        b.classList.add('text-gray-400');
-      });
-      btn.classList.add('bg-primary-500', 'text-white');
-      btn.classList.remove('text-gray-400');
-      
-      // Show/hide content
-      document.querySelectorAll('[data-day-content]').forEach(content => {
-        if (content.getAttribute('data-day-content') === day) {
-          content.classList.remove('hidden');
-        } else {
-          content.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>

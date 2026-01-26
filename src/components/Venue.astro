@@ -1,189 +1,195 @@
 ---
 import siteData from "../data/site.json";
+import VenueGallery from "./VenueGallery";
 
 interface Props {
-    locale?: string;
+  locale?: string;
 }
 
 const { locale = "en" } = Astro.props;
 const isEs = locale === "es";
 
 const features = isEs
-    ? [
-          {
-              icon: "wifi",
-              title: "Evento Híbrido",
-              desc: "Participación presencial en Ilo, Moquegua y conexión virtual para participantes remotos.",
-          },
-          {
-              icon: "food",
-              title: "Networking y Catering",
-              desc: "Almuerzo y coffee breaks incluidos para mantener la energía y facilitar conexiones.",
-          },
-          {
-              icon: "hotel",
-              title: "Universidad Nacional de Moquegua",
-              desc: "Instalaciones de primer nivel proporcionadas por nuestro partner universitario.",
-          },
-      ]
-    : [
-          {
-              icon: "wifi",
-              title: "Hybrid Event",
-              desc: "In-person participation in Ilo, Moquegua and virtual connection for remote attendees.",
-          },
-          {
-              icon: "food",
-              title: "Networking & Catering",
-              desc: "Lunch and coffee breaks included to keep energy up and facilitate connections.",
-          },
-          {
-              icon: "hotel",
-              title: "Universidad Nacional de Moquegua",
-              desc: "First-class facilities provided by our university partner.",
-          },
-      ];
+  ? [
+      {
+        icon: "wifi",
+        title: "Evento Híbrido",
+        desc: "Participación presencial en Ilo, Moquegua y conexión virtual para participantes remotos.",
+      },
+      {
+        icon: "food",
+        title: "Networking y Catering",
+        desc: "Almuerzo y coffee breaks incluidos para mantener la energía y facilitar conexiones.",
+      },
+      {
+        icon: "hotel",
+        title: "Universidad Nacional de Moquegua",
+        desc: "Instalaciones de primer nivel proporcionadas por nuestro partner universitario.",
+      },
+    ]
+  : [
+      {
+        icon: "wifi",
+        title: "Hybrid Event",
+        desc: "In-person participation in Ilo, Moquegua and virtual connection for remote attendees.",
+      },
+      {
+        icon: "food",
+        title: "Networking & Catering",
+        desc: "Lunch and coffee breaks included to keep energy up and facilitate connections.",
+      },
+      {
+        icon: "hotel",
+        title: "Universidad Nacional de Moquegua",
+        desc: "First-class facilities provided by our university partner.",
+      },
+    ];
 ---
 
-<section id="venue" class="py-24 bg-black">
-    <div
-        style="max-width: var(--content-max-width, 70%); margin: 0 auto; padding: 0 1rem;"
-    >
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Map Side -->
-            <div class="relative">
-                <div
-                    class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800"
-                >
-                    <div class="bg-gray-900 rounded-2xl overflow-hidden">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30456.!2d-71.34!3d-17.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x914148e8d5c9c0c1%3A0x!2sIlo%2C%20Peru!5e0!3m2!1sen!2spe!4v1600000000000!5m2!1sen!2spe"
-                            width="100%"
-                            height="400"
-                            style="border:0; filter: invert(90%) hue-rotate(180deg);"
-                            loading="lazy"></iframe>
-                    </div>
+<section id="venue" class="py-24 bg-dark-bg relative overflow-hidden">
+  <!-- Background decoration -->
+  <div
+    class="absolute top-0 right-0 w-1/3 h-full bg-primary-500/5 blur-3xl pointer-events-none"
+  >
+  </div>
 
-                    <div
-                        class="absolute bottom-4 left-4 right-4 bg-black/95 backdrop-blur-sm rounded-xl p-4 border border-gray-800"
-                    >
-                        <div class="flex items-start gap-3">
-                            <div
-                                class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0"
-                            >
-                                <svg
-                                    class="w-5 h-5 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white">
-                                    {siteData.location.name}
-                                </h4>
-                                <p class="text-sm text-gray-400">
-                                    {siteData.location.city}, {
-                                        siteData.location.region
-                                    }, {siteData.location.country}
-                                </p>
-                                <a
-                                    href="#"
-                                    class="inline-flex items-center gap-1 text-primary-500 text-sm font-medium mt-2 hover:text-primary-400"
-                                >
-                                    {isEs ? "CÓMO LLEGAR" : "GET DIRECTIONS"}
-                                    <svg
-                                        class="w-4 h-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                        ></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Content Side -->
-            <div class="space-y-8">
-                <div>
-                    <h2
-                        class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white"
-                    >
-                        {isEs ? "Ilo, Moquegua" : "Ilo, Moquegua"}
-                        <span class="block text-primary-500 text-2xl mt-2"
-                            >{isEs ? "Perú" : "Peru"}</span
-                        >
-                    </h2>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        {
-                            isEs
-                                ? "Ubicado en el sur de Perú, en el corazón de la región Aymara. Nuestro evento conecta la Universidad Nacional de Moquegua con las comunidades originarias de Perú, Bolivia, Argentina y Chile."
-                                : "Located in southern Peru, in the heart of the Aymara region. Our event connects the National University of Moquegua with indigenous communities from Peru, Bolivia, Argentina, and Chile."
-                        }
-                    </p>
-                </div>
-
-                <div class="space-y-6">
-                    {
-                        features.map((feature) => (
-                            <div class="flex items-start gap-4 group">
-                                <div class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
-                                    {feature.icon === "wifi" && (
-                                        <svg
-                                            class="w-6 h-6 text-primary-500"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.415 5 5 0 017.072 0 1 1 0 01-1.415 1.415zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
-                                    )}
-                                    {feature.icon === "food" && (
-                                        <svg
-                                            class="w-6 h-6 text-primary-500"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                                        </svg>
-                                    )}
-                                    {feature.icon === "hotel" && (
-                                        <svg
-                                            class="w-6 h-6 text-primary-500"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                                        </svg>
-                                    )}
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white mb-1 text-lg">
-                                        {feature.title}
-                                    </h4>
-                                    <p class="text-gray-400">{feature.desc}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        </div>
+  <div
+    style="max-width: var(--content-max-width, 85%); margin: 0 auto; padding: 0 1rem;"
+  >
+    <div class="mb-16 text-center">
+      <div
+        class="inline-flex items-center gap-3 text-primary-500 font-medium mb-4 justify-center"
+      >
+        <div class="w-8 h-[2px] bg-primary-500"></div>
+        <span class="uppercase tracking-widest text-sm">
+          {isEs ? "Descubre Ilo" : "Discover Ilo"}
+        </span>
+        <div class="w-8 h-[2px] bg-primary-500"></div>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white font-heading">
+        {isEs ? "Nuestro Puerto" : "Our Host City"}
+      </h2>
     </div>
+
+    <!-- Gallery Section -->
+    <div class="mb-20">
+      <VenueGallery locale={locale} client:visible />
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Content Side -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-3xl font-bold leading-tight mb-6 text-white">
+            {isEs ? "La Joya del Sur" : "The Jewel of the South"}
+            <span class="block text-primary-500 text-xl mt-2 font-normal"
+              >{
+                isEs
+                  ? "Donde el desierto encuentra al mar"
+                  : "Where the desert meets the sea"
+              }</span
+            >
+          </h3>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            {
+              isEs
+                ? "Ubicado en el sur de Perú, Ilo es una ciudad puerto histórica que combina playas hermosas, el legado de la cultura Chiribaya y una creciente modernidad académica. Es el escenario perfecto para conectar tradición con el futuro de la IA."
+                : "Located in southern Peru, Ilo is a historic port city combining beautiful beaches, the legacy of the Chiribaya culture, and growing academic modernity. It is the perfect setting to connect tradition with the future of AI."
+            }
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {
+            features.map((feature) => (
+              <div class="flex items-start gap-4 group">
+                <div class="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0 transition-all group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/25">
+                  {feature.icon === "wifi" && (
+                    <svg
+                      class="w-6 h-6 text-primary-500 group-hover:text-white transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.415 5 5 0 017.072 0 1 1 0 01-1.415 1.415zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  )}
+                  {feature.icon === "food" && (
+                    <svg
+                      class="w-6 h-6 text-primary-500 group-hover:text-white transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                    </svg>
+                  )}
+                  {feature.icon === "hotel" && (
+                    <svg
+                      class="w-6 h-6 text-primary-500 group-hover:text-white transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                  )}
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1 text-lg">
+                    {feature.title}
+                  </h4>
+                  <p class="text-sm text-gray-400 leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Simple Map (Moved to secondary position) -->
+      <div
+        class="relative h-full min-h-[400px] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30456.!2d-71.34!3d-17.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x914148e8d5c9c0c1%3A0x!2sIlo%2C%20Peru!5e0!3m2!1sen!2spe!4v1600000000000!5m2!1sen!2spe"
+          width="100%"
+          height="100%"
+          style="border:0; filter: invert(90%) hue-rotate(180deg); min-height: 400px;"
+          loading="lazy"
+          class="absolute inset-0"></iframe>
+
+        <div
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 pointer-events-none"
+        >
+          <div
+            class="inline-flex items-center gap-2 bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-gray-800 text-sm font-medium text-white pointer-events-auto"
+          >
+            <svg
+              class="w-4 h-4 text-primary-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            {siteData.location.name}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

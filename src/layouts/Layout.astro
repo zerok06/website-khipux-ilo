@@ -1,12 +1,16 @@
 ---
 import "../styles/global.css";
-import "@fontsource/inter";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/700.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
-	lang: string;
+  title: string;
+  lang: string;
 }
 
 const { title, lang } = Astro.props;
@@ -14,37 +18,37 @@ const { title, lang } = Astro.props;
 
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="KHIPUx Ilo 2026 - AI meets Aymara Community"
-		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<style>
-			:root {
-				--content-max-width: 70%;
-			}
-			@media (max-width: 1024px) {
-				:root {
-					--content-max-width: 90%;
-				}
-			}
-			@media (max-width: 640px) {
-				:root {
-					--content-max-width: 95%;
-				}
-			}
-		</style>
-	</head>
-	<body class="min-h-screen bg-black text-white font-sans antialiased">
-		<Navbar locale={lang} />
-		<main>
-			<slot />
-		</main>
-		<Footer locale={lang} />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="KHIPUx Ilo 2026 - AI meets Aymara Community"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style>
+      :root {
+        --content-max-width: 70%;
+      }
+      @media (max-width: 1024px) {
+        :root {
+          --content-max-width: 90%;
+        }
+      }
+      @media (max-width: 640px) {
+        :root {
+          --content-max-width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-bg text-text font-sans antialiased">
+    <Navbar locale={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={lang} />
+  </body>
 </html>

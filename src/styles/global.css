@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-    /* Primary Orange - Khipu brand #d85120 */
+    /* Pure Black Theme */
+    --color-bg: #000000;
+    --color-surface: #0a0a0a;
+    --color-surface-elevated: #111111;
+    --color-border: #1a1a1a;
+    --color-border-subtle: #141414;
+    
+    /* Text */
+    --color-text: #ffffff;
+    --color-text-muted: #666666;
+    --color-text-subtle: #444444;
+
+    /* Primary Orange - Khipu brand */
     --color-primary-50: #fff2ec;
     --color-primary-100: #ffe1d4;
     --color-primary-200: #ffc0a8;
@@ -14,71 +26,110 @@
     --color-primary-900: #7a2f18;
     --color-primary-950: #42140b;
 
-
+    /* Typography */
     --font-family-sans: 'Inter', system-ui, sans-serif;
-
-    /* Global color requested */
-    --e-global-color-c9399c4: #d85120;
+    --font-family-heading: 'Space Grotesk', system-ui, sans-serif;
 }
-
-@layer utilities {
-    .chsumto {
-        --divider-border-style: zigzag_tribal;
-        --divider-color: currentColor;
-        --divider-pattern-height: 20px;
-        --divider-pattern-url: url("/pattern-line.svg");
-
-        display: block;
-        width: 100%;
-        height: var(--divider-pattern-height);
-        background-color: var(--divider-color, currentColor);
-        mask-image: var(--divider-pattern-url);
-        mask-size: auto 100%;
-        mask-repeat: repeat-x;
-        mask-position: left center;
-    }
-}
-
 
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - minimal dark */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #000;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+    background: #333;
+    border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-
-/* Grid Pattern */
-.grid-pattern {
-    background-image:
-        linear-gradient(rgba(216, 81, 32, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216, 81, 32, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background: #555;
 }
 
 /* Focus States */
 :focus-visible {
-    outline: 2px solid #d85120;
+    outline: 2px solid #f15b24;
     outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-    background-color: #d85120;
+    background-color: #f15b24;
     color: white;
+}
+
+/* Utility classes for the design system */
+@layer utilities {
+    /* 3D Tilt card effect */
+    .card-tilt {
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+    }
+    .card-tilt:hover {
+        transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(10px);
+    }
+
+    /* Subtle glow effect */
+    .glow-primary {
+        box-shadow: 0 0 40px -10px rgba(241, 91, 36, 0.3);
+    }
+
+    /* Reveal animation class (to be triggered by JS) */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Section divider line */
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #1a1a1a 20%, #1a1a1a 80%, transparent);
+    }
+
+    /* Pulse glow animation */
+    @keyframes pulse-glow {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(241, 91, 36, 0.2)); }
+        50% { filter: drop-shadow(0 0 40px rgba(241, 91, 36, 0.4)); }
+    }
+    .animate-pulse-glow {
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    /* Slide in from left */
+    @keyframes slide-in-left {
+        from { opacity: 0; transform: translateX(-40px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-slide-in-left {
+        animation: slide-in-left 0.8s ease-out forwards;
+    }
+
+    /* Fade in up */
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+    }
+
+    /* Staggered animation delays */
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
 }
