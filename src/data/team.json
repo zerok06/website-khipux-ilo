@@ -1,0 +1,63 @@
+[
+    {
+        "name_es": "Dirección General",
+        "name_en": "General Direction",
+        "members": [
+            {
+                "name": "Honorio Apaza Alanoca",
+                "role": "Director del Comité Organizador",
+                "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+                "bio": "Director del Comité Organizador. Docente universitario e investigador en IA. Cofundador de AiMara Lab.",
+                "affiliation": "AiMara Lab"
+            }
+        ]
+    },
+    {
+        "name_es": "Comité de Programa",
+        "name_en": "Program Committee",
+        "members": [
+            {
+                "name": "Allison Inguer Reynoso Serra",
+                "role": "Coordinadora de Contenido y Programación",
+                "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
+                "bio": "Coordinadora de Contenido y Programación. Experta en NLP, HTR y traducción automática neuronal para el aymara.",
+                "affiliation": "AiMara Lab"
+            }
+        ],
+        "subgroups": [
+            {
+                "name_es": "Evaluación de Proyectos",
+                "name_en": "Project Evaluation",
+                "members": []
+            }
+        ]
+    },
+    {
+        "name_es": "Comité de Outreach y Comunidad",
+        "name_en": "Outreach & Community Committee",
+        "members": [
+            {
+                "name": "Brigida Huahualuque Mamani",
+                "role": "Coordinadora Outreach Comunitario",
+                "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
+                "bio": "Intérprete, traductora y líder aymara reconocida por el Ministerio de Cultura.",
+                "affiliation": "Líder Comunitario"
+            }
+        ],
+        "subgroups": [
+            {
+                "name_es": "Voluntarios Locales",
+                "name_en": "Local Volunteers",
+                "members": [
+                    {
+                        "name": "Voluntario 1",
+                        "role": "Logística",
+                        "image": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=500&fit=crop",
+                        "bio": "Estudiante de Ingeniería de Sistemas.",
+                        "affiliation": "UNAM"
+                    }
+                ]
+            }
+        ]
+    }
+]

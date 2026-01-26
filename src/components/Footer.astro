@@ -85,21 +85,23 @@ const links = isEs ? footerLinks.es : footerLinks.en;
                     <ul class="space-y-2 text-sm text-white-400">
                         <li>
                             <a
-                                href="#"
+                                href={`/${locale}#about`}
                                 class="hover:text-primary-400 transition-colors"
                                 >{isEs ? "Quiénes Somos" : "About Us"}</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="https://www.aimaralab.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="hover:text-primary-400 transition-colors"
                                 >{isEs ? "AiMara Lab" : "AiMara Lab"}</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href={`/${locale}/policies`}
                                 class="hover:text-primary-400 transition-colors"
                                 >{
                                     isEs

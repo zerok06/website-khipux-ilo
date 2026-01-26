@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import speakersData from '../data/speakers.json';
 
 interface Session {
   time: string;
@@ -9,6 +10,7 @@ interface Session {
   type: string;
   location: string;
   speaker_id?: string;
+  speaker_ids?: string[];
 }
 
 interface Day {
@@ -24,9 +26,10 @@ interface AgendaProps {
 }
 
 const typeConfig: Record<string, { color: string; bgColor: string; label: string; labelEs: string }> = {
-  talk: { color: 'text-amber-400', bgColor: 'bg-amber-500/10', label: 'Keynote', labelEs: 'Keynote' },
+  keynote: { color: 'text-amber-400', bgColor: 'bg-amber-500/10', label: 'Keynote', labelEs: 'Keynote' },
+  talk: { color: 'text-blue-400', bgColor: 'bg-blue-500/10', label: 'Talk', labelEs: 'Charla' },
   panel: { color: 'text-purple-400', bgColor: 'bg-purple-500/10', label: 'Panel', labelEs: 'Panel' },
-  workshop: { color: 'text-blue-400', bgColor: 'bg-blue-500/10', label: 'Workshop', labelEs: 'Taller' },
+  workshop: { color: 'text-pink-400', bgColor: 'bg-pink-500/10', label: 'Workshop', labelEs: 'Taller' },
   networking: { color: 'text-green-400', bgColor: 'bg-green-500/10', label: 'Networking', labelEs: 'Networking' },
   logistics: { color: 'text-gray-400', bgColor: 'bg-gray-500/10', label: 'Logistics', labelEs: 'Logística' },
 };
@@ -38,6 +41,14 @@ export default function Agenda({ days, locale }: AgendaProps) {
 
   const toggleSession = (index: number) => {
     setExpandedSession(expandedSession === index ? null : index);
+  };
+
+  const getSpeakers = (session: Session) => {
+    const ids = [];
+    if (session.speaker_id) ids.push(session.speaker_id);
+    if (session.speaker_ids) ids.push(...session.speaker_ids);
+
+    return ids.map(id => speakersData.find(s => s.id === id)).filter(Boolean);
   };
 
   return (
@@ -66,14 +77,13 @@ export default function Agenda({ days, locale }: AgendaProps) {
                 setActiveDay(index);
                 setExpandedSession(null);
               }}
-              className={`relative px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 ${
-                activeDay === index
+              className={`relative px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 ${activeDay === index
                   ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               <span className="block text-lg">{isEs ? `Día ${index + 1}` : `Day ${index + 1}`}</span>
-              <span className="block text-xs opacity-70 mt-1">{day.date}</span>
+              <span className="block text-xs opacity-70 mt-1">{days[index].date}</span>
             </button>
           ))}
         </div>
@@ -113,7 +123,8 @@ export default function Agenda({ days, locale }: AgendaProps) {
             {days[activeDay].sessions.map((session, idx) => {
               const config = typeConfig[session.type] || typeConfig.logistics;
               const isExpanded = expandedSession === idx;
-              const hasDetails = session.description;
+              const speakers = getSpeakers(session);
+              const hasDetails = session.description || speakers.length > 0;
 
               return (
                 <motion.div
@@ -125,9 +136,8 @@ export default function Agenda({ days, locale }: AgendaProps) {
                   {/* Row */}
                   <div
                     onClick={() => hasDetails && toggleSession(idx)}
-                    className={`grid md:grid-cols-12 gap-4 px-6 py-5 border-b border-gray-800/50 transition-all duration-300 ${
-                      hasDetails ? 'cursor-pointer hover:bg-surface' : ''
-                    } ${isExpanded ? 'bg-surface' : ''}`}
+                    className={`grid md:grid-cols-12 gap-4 px-6 py-5 border-b border-gray-800/50 transition-all duration-300 ${hasDetails ? 'cursor-pointer hover:bg-surface' : ''
+                      } ${isExpanded ? 'bg-surface' : ''}`}
                   >
                     {/* Time Column */}
                     <div className="md:col-span-2 flex items-center">
@@ -137,18 +147,36 @@ export default function Agenda({ days, locale }: AgendaProps) {
                     </div>
 
                     {/* Session Title Column */}
-                    <div className="md:col-span-6 flex items-center">
+                    <div className="md:col-span-6 flex flex-col justify-center">
                       <div>
                         <h3 className="text-lg md:text-xl font-semibold text-white leading-tight">
                           {isEs ? session.title_es : session.title_en}
                         </h3>
+                        {/* Inline Speakers Preview */}
+                        {speakers.length > 0 && !isExpanded && (
+                          <div className="flex items-center gap-2 mt-2">
+                            <div className="flex -space-x-2 overflow-hidden">
+                              {speakers.map((s, i) => (
+                                <img
+                                  key={i}
+                                  src={s!.image}
+                                  alt={s!.name}
+                                  className="inline-block h-6 w-6 rounded-full ring-2 ring-surface object-cover grayscale"
+                                />
+                              ))}
+                            </div>
+                            <span className="text-xs text-gray-400">
+                              {speakers.map(s => s!.name).join(', ')}
+                            </span>
+                          </div>
+                        )}
                         {hasDetails && (
-                          <span className="inline-flex items-center gap-1 text-xs text-gray-500 mt-2">
+                          <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
+                            <span>{isEs ? 'Ver detalles' : 'View details'}</span>
                             <svg className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
-                            {isEs ? 'Ver detalles' : 'View details'}
-                          </span>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -162,16 +190,18 @@ export default function Agenda({ days, locale }: AgendaProps) {
 
                     {/* Location Column */}
                     <div className="md:col-span-2 flex items-center text-gray-400 text-sm">
-                      <svg className="w-4 h-4 mr-1.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      </svg>
-                      {session.location}
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        </svg>
+                        <span>{session.location}</span>
+                      </div>
                     </div>
                   </div>
 
                   {/* Expanded Details */}
                   <AnimatePresence>
-                    {isExpanded && session.description && (
+                    {isExpanded && hasDetails && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
@@ -179,10 +209,40 @@ export default function Agenda({ days, locale }: AgendaProps) {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden bg-surface border-b border-gray-800/50"
                       >
-                        <div className="px-6 py-6 md:pl-[calc(16.666%+1.5rem)]">
-                          <p className="text-gray-300 leading-relaxed max-w-3xl">
-                            {session.description}
-                          </p>
+                        <div className="px-6 py-6 md:pl-[calc(16.666%+1.5rem)] grid md:grid-cols-2 gap-8">
+                          {/* Description */}
+                          <div className="space-y-4">
+                            <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+                              {isEs ? 'Acerca de la sesión' : 'About the session'}
+                            </h4>
+                            <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                              {session.description}
+                            </p>
+                          </div>
+
+                          {/* Speakers Grid in Expanded View */}
+                          {speakers.length > 0 && (
+                            <div className="space-y-4">
+                              <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                {isEs ? (speakers.length > 1 ? 'Panelistas' : 'Speaker') : (speakers.length > 1 ? 'Speakers' : 'Speaker')}
+                              </h4>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {speakers.map((s, i) => (
+                                  <div key={i} className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
+                                    <img
+                                      src={s!.image}
+                                      alt={s!.name}
+                                      className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                      <p className="text-sm font-bold text-white leading-none">{s!.name}</p>
+                                      <p className="text-xs text-primary-400 mt-1 line-clamp-1">{s!.role}</p>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </motion.div>
                     )}

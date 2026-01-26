@@ -11,29 +11,135 @@ const isEs = lang === "es";
 
 <Layout title={isEs ? "Políticas - Khipux" : "Policies - Khipux"} lang={lang}>
     <section class="pt-32 pb-16 bg-white dark:bg-gray-900 min-h-screen">
-        <div class="max-w-screen-md mx-auto px-4">
-            <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-                {isEs ? "Políticas del Evento" : "Event Policies"}
+        <div class="max-w-4xl mx-auto px-6">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-12 text-gray-900 dark:text-white font-heading"
+            >
+                {isEs ? "Políticas e Inclusión" : "Policies & Inclusivity"}
             </h1>
 
-            <div class="prose dark:prose-invert">
-                <h2>{isEs ? "Código de Conducta" : "Code of Conduct"}</h2>
-                <p>
-                    {
-                        isEs
-                            ? "Khipux se dedica a ofrecer una experiencia libre de acoso para todos. No toleramos el acoso a los participantes de la conferencia de ninguna forma."
-                            : "Khipux is dedicated to providing a harassment-free experience for everyone. We do not tolerate harassment of conference participants in any form."
-                    }
-                </p>
+            <div class="prose dark:prose-invert prose-lg max-w-none">
+                {/* Inclusivity Section */}
+                <div class="mb-16">
+                    <h2
+                        class="text-3xl font-bold text-primary-500 mb-6 flex items-center gap-3"
+                    >
+                        <span class="p-2 bg-primary-500/10 rounded-lg">🤝</span>
+                        {
+                            isEs
+                                ? "Plan de Inclusión y Alcance"
+                                : "Inclusivity & Outreach Plan"
+                        }
+                    </h2>
+                    <p>
+                        {
+                            isEs
+                                ? "Nuestro compromiso es democratizar el acceso al conocimiento en Inteligencia Artificial y fortalecer la comunidad Aymara."
+                                : "Our commitment is to democratize access to Artificial Intelligence knowledge and strengthen the Aymara community."
+                        }
+                    </p>
 
-                <h2>{isEs ? "Privacidad" : "Privacy"}</h2>
-                <p>
-                    {
-                        isEs
-                            ? "Respetamos su privacidad y protegemos sus datos personales."
-                            : "We respect your privacy and protect your personal data."
-                    }
-                </p>
+                    <div class="grid md:grid-cols-2 gap-8 mt-8 not-prose">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+                        >
+                            <h3
+                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                            >
+                                {isEs ? "🎓 Estudiantes" : "🎓 Students"}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {
+                                    isEs
+                                        ? "Todos los estudiantes a tiempo completo tienen acceso gratuito al evento."
+                                        : "All full-time students have free access to the event."
+                                }
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+                        >
+                            <h3
+                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                            >
+                                {isEs ? "🌍 Traducción" : "🌍 Translation"}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {
+                                    isEs
+                                        ? "Facilidades de traducción simultánea (Español-Aimara) en sesiones clave."
+                                        : "Simultaneous translation facilities (Spanish-Aymara) in key sessions."
+                                }
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+                        >
+                            <h3
+                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                            >
+                                {
+                                    isEs
+                                        ? "✈️ Becas de Viaje"
+                                        : "✈️ Travel Grants"
+                                }
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {
+                                    isEs
+                                        ? "Apoyo económico para viaje y alojamiento a participantes clave de la comunidad y estudiantes."
+                                        : "Financial support for travel and accommodation for key community participants and students."
+                                }
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+                        >
+                            <h3
+                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                            >
+                                {isEs ? "🌈 Diversidad" : "🌈 Diversity"}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {
+                                    isEs
+                                        ? "Priorizamos la representación de mujeres, investigadores regionales y expertos indígenas."
+                                        : "We prioritize representation of women, regional researchers, and indigenous experts."
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200 dark:border-gray-800 my-12" />
+
+                {/* Code of Conduct Section */}
+                <div>
+                    <h2
+                        class="text-3xl font-bold text-primary-500 mb-6 flex items-center gap-3"
+                    >
+                        <span class="p-2 bg-primary-500/10 rounded-lg">📜</span>
+                        {isEs ? "Código de Conducta" : "Code of Conduct"}
+                    </h2>
+                    <div
+                        class="bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border-l-4 border-primary-500"
+                    >
+                        <p class="font-medium text-lg mb-4">
+                            {
+                                isEs
+                                    ? "KHIPUx Ilo se dedica a ofrecer una experiencia libre de acoso para todos, independientemente de su género, orientación sexual, discapacidad, apariencia física, raza o religión."
+                                    : "KHIPUx Ilo is dedicated to providing a harassment-free experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, race, or religion."
+                            }
+                        </p>
+                        <p>
+                            {
+                                isEs
+                                    ? "No toleramos el acoso a los participantes de la conferencia de ninguna forma. Los participantes que violen estas reglas pueden ser sancionados o expulsados de la conferencia a discreción de los organizadores."
+                                    : "We do not tolerate harassment of conference participants in any form. Participants violating these rules may be sanctioned or expelled from the conference at the discretion of the organizers."
+                            }
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

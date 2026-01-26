@@ -39,7 +39,9 @@ const isEs = locale === "es";
     <div class="relative">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-20">
         {
-          speakersData.map((speaker) => (
+          speakersData
+            .filter((s) => s.type === "keynote" || s.type === "speaker")
+            .map((speaker) => (
             <div class="group relative flex flex-col items-center">
               <div class="relative w-40 h-40 md:w-56 md:h-56 mb-8">
                 <!-- Decorative Margin Frame (Inverse propagation effect) -->

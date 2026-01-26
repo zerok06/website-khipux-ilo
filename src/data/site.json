@@ -33,6 +33,10 @@
             {
                 "label": "Venue",
                 "href": "/es/venue"
+            },
+            {
+                "label": "Team",
+                "href": "/es/team"
             }
         ],
         "en": [
@@ -51,6 +55,10 @@
             {
                 "label": "Venue",
                 "href": "/en/venue"
+            },
+            {
+                "label": "Team",
+                "href": "/en/team"
             }
         ]
     },

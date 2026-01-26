@@ -9,6 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const navLinks = siteData.nav[locale as keyof typeof siteData.nav];
+const isEs = locale === "es";
 ---
 
 <nav
@@ -47,7 +48,7 @@ const navLinks = siteData.nav[locale as keyof typeof siteData.nav];
           href="#"
           class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-full transition-colors shadow-lg shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-black"
         >
-          Support Us
+          {isEs ? "Apóyanos" : "Support Us"}
         </a>
 
         <!-- Mobile menu button -->
