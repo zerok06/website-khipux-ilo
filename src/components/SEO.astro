@@ -13,7 +13,9 @@ const {
     article = false,
 } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.toString() : "https://khipux.ilo.pe";
+const siteUrl = Astro.site
+    ? Astro.site.toString()
+    : "https://khipux.aimaralab.com";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const socialImageURL = new URL(image, siteUrl);
 ---

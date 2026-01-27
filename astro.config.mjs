@@ -7,7 +7,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://khipux.ilo.pe',
+  site: 'https://khipux.aimaralab.com',
   vite: {
     plugins: [tailwindcss()],
   },
