@@ -96,7 +96,7 @@ const backgroundSymbols = [
         <!-- CTA -->
         <div class="flex flex-wrap gap-4 pt-4">
           <a
-            href="#register"
+            href={isEs ? "/es/register" : "/en/register"}
             class="group inline-flex items-center gap-2 px-8 py-3.5 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5"
           >
             <span>{content.cta_primary}</span>
@@ -114,7 +114,7 @@ const backgroundSymbols = [
             </svg>
           </a>
           <a
-            href={`/${locale}/schedule`}
+            href={isEs ? "/es/schedule" : "/en/schedule"}
             class="inline-flex items-center gap-2 px-8 py-3.5 border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 rounded-xl font-medium text-lg transition-all hover:bg-white/5"
           >
             {content.cta_secondary}

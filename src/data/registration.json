@@ -1,0 +1,50 @@
+{
+    "es": {
+        "title": "Proceso de Registro",
+        "subtitle": "Pasos para participar",
+        "description": "KHIPUx Ilo 2026 busca reunir a una comunidad diversa y apasionada. Debido a la capacidad limitada, utilizamos un proceso de selección para garantizar una participación equilibrada.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Pre-inscripción",
+                "description": "Completa el formulario de solicitud con tus datos personales, experiencia e interés en la intersección de IA y lenguas nativas. No se requiere pago en esta etapa."
+            },
+            {
+                "number": "02",
+                "title": "Evaluación del Comité",
+                "description": "Nuestro comité revisará todas las solicitudes. Se dará prioridad a estudiantes, investigadores y miembros de comunidades nativas, buscando equidad de género y geográfica."
+            },
+            {
+                "number": "03",
+                "title": "Confirmación y Pago",
+                "description": "Los seleccionados recibirán un correo electrónico de aceptación con las instrucciones para realizar el pago de la inscripción (si corresponde) y confirmar su plaza."
+            }
+        ],
+        "cta": "Ir al Formulario de Solicitud",
+        "note": "El formulario se abrirá en una nueva pestaña."
+    },
+    "en": {
+        "title": "Registration Process",
+        "subtitle": "Steps to participate",
+        "description": "KHIPUx Ilo 2026 brings together a diverse and passionate community. Due to limited capacity, we use a selection process to ensure balanced participation.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Pre-registration",
+                "description": "Complete the application form with your personal details, experience, and interest in the intersection of AI and native languages. No payment is required at this stage."
+            },
+            {
+                "number": "02",
+                "title": "Committee Evaluation",
+                "description": "Our committee will review all applications. Priority is given to students, researchers, and native community members, aiming for gender and geographic balance."
+            },
+            {
+                "number": "03",
+                "title": "Confirmation & Payment",
+                "description": "Selected participants will receive an acceptance email with instructions to pay the registration fee (if applicable) and confirm their spot."
+            }
+        ],
+        "cta": "Go to Application Form",
+        "note": "The form will open in a new tab."
+    }
+}

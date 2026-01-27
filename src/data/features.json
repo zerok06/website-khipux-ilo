@@ -1,0 +1,7 @@
+{
+    "registration": false,
+    "schedule": false,
+    "venue": false,
+    "team": true,
+    "speakers": true
+}

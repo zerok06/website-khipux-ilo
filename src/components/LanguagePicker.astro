@@ -7,10 +7,28 @@ interface Props {
 
 const { locale } = Astro.props;
 const otherLocale = locale === "es" ? "en" : "es";
+
+const currentPath = Astro.url.pathname;
+let pathWithoutLocale = currentPath;
+
+const localePrefix = `/${locale}`;
+
+if (
+    currentPath === localePrefix ||
+    currentPath.startsWith(localePrefix + "/")
+) {
+    pathWithoutLocale = currentPath.substring(localePrefix.length);
+}
+
+if (!pathWithoutLocale.startsWith("/")) {
+    pathWithoutLocale = "/" + pathWithoutLocale;
+}
+
+const targetUrl = getRelativeLocaleUrl(otherLocale, pathWithoutLocale);
 ---
 
 <a
-    href={getRelativeLocaleUrl(otherLocale)}
+    href={targetUrl}
     class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
     aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
 >

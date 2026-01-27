@@ -1,0 +1,114 @@
+---
+interface Props {
+    locale: string;
+}
+
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+const content = {
+    es: {
+        title: "¿Listo para ser parte del futuro?",
+        description:
+            "Únete a nosotros en esta fusión única de Inteligencia Artificial y cultura ancestral. Asegura tu lugar hoy mismo.",
+        cta: "Regístrate Ahora",
+    },
+    en: {
+        title: "Ready to be part of the future?",
+        description:
+            "Join us in this unique fusion of Artificial Intelligence and ancestral culture. Secure your spot today.",
+        cta: "Register Now",
+    },
+};
+
+const t = isEs ? content.es : content.en;
+---
+
+<section class="py-12 px-6 lg:px-8 bg-black">
+    <div class="max-w-7xl mx-auto">
+        <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
+            {/* Background Effects */}
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute -right-20 -top-40 w-[500px] h-[500px] bg-primary-500/30 blur-[100px] rounded-full mix-blend-screen"
+                >
+                </div>
+                <div
+                    class="absolute -left-20 -bottom-40 w-[400px] h-[400px] bg-indigo-500/20 blur-[100px] rounded-full mix-blend-screen"
+                >
+                </div>
+                <div
+                    class="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay"
+                >
+                </div>
+            </div>
+
+            <div class="relative z-10 px-8 py-10 md:px-12 md:py-12">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    {/* Left Column: Text */}
+                    <div class="space-y-6 text-center md:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"
+                            ></span>
+                            <span
+                                class="text-[10px] sm:text-xs font-bold text-white uppercase tracking-widest"
+                            >
+                                {
+                                    isEs
+                                        ? "Inscripciones Abiertas"
+                                        : "Registrations Open"
+                                }
+                            </span>
+                        </div>
+
+                        <h2
+                            class="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight leading-tight"
+                        >
+                            {t.title}
+                        </h2>
+
+                        <p
+                            class="text-base md:text-lg text-primary-100/90 leading-relaxed max-w-lg mx-auto md:mx-0"
+                        >
+                            {t.description}
+                        </p>
+                    </div>
+
+                    {/* Right Column: CTA */}
+                    <div
+                        class="flex flex-col items-center md:items-end justify-center"
+                    >
+                        <a
+                            href={`/${locale}/register`}
+                            class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary-900 rounded-full font-bold text-base md:text-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                        >
+                            <span>{t.cta}</span>
+                            <svg
+                                class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <p class="mt-4 text-xs text-white/50 font-medium">
+                            {
+                                isEs
+                                    ? "* Plazas limitadas"
+                                    : "* Limited spots available"
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

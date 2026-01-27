@@ -4,6 +4,7 @@ import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
 import Speakers from "../../components/Speakers.astro";
 import Sponsors from "../../components/Sponsors.astro";
+import RegistrationCTA from "../../components/RegistrationCTA.astro";
 import siteData from "../../data/site.json";
 
 export function getStaticPaths() {
@@ -18,4 +19,5 @@ const { lang } = Astro.params;
   <About locale={lang} />
   <Speakers locale={lang} />
   <Sponsors locale={lang} />
+  <RegistrationCTA locale={lang} />
 </Layout>
