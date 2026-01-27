@@ -16,7 +16,7 @@ const isEs = locale === "es";
 ---
 
 <nav
-  class="fixed w-full z-50 top-0 start-0 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800"
+  class="fixed w-full z-50 top-0 start-0 bg-black/95 backdrop-blur-md border-b border-gray-800"
 >
   <div
     style="max-width: var(--content-max-width, 70%); margin: 0 auto; padding: 0 1rem;"
@@ -36,7 +36,7 @@ const isEs = locale === "es";
           navLinks.map((link) => (
             <a
               href={link.href}
-              class="text-sm font-medium text-gray-600 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+              class="text-sm font-medium text-gray-300 hover:text-primary-400 transition-colors"
             >
               {link.label}
             </a>
@@ -49,7 +49,7 @@ const isEs = locale === "es";
         <LanguagePicker locale={locale} />
         <a
           href="#"
-          class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-full transition-colors shadow-lg shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-black"
+          class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium bg-primary-500 hover:bg-primary-600 rounded-full transition-colors shadow-lg shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-black text-gray-800"
         >
           {isEs ? "Apóyanos" : "Support Us"}
         </a>
@@ -58,7 +58,7 @@ const isEs = locale === "es";
         <button
           id="mobile-menu-btn"
           type="button"
-          class="md:hidden p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          class="md:hidden p-2 text-gray-400 hover:text-gray-200"
           aria-label="Open menu"
         >
           <svg
@@ -81,14 +81,14 @@ const isEs = locale === "es";
   <!-- Mobile Navigation -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-black"
+    class="hidden md:hidden border-t border-gray-800 bg-black"
   >
     <div class="px-4 py-4 space-y-3">
       {
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="block text-base font-medium text-gray-600 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-400 py-2"
+            class="block text-base font-medium hover:text-primary-500 text-gray-300 py-2"
           >
             {link.label}
           </a>
