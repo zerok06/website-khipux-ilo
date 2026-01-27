@@ -14,7 +14,13 @@ const keynotes = speakersData.filter((s) => s.type === "keynote");
 const speakers = speakersData.filter((s) => s.type === "speaker");
 ---
 
-<Layout title={isEs ? "Speakers - Khipux" : "Speakers - Khipux"} lang={lang}>
+<Layout
+    title={isEs ? "Speakers - Khipux" : "Speakers - Khipux"}
+    lang={lang}
+    description={isEs
+        ? "Conoce a los expertos en IA y lenguas nativas que participarán en KHIPUx Ilo 2026."
+        : "Meet the AI and native language experts participating in KHIPUx Ilo 2026."}
+>
     <section class="pt-32 pb-24 bg-black min-h-screen">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">

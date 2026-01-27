@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khipux.aimaralab.com/sitemap-index.xml

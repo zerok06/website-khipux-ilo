@@ -11,7 +11,13 @@ const { lang } = Astro.params;
 const isEs = lang === "es";
 ---
 
-<Layout title={isEs ? "Equipo - Khipux" : "Team - Khipux"} lang={lang}>
+<Layout
+    title={isEs ? "Equipo - Khipux" : "Team - Khipux"}
+    lang={lang}
+    description={isEs
+        ? "Conoce al equipo organizador de KHIPUx Ilo 2026."
+        : "Meet the organizing team of KHIPUx Ilo 2026."}
+>
     <section class="pt-32 pb-24 bg-black min-h-screen">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">

@@ -14,7 +14,13 @@ const title = isEs
   : "Schedule - KHIPUx Ilo 2026";
 ---
 
-<Layout title={title} lang={lang || "es"}>
+<Layout
+  title={title}
+  lang={lang || "es"}
+  description={isEs
+    ? "Agenda y programa completo de KHIPUx Ilo 2026."
+    : "Full agenda and schedule for KHIPUx Ilo 2026."}
+>
   <div class="min-h-screen bg-bg text-text">
     <!-- Hero Section -->
     <section class="pt-32 pb-16 relative">

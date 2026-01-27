@@ -50,3 +50,53 @@ const socialImageURL = new URL(image, siteUrl);
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json" is:inline>
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Khipu",
+                "url": "https://khipu.ai",
+                "logo": "https://khipux.aimaralab.com/khipu_logo.webp",
+                "sameAs": [
+                    "https://twitter.com/khipuai",
+                    "https://linkedin.com/company/khipu",
+                    "https://youtube.com/@khipu",
+                    "https://instagram.com/khipuai"
+                ]
+            },
+            {
+                "@type": "Event",
+                "name": "KHIPUx Ilo 2026",
+                "startDate": "2026-08-18",
+                "endDate": "2026-08-19",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "location": {
+                    "@type": "Place",
+                    "name": "Universidad Nacional de Moquegua",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Ilo, Moquegua",
+                        "addressLocality": "Ilo",
+                        "addressRegion": "Moquegua",
+                        "addressCountry": "PE"
+                    }
+                },
+                "image": [
+                    "https://khipux.aimaralab.com/khipu_logo.webp",
+                    "https://khipux.aimaralab.com/chiribaya.webp"
+                ],
+                "description": "Fusionando la Inteligencia Artificial con la comunidad Aymara. Evento híbrido: presencial y virtual.",
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "Khipu",
+                    "url": "https://khipu.ai"
+                }
+            }
+        ]
+    }
+</script>
