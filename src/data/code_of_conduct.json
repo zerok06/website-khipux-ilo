@@ -1,0 +1,70 @@
+{
+    "en": {
+        "title": "KHIPU Code of Conduct",
+        "intro": "The open exchange of ideas, the freedom of thought and expression, and respectful scientific debate are central to KHIPU goals. This requires a community and an environment that recognizes and respects the inherent worth of every person. The purpose of this Code of Conduct (CoC) is to outline expected standards of behavior to all events and communication channels associated with KHIPU.",
+        "sections": [
+            {
+                "title": "Scope",
+                "content": "This CoC applies to all KHIPU activities, including but not limited to:\n\n- KHIPU in person events,\n- Events organized, hosted, co-branded, in cooperation with KHIPU, or as part of the KHIPUx Program\n- Communications sent through communication channels associated with Khipu, including but not limited to social media and the KHIPU emailing list, or Slack channels,\n- Meetings and discussions associated with KHIPU activities.\n\nIf an activity is in cooperation with another organization, if the other organization has its own CoC, the union of both CoCs apply."
+            },
+            {
+                "title": "Responsibility",
+                "content": "All attendees, speakers, mentors, panelists, sponsors, contractors, organizers, volunteers, members of the KHIPU team (referred to as “Participants” collectively throughout this document) involved in KHIPU activities as described above are required to comply with this CoC. Sponsors are equally subject to this CoC. In particular, sponsors should not use images, activities, or other materials that reinforce gender stereotypes or are of a sexual, racial, or otherwise offensive nature at KHIPU events. Booth staff, including but not limited to volunteers, should not create a sexualized environment."
+            },
+            {
+                "title": "Unacceptable behavior",
+                "content": "KHIPU is dedicated to providing an experience for all participants that is free from harassment, bullying, discrimination, and retaliation. This includes offensive comments related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), politics, technology choices, or any other personal characteristics or considerations made unlawful by federal, state, or local laws, ordinances, or regulations. Inappropriate or unprofessional behavior that interferes with another participant’s full participation will not be tolerated. This includes bullying, intimidation, personal attacks, harassment, sustained disruption of talks or other events, sexual harassment, stalking, following, harassing photography or recording, inappropriate physical contact, unwelcome sexual attention, public vulgar exchanges, derogatory name-calling, or diminutive characterizations, all of which are unwelcome in this community. Advocating for, or encouraging, any of the above behavior, is also considered harassment. No use of images, activities, or other materials that are of a sexual, racial, or otherwise offensive nature that may create an inappropriate or toxic environment is permitted. Disorderly, boisterous, or disruptive conduct including but not limited to fighting, coercion, theft, damage to property, or any mistreatment or non-businesslike behavior towards other participants is not tolerated. Scientific misconduct—including but not limited to fabrication, falsification, or plagiarism of paper submissions or research presentations—is prohibited."
+            },
+            {
+                "title": "Reporting",
+                "content": "If you have concerns related to your participation or interaction at a KHIPU activity, observe someone else’s difficulties, or have any other concerns you wish to share, you can make a report:\n\n- Anytime by email at Diversity, Equity and Inclusion (dei@khipu.ai)\n- During an event in-person to organizers, volunteers, or any member of the KHIPU Team. They will then direct you to the designated responder(s) for that event. There is no deadline by which to make a report."
+            },
+            {
+                "title": "Enforcement",
+                "content": "Any participant asked by any member of the community to stop any unacceptable behavior is expected to comply immediately. A response of “just joking” will not be accepted; behavior can be harassing without an intent to offend.\n\nIf a participant engages in behavior that violates this CoC, KHIPU retains the right to take any action deemed appropriate, including but not limited to:\n\n- Formal or informal warnings.\n- Barring or limiting continued attendance and participation, including but not limited to expulsion from the event.\n- Barring from participating in or deriving benefits from future KHIPU activities.\n- Exclusion from KHIPU opportunities, e.g. leadership, organizing, volunteering, speaking, reviewing, sponsoring, etc.\n- Reporting the incident to the offender’s local institution or funding agencies.\n- Reporting the incident to local authorities or law enforcement.\n- Other action(s) as deemed appropriate for the situation being addressed.\n\nThe same actions may be taken toward any individual who engages in retaliation or who knowingly makes a false allegation of harassment."
+            },
+            {
+                "title": "Ongoing Review",
+                "content": "The KHIPU team welcomes feedback from the community on this CoC policy and procedures; please contact us by email at info@khipu.ai."
+            },
+            {
+                "title": "Acknowledgements",
+                "content": "This CoC has been adapted from the CoC at WiML. Its policy was written by adapting the wording and structure from other CoC policies and procedures by Geek Feminism Wiki (created by the Ada Initiative), NeurIPS, ACM, Montreal AI Symposium, and Deep Learning Indaba."
+            }
+        ]
+    },
+    "es": {
+        "title": "Código de Conducta KHIPU",
+        "intro": "El libre intercambio de ideas, la libertad de pensamiento y expresión, y el debate científico respetuoso son fundamentales para los objetivos de KHIPU. Esto requiere una comunidad y un entorno que reconozca y respete el valor inherente de cada persona. El propósito de este Código de Conducta (CdC) es describir los estándares de comportamiento esperados en todos los eventos y canales de comunicación asociados con KHIPU.",
+        "sections": [
+            {
+                "title": "Alcance",
+                "content": "Este CdC se aplica a todas las actividades de KHIPU, incluyendo pero no limitándose a:\n\n- Eventos presenciales de KHIPU,\n- Eventos organizados, alojados, con marca compartida, en cooperación con KHIPU, o como parte del Programa KHIPUx\n- Comunicaciones enviadas a través de canales de comunicación asociados con Khipu, incluyendo pero no limitándose a redes sociales y la lista de correo de KHIPU, o canales de Slack,\n- Reuniones y discusiones asociadas con actividades de KHIPU.\n\nSi una actividad se realiza en cooperación con otra organización, si la otra organización tiene su propio CdC, se aplica la unión de ambos CdC."
+            },
+            {
+                "title": "Responsabilidad",
+                "content": "Todos los asistentes, ponentes, mentores, panelistas, patrocinadores, contratistas, organizadores, voluntarios, miembros del equipo de KHIPU (referidos colectivamente como \"Participantes\" en este documento) involucrados en las actividades de KHIPU descritas anteriormente, deben cumplir con este CdC. Los patrocinadores están igualmente sujetos a este CdC. En particular, los patrocinadores no deben utilizar imágenes, actividades u otros materiales que refuercen los estereotipos de género o sean de naturaleza sexual, racial u ofensiva en los eventos de KHIPU. El personal del stand, incluyendo a los voluntarios, no debe crear un ambiente sexualizado."
+            },
+            {
+                "title": "Comportamiento Inaceptable",
+                "content": "KHIPU se dedica a brindar una experiencia libre de acoso para todos los participantes, intimidación, discriminación y represalias. Esto incluye comentarios ofensivos relacionados con el género, la identidad y expresión de género, la edad, la orientación sexual, la discapacidad, la apariencia física, el tamaño corporal, la raza, la etnia, la religión (o la falta de ella), la política, las opciones tecnológicas, o cualquier otra característica personal o consideración ilegal según las leyes, ordenanzas o regulaciones federales, estatales o locales. No se tolerará el comportamiento inapropiado o poco profesional que interfiera con la participación plena de otro participante. Esto incluye intimidación, ataques personales, acoso, interrupción sostenida de charlas u otros eventos, acoso sexual, acecho, seguimiento, fotografía o grabación acosadora, contacto físico inapropiado, atención sexual no deseada, intercambios vulgares públicos, insultos o caracterizaciones diminutivas, todos los cuales no son bienvenidos en esta comunidad. Abogar por, o fomentar, cualquiera de los comportamientos anteriores, también se considera acoso. No se permite el uso de imágenes, actividades u otros materiales que sean de naturaleza sexual, racial u ofensiva que puedan crear un ambiente inapropiado o tóxico. No se tolera la conducta desordenada, bulliciosa o disruptiva, incluyendo peleas, coerción, robo, daño a la propiedad, o cualquier maltrato o comportamiento no profesional hacia otros participantes. La mala conducta científica, incluyendo la fabricación, falsificación o plagio de presentaciones de investigación o artículos, está prohibida."
+            },
+            {
+                "title": "Reportes",
+                "content": "Si tienes inquietudes relacionadas con tu participación o interacción en una actividad de KHIPU, observas las dificultades de otra persona, o tienes alguna otra inquietud que desees compartir, puedes hacer un informe:\n\n- En cualquier momento por correo electrónico a Diversidad, Equidad e Inclusión (dei@khipu.ai)\n- Durante un evento en persona a los organizadores, voluntarios o cualquier miembro del equipo de KHIPU. Ellos te dirigirán al respondedor(es) designado para ese evento. No hay una fecha límite para hacer un informe."
+            },
+            {
+                "title": "Cumplimiento",
+                "content": "Se espera que cualquier participante a quien cualquier miembro de la comunidad le pida que detenga cualquier comportamiento inaceptable, cumpla de inmediato. No se aceptará una respuesta de \"solo es una broma\"; el comportamiento puede ser acosador sin intención de ofender.\n\nSi un participante incurre en un comportamiento que viola este CdC, KHIPU se reserva el derecho de tomar cualquier medida que considere apropiada, incluyendo pero no limitándose a:\n\n- Advertencias formales o informales.\n- Prohibir o limitar la asistencia y participación continua, incluyendo la expulsión del evento.\n- Prohibición de participar o obtener beneficios de futuras actividades de KHIPU.\n- Exclusión de oportunidades de KHIPU, por ejemplo, liderazgo, organización, voluntariado, oratoria, revisión, patrocinio, etc.\n- Reportar el incidente a la institución local del ofensor o agencias de financiamiento.\n- Reportar el incidente a las autoridades locales o policiales.\n- Otras acciones que se consideren apropiadas para la situación que se está abordando.\n\nSe pueden tomar las mismas acciones contra cualquier individuo que participe en represalias o que a sabiendas haga una falsa acusación de acoso."
+            },
+            {
+                "title": "Revisión Continua",
+                "content": "El equipo de KHIPU agradece los comentarios de la comunidad sobre esta política y procedimientos de CdC; contáctanos por correo electrónico a info@khipu.ai."
+            },
+            {
+                "title": "Agradecimientos",
+                "content": "Este CdC ha sido adaptado del CdC en WiML. Su política fue escrita adaptando la redacción y estructura de otras políticas y procedimientos de CdC por Geek Feminism Wiki (creado por la Iniciativa Ada), NeurIPS, ACM, Montreal AI Symposium y Deep Learning Indaba."
+            }
+        ]
+    }
+}

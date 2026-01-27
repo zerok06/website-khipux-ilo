@@ -101,13 +101,20 @@ const links = isEs ? footerLinks.es : footerLinks.en;
                         </li>
                         <li>
                             <a
-                                href={`/${locale}/policies`}
+                                href={`/${locale}/code-of-conduct`}
                                 class="hover:text-primary-400 transition-colors"
                                 >{
                                     isEs
                                         ? "Código de Conducta"
                                         : "Code of Conduct"
                                 }</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href={`/${locale}/inclusion`}
+                                class="hover:text-primary-400 transition-colors"
+                                >{isEs ? "Inclusión" : "Inclusion"}</a
                             >
                         </li>
                     </ul>

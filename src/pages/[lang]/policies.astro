@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import cocData from "../../data/code_of_conduct.json";
 
 export function getStaticPaths() {
     return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -7,137 +8,162 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const isEs = lang === "es";
+const coc = isEs ? cocData.es : cocData.en;
+
+const inclusionItems = [
+    {
+        icon: "🎓",
+        title: isEs ? "Estudiantes" : "Students",
+        desc: isEs
+            ? "Todos los estudiantes a tiempo completo tienen acceso gratuito al evento."
+            : "All full-time students have free access to the event.",
+    },
+    {
+        icon: "🌍",
+        title: isEs ? "Traducción" : "Translation",
+        desc: isEs
+            ? "Facilidades de traducción simultánea (Español-Aimara) en sesiones clave."
+            : "Simultaneous translation facilities (Spanish-Aymara) in key sessions.",
+    },
+    {
+        icon: "✈️",
+        title: isEs ? "Becas de Viaje" : "Travel Grants",
+        desc: isEs
+            ? "Apoyo económico para viaje y alojamiento a participantes clave."
+            : "Financial support for travel and accommodation for key participants.",
+    },
+    {
+        icon: "🌈",
+        title: isEs ? "Diversidad" : "Diversity",
+        desc: isEs
+            ? "Priorizamos la representación de mujeres y expertos indígenas."
+            : "We prioritize representation of women and indigenous experts.",
+    },
+];
 ---
 
 <Layout title={isEs ? "Políticas - Khipux" : "Policies - Khipux"} lang={lang}>
-    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 min-h-screen">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1
-                class="text-4xl md:text-5xl font-bold mb-12 text-gray-900 dark:text-white font-heading"
-            >
-                {isEs ? "Políticas e Inclusión" : "Policies & Inclusivity"}
-            </h1>
+    <section class="pt-32 pb-24 bg-black min-h-screen">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            {/* Header Section */}
+            <div class="text-center mb-20 animate-fade-in-up">
+                <div
+                    class="inline-flex items-center gap-3 text-primary-500 font-bold mb-4"
+                >
+                    <div class="w-12 h-[2px] bg-primary-500"></div>
+                    <span class="uppercase tracking-widest text-sm">
+                        {isEs ? "Nuestros Valores" : "Our Values"}
+                    </span>
+                    <div class="w-12 h-[2px] bg-primary-500"></div>
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-heading uppercase tracking-tight"
+                >
+                    {isEs ? "Políticas e Inclusión" : "Policies & Inclusivity"}
+                </h1>
+                <p
+                    class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                >
+                    {
+                        isEs
+                            ? "Nuestro compromiso es democratizar el acceso al conocimiento y fortalecer la comunidad."
+                            : "Our commitment is to democratize access to knowledge and strengthen the community."
+                    }
+                </p>
+            </div>
 
-            <div class="prose dark:prose-invert prose-lg max-w-none">
+            <div class="space-y-32">
                 {/* Inclusivity Section */}
-                <div class="mb-16">
-                    <h2
-                        class="text-3xl font-bold text-primary-500 mb-6 flex items-center gap-3"
-                    >
-                        <span class="p-2 bg-primary-500/10 rounded-lg">🤝</span>
-                        {
-                            isEs
-                                ? "Plan de Inclusión y Alcance"
-                                : "Inclusivity & Outreach Plan"
-                        }
-                    </h2>
-                    <p>
-                        {
-                            isEs
-                                ? "Nuestro compromiso es democratizar el acceso al conocimiento en Inteligencia Artificial y fortalecer la comunidad Aymara."
-                                : "Our commitment is to democratize access to Artificial Intelligence knowledge and strengthen the Aymara community."
-                        }
-                    </p>
+                <div class="relative">
+                    <div class="flex items-center gap-6 mb-16">
+                        <div
+                            class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"
+                        >
+                        </div>
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-white uppercase tracking-widest text-center px-4 border-l-4 border-primary-500 pl-6"
+                        >
+                            {isEs ? "Plan de Inclusión" : "Inclusion Plan"}
+                        </h2>
+                        <div
+                            class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"
+                        >
+                        </div>
+                    </div>
 
-                    <div class="grid md:grid-cols-2 gap-8 mt-8 not-prose">
-                        <div
-                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
-                        >
-                            <h3
-                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
-                            >
-                                {isEs ? "🎓 Estudiantes" : "🎓 Students"}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                {
-                                    isEs
-                                        ? "Todos los estudiantes a tiempo completo tienen acceso gratuito al evento."
-                                        : "All full-time students have free access to the event."
-                                }
-                            </p>
-                        </div>
-                        <div
-                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
-                        >
-                            <h3
-                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
-                            >
-                                {isEs ? "🌍 Traducción" : "🌍 Translation"}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                {
-                                    isEs
-                                        ? "Facilidades de traducción simultánea (Español-Aimara) en sesiones clave."
-                                        : "Simultaneous translation facilities (Spanish-Aymara) in key sessions."
-                                }
-                            </p>
-                        </div>
-                        <div
-                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
-                        >
-                            <h3
-                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
-                            >
-                                {
-                                    isEs
-                                        ? "✈️ Becas de Viaje"
-                                        : "✈️ Travel Grants"
-                                }
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                {
-                                    isEs
-                                        ? "Apoyo económico para viaje y alojamiento a participantes clave de la comunidad y estudiantes."
-                                        : "Financial support for travel and accommodation for key community participants and students."
-                                }
-                            </p>
-                        </div>
-                        <div
-                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
-                        >
-                            <h3
-                                class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
-                            >
-                                {isEs ? "🌈 Diversidad" : "🌈 Diversity"}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                {
-                                    isEs
-                                        ? "Priorizamos la representación de mujeres, investigadores regionales y expertos indígenas."
-                                        : "We prioritize representation of women, regional researchers, and indigenous experts."
-                                }
-                            </p>
-                        </div>
+                    <div
+                        class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+                    >
+                        {
+                            inclusionItems.map((item) => (
+                                <div class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-primary-500/50 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1">
+                                    <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity text-4xl grayscale group-hover:grayscale-0">
+                                        {item.icon}
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors flex items-center gap-3">
+                                        <span class="text-2xl">
+                                            {item.icon}
+                                        </span>
+                                        {item.title}
+                                    </h3>
+                                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
-                <hr class="border-gray-200 dark:border-gray-800 my-12" />
-
                 {/* Code of Conduct Section */}
-                <div>
-                    <h2
-                        class="text-3xl font-bold text-primary-500 mb-6 flex items-center gap-3"
-                    >
-                        <span class="p-2 bg-primary-500/10 rounded-lg">📜</span>
-                        {isEs ? "Código de Conducta" : "Code of Conduct"}
-                    </h2>
-                    <div
-                        class="bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border-l-4 border-primary-500"
-                    >
-                        <p class="font-medium text-lg mb-4">
-                            {
-                                isEs
-                                    ? "KHIPUx Ilo se dedica a ofrecer una experiencia libre de acoso para todos, independientemente de su género, orientación sexual, discapacidad, apariencia física, raza o religión."
-                                    : "KHIPUx Ilo is dedicated to providing a harassment-free experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, race, or religion."
-                            }
-                        </p>
-                        <p>
-                            {
-                                isEs
-                                    ? "No toleramos el acoso a los participantes de la conferencia de ninguna forma. Los participantes que violen estas reglas pueden ser sancionados o expulsados de la conferencia a discreción de los organizadores."
-                                    : "We do not tolerate harassment of conference participants in any form. Participants violating these rules may be sanctioned or expelled from the conference at the discretion of the organizers."
-                            }
-                        </p>
+                <div class="relative" id="code-of-conduct">
+                    <div class="flex items-center gap-6 mb-16">
+                        <div
+                            class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                        >
+                        </div>
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-primary-400 uppercase tracking-widest text-center px-4"
+                        >
+                            {coc.title}
+                        </h2>
+                        <div
+                            class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto">
+                        <div
+                            class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl backdrop-blur-sm relative overflow-hidden"
+                        >
+                            {/* Decorative Elements */}
+                            <div
+                                class="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-[80px] pointer-events-none"
+                            >
+                            </div>
+
+                            <p
+                                class="text-lg md:text-xl text-white/90 leading-relaxed mb-12 font-medium text-center max-w-3xl mx-auto relative z-10"
+                            >
+                                "{coc.intro}"
+                            </p>
+
+                            <div class="space-y-8 relative z-10">
+                                {
+                                    coc.sections.map((section, index) => (
+                                        <div class="group border-l-2 border-white/10 pl-6 hover:border-primary-500 transition-colors duration-300">
+                                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
+                                                {section.title}
+                                            </h3>
+                                            <div class="text-gray-400 leading-relaxed whitespace-pre-line text-sm md:text-base group-hover:text-gray-300 transition-colors">
+                                                {section.content}
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

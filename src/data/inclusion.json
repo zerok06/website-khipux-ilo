@@ -1,0 +1,48 @@
+{
+    "es": {
+        "title": "Plan de Inclusión y Alcance",
+        "subtitle": "Nuestro Valores",
+        "description": "Nuestro compromiso es democratizar el acceso al conocimiento en Inteligencia Artificial y fortalecer la comunidad Aymara.",
+        "items": [
+            {
+                "title": "Estudiantes",
+                "description": "Todos los estudiantes a tiempo completo tienen acceso gratuito al evento."
+            },
+            {
+                "title": "Traducción",
+                "description": "Facilidades de traducción simultánea (Español-Aimara) en sesiones clave."
+            },
+            {
+                "title": "Becas de Viaje",
+                "description": "Apoyo económico para viaje y alojamiento a participantes clave de la comunidad y estudiantes."
+            },
+            {
+                "title": "Diversidad",
+                "description": "Priorizamos la representación de mujeres, investigadores regionales y expertos indígenas."
+            }
+        ]
+    },
+    "en": {
+        "title": "Inclusivity & Outreach Plan",
+        "subtitle": "Our Values",
+        "description": "Our commitment is to democratize access to Artificial Intelligence knowledge and strengthen the Aymara community.",
+        "items": [
+            {
+                "title": "Students",
+                "description": "All full-time students have free access to the event."
+            },
+            {
+                "title": "Translation",
+                "description": "Simultaneous translation facilities (Spanish-Aymara) in key sessions."
+            },
+            {
+                "title": "Travel Grants",
+                "description": "Financial support for travel and accommodation for key community participants and students."
+            },
+            {
+                "title": "Diversity",
+                "description": "We prioritize representation of women, regional researchers, and indigenous experts."
+            }
+        ]
+    }
+}

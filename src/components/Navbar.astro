@@ -12,17 +12,6 @@ import features from "../data/features.json";
 const { locale } = Astro.props;
 let navLinks = siteData.nav[locale as keyof typeof siteData.nav];
 
-// Filter links based on feature flags
-navLinks = navLinks.filter((link) => {
-  if (link.href.includes("/schedule") && !features.schedule) return false;
-  if (link.href.includes("/venue") && !features.venue) return false;
-  if (link.href.includes("/team") && !features.team) return false;
-  if (link.href.includes("#speakers") && !features.speakers) return false;
-  // Registration is handled by CTA usually, but if it's in nav:
-  if (link.href.includes("/register") && !features.registration) return false;
-  return true;
-});
-
 const isEs = locale === "es";
 ---
 
