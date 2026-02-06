@@ -1,74 +1,83 @@
 [
     {
         "id": "1",
-        "name": "Ana Korhonen",
-        "role": "University of Cambridge",
-        "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
-        "bio": "Professor at University of Cambridge. Keynote speaker on 'The Role of AI in the Preservation and Revitalization of Indigenous Languages'.",
-        "type": "keynote"
+        "name": "Norman Valdez",
+        "role": "CEO Brain Trainr | Fellow Tecnologías Emergentes",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+        "bio": "Norman Valdez es un líder indígena (Aymara) y estratega en IA Responsable, actualmente CEO de Brain Trainr y Fellow de Tecnologías Emergentes en Community Foundations of Canada. Con una sólida base académica que incluye una Maestría en Sistemas de Información por la Universidad de Toronto y estudios en Comunicaciones Digitales en Sheridan College.",
+        "type": "keynote",
+        "status": "confirmed"
     },
     {
         "id": "2",
-        "name": "Sandra Ávila",
-        "role": "UNICAMP Brazil",
-        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
-        "bio": "Professor at UNICAMP Brazil. Invited speaker on 'AI Ethics and Data Sovereignty in Indigenous Communities'.",
-        "type": "keynote"
+        "name": "Elias Reynaldo Ajata Rivera",
+        "role": "Lingüista y Activista Aymara | Bolivia",
+        "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
+        "bio": "Elías Reynaldo Ajata Rivera es un lingüista y activista aymara boliviano, nacido en la provincia de Pacajes. Formado en Lingüística e Idiomas en la Universidad Pública de El Alto (UPEA), donde también ejerció como Presidente del Consejo Universitario, Elías se ha destacado por su incansable labor en la revitalización del idioma aymara a través del activismo digital y la enseñanza. Su trabajo combina la investigación académica con el uso de nuevas tecnologías y plataformas sociales para fortalecer y difundir la lengua y cultura ancestral en el contexto contemporáneo.",
+        "type": "keynote",
+        "status": "pending"
     },
     {
         "id": "3",
-        "name": "Honorio Apaza Alanoca",
-        "role": "AiMara Lab",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
-        "bio": "Director del Comité Organizador. Docente universitario e investigador en IA. Cofundador de AiMara Lab.",
-        "type": "organizer"
+        "name": "Omar Florez",
+        "role": "AI Researcher | LatamGPT CENIA",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+        "bio": "Omar Flórez es un científico peruano y líder global en Inteligencia Artificial, reconocido por cofundar LatinX in AI y dirigir actualmente el pre-entrenamiento de LatamGPT en CENIA. Egresado de la Universidad Nacional de San Agustín (UNSA) de Arequipa y Doctor en Ciencias de la Computación por la Utah State University. Omar ha llevado su talento a gigantes como Twitter Cortex, Intel Labs y Capital One, enfocándose hoy en desarrollar modelos fundacionales que respeten y representen la diversidad cultural y lingüística de Latinoamérica.",
+        "type": "keynote",
+        "status": "confirmed"
     },
     {
         "id": "4",
-        "name": "Allison Inguer Reynoso Serra",
-        "role": "AiMara Lab",
-        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
-        "bio": "Coordinadora de Contenido y Programación. Experta en NLP, HTR y traducción automática neuronal para el aymara.",
-        "type": "organizer"
+        "name": "Arturo Oncevay",
+        "role": "AI Researcher Senior | JPMorgan Chase Londres",
+        "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
+        "bio": "Arturo Oncevay es un destacado investigador peruano en Inteligencia Artificial, especializado en el Procesamiento de Lenguaje Natural para lenguas de bajos recursos. Ingeniero Informático y Magíster por la Pontificia Universidad Católica del Perú (PUCP), y Doctor en Informática por la Universidad de Edimburgo. Arturo se desempeña actualmente como AI Researcher Senior en JPMorgan Chase en Londres. Su trabajo es fundamental para la democratización tecnológica en los Andes, liderando proyectos de traducción automática que integran la riqueza lingüística del Perú en la era digital.",
+        "type": "keynote",
+        "status": "confirmed"
     },
     {
         "id": "5",
-        "name": "Brigida Huahualuque Mamani",
-        "role": "Líder Comunitario",
-        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
-        "bio": "Coordinadora Outreach Comunitario. Intérprete, traductora y líder aymara reconocida por el Ministerio de Cultura.",
-        "type": "organizer"
+        "name": "Honorio Apaza",
+        "role": "AiMara Lab | Investigador IA",
+        "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
+        "bio": "Docente universitario e investigador en IA. Cofundador de AiMara Lab. Investigador del proyecto de Traducción para las lenguas Nativas Peruanas.",
+        "type": "speaker",
+        "status": "confirmed"
     },
     {
         "id": "6",
         "name": "Israel Chaparro",
-        "role": "NVIDIA",
-        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
-        "bio": "Instructor experto de NVIDIA Deep Learning Institute.",
-        "type": "speaker"
+        "role": "NVIDIA Deep Learning Institute",
+        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
+        "bio": "Instructor experto de NVIDIA Deep Learning Institute. Especialista en desarrollo de talleres prácticos de IA y aprendizaje profundo.",
+        "type": "speaker",
+        "status": "confirmed"
     },
     {
         "id": "7",
-        "name": "Brisayda Aruahuanca",
-        "role": "Investigadora Quechua",
+        "name": "Brisayda Aruancca",
+        "role": "Investigadora Quechua | IA y NLP",
         "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop",
-        "bio": "Especialista en IA y NLP para lengua Quechua.",
-        "type": "speaker"
+        "bio": "Especialista en IA y NLP para lengua Quechua. Líder influyente en la comunidad indígena.",
+        "type": "speaker",
+        "status": "confirmed"
     },
     {
         "id": "8",
-        "name": "Rosa Paccaycota",
-        "role": "Experta en Traducción",
-        "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
-        "bio": "Investigadora y experta en proyectos de traducción Quechua.",
-        "type": "speaker"
+        "name": "Brigida Huahualuque",
+        "role": "Líder Comunitario Aymara",
+        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
+        "bio": "Coordinadora Outreach Comunitario. Intérprete, traductora y líder aymara reconocida por el Ministerio de Cultura.",
+        "type": "community",
+        "status": "confirmed"
     },
     {
         "id": "9",
-        "name": "Arturo Oncebay",
-        "role": "Experto en Traducción",
-        "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
-        "bio": "Investigador y experto en lenguas nativas.",
-        "type": "speaker"
+        "name": "Keny Lazo",
+        "role": "Facilitador de Talleres Comunitarios",
+        "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=500&fit=crop",
+        "bio": "Especialista en facilitación de sesiones de ideación y planificación de proyectos de colaboración con comunidades nativas.",
+        "type": "speaker",
+        "status": "confirmed"
     }
 ]

@@ -11,6 +11,7 @@ interface Session {
   location: string;
   speaker_id?: string;
   speaker_ids?: string[];
+  status?: string;
 }
 
 interface Day {
@@ -23,6 +24,32 @@ interface Day {
 interface AgendaProps {
   days: Day[];
   locale: string;
+}
+
+// Expandable Bio Component for long texts
+function ExpandableBio({ text, maxLength = 120, isEs }: { text: string; maxLength?: number; isEs: boolean }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  if (text.length <= maxLength) {
+    return <span>{text}</span>;
+  }
+
+  const truncated = text.slice(0, maxLength).trim() + '...';
+
+  return (
+    <span>
+      {isExpanded ? text : truncated}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsExpanded(!isExpanded);
+        }}
+        className="ml-1 text-primary-400 hover:text-primary-300 font-medium transition-colors"
+      >
+        {isExpanded ? (isEs ? 'Leer menos' : 'Read less') : (isEs ? 'Leer más' : 'Read more')}
+      </button>
+    </span>
+  );
 }
 
 const typeConfig: Record<string, { color: string; bgColor: string; label: string; labelEs: string }> = {
@@ -69,7 +96,7 @@ export default function Agenda({ days, locale }: AgendaProps) {
 
       {/* Day Selector - Horizontal Tabs */}
       <div className="flex justify-center mb-12">
-        <div className="inline-flex bg-surface rounded-xl p-1 border border-border">
+        <div className="inline-flex gap-2 bg-surface rounded-2xl p-1 border border-border">
           {days.map((day, index) => (
             <button
               key={index}
@@ -77,13 +104,15 @@ export default function Agenda({ days, locale }: AgendaProps) {
                 setActiveDay(index);
                 setExpandedSession(null);
               }}
-              className={`relative px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 ${activeDay === index
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
-                  : 'text-gray-400 hover:text-white'
+              className={`relative px-4 py-2 cursor-pointer rounded-xl text-base font-semibold transition-all duration-300 ${activeDay === index
+                ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
+                : 'text-gray-400 hover:text-white'
                 }`}
             >
               <span className="block text-lg">{isEs ? `Día ${index + 1}` : `Day ${index + 1}`}</span>
-              <span className="block text-xs opacity-70 mt-1">{days[index].date}</span>
+              <span className="block text-xs opacity-70 mt-1 capitalize">
+                {new Date(day.date + 'T00:00:00').toLocaleDateString(locale, { month: 'long', day: 'numeric' })}
+              </span>
             </button>
           ))}
         </div>
@@ -141,15 +170,15 @@ export default function Agenda({ days, locale }: AgendaProps) {
                   >
                     {/* Time Column */}
                     <div className="md:col-span-2 flex items-center">
-                      <span className="text-xl md:text-2xl font-bold text-primary-500 font-heading tabular-nums">
-                        {session.time.split(' - ')[0]}
+                      <span className="text-base font-bold text-primary-500 font-heading tabular-nums">
+                        {session.time}
                       </span>
                     </div>
 
                     {/* Session Title Column */}
                     <div className="md:col-span-6 flex flex-col justify-center">
                       <div>
-                        <h3 className="text-lg md:text-xl font-semibold text-white leading-tight">
+                        <h3 className="text-base md:text-lg font-semibold text-white leading-tight">
                           {isEs ? session.title_es : session.title_en}
                         </h3>
                         {/* Inline Speakers Preview */}
@@ -226,18 +255,25 @@ export default function Agenda({ days, locale }: AgendaProps) {
                               <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest">
                                 {isEs ? (speakers.length > 1 ? 'Panelistas' : 'Speaker') : (speakers.length > 1 ? 'Speakers' : 'Speaker')}
                               </h4>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <div className="grid grid-cols-1 gap-4">
                                 {speakers.map((s, i) => (
-                                  <div key={i} className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
-                                    <img
-                                      src={s!.image}
-                                      alt={s!.name}
-                                      className="w-10 h-10 rounded-full object-cover"
-                                    />
-                                    <div>
-                                      <p className="text-sm font-bold text-white leading-none">{s!.name}</p>
-                                      <p className="text-xs text-primary-400 mt-1 line-clamp-1">{s!.role}</p>
+                                  <div key={i} className="flex flex-col gap-3 bg-white/5 p-4 rounded-lg border border-white/5">
+                                    <div className="flex items-center gap-3">
+                                      <img
+                                        src={s!.image}
+                                        alt={s!.name}
+                                        className="w-12 h-12 rounded-full object-cover"
+                                      />
+                                      <div>
+                                        <p className="text-sm font-bold text-white leading-none">{s!.name}</p>
+                                        <p className="text-xs text-primary-400 mt-1">{s!.role}</p>
+                                      </div>
                                     </div>
+                                    {s!.bio && (
+                                      <p className="text-xs text-gray-400 leading-relaxed">
+                                        <ExpandableBio text={s!.bio} maxLength={150} isEs={isEs} />
+                                      </p>
+                                    )}
                                   </div>
                                 ))}
                               </div>
