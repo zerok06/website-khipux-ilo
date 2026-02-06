@@ -22,10 +22,11 @@ const content = {
 };
 
 const t = isEs ? content.es : content.en;
+import Wrapper from "./Wrapper.astro";
 ---
 
 <section class="py-12 px-6 lg:px-8 bg-black">
-    <div class="max-w-7xl mx-auto">
+    <Wrapper class="max-w-7xl">
         <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
             {/* Background Effects */}
             <div class="absolute inset-0 pointer-events-none">
@@ -110,5 +111,5 @@ const t = isEs ? content.es : content.en;
                 </div>
             </div>
         </div>
-    </div>
+    </Wrapper>
 </section>

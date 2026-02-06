@@ -34,6 +34,7 @@ const content = {
 };
 
 const data = isEs ? content.es : content.en;
+import Wrapper from "./Wrapper.astro";
 ---
 
 <section id="about" class="py-32 bg-bg relative overflow-hidden">
@@ -67,7 +68,7 @@ const data = isEs ? content.es : content.en;
     </svg>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+  <Wrapper class="relative z-10">
     <div class="grid lg:grid-cols-5 gap-16 items-start">
       <!-- Left Column: Main Content (3/5) -->
       <div class="lg:col-span-3 space-y-8">
@@ -81,13 +82,13 @@ const data = isEs ? content.es : content.en;
 
         <!-- Title -->
         <h2
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-text font-heading leading-[1.1]"
+          class="text-2xl md:text-3xl lg:text-4xl font-bold text-text font-heading leading-[1.1]"
         >
           {data.title}
         </h2>
 
         <!-- Description -->
-        <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+        <p class="text-base text-gray-300 leading-relaxed max-w-2xl">
           {data.description}
         </p>
 
@@ -95,7 +96,7 @@ const data = isEs ? content.es : content.en;
         <div class="flex flex-wrap gap-3 pt-4">
           {
             data.highlights.map((item) => (
-              <span class="px-4 py-2 bg-surface border border-border rounded-full text-sm text-text-muted">
+              <span class="px-4 py-2 bg-surface border border-gray-700 rounded-full text-sm text-gray-400">
                 {item}
               </span>
             ))
@@ -162,5 +163,5 @@ const data = isEs ? content.es : content.en;
         </div>
       </div>
     </div>
-  </div>
+  </Wrapper>
 </section>

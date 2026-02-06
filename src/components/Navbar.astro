@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import LanguagePicker from "./LanguagePicker.astro";
+import Wrapper from "./Wrapper.astro";
 import siteData from "../data/site.json";
 
 interface Props {
@@ -18,9 +19,7 @@ const isEs = locale === "es";
 <nav
   class="fixed w-full z-50 top-0 start-0 bg-black/95 backdrop-blur-md border-b border-gray-800"
 >
-  <div
-    style="max-width: var(--content-max-width, 70%); margin: 0 auto; padding: 0 1rem;"
-  >
+  <Wrapper>
     <div class="flex items-center justify-between py-3">
       <!-- Logo -->
       <a
@@ -76,7 +75,7 @@ const isEs = locale === "es";
         </button>
       </div>
     </div>
-  </div>
+  </Wrapper>
 
   <!-- Mobile Navigation -->
   <div
