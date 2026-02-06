@@ -2,61 +2,87 @@
     {
         "name_es": "Dirección General",
         "name_en": "General Direction",
-        "members": [
-            {
-                "name": "Honorio Apaza Alanoca",
-                "role": "Director del Comité Organizador",
-                "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
-                "bio": "Director del Comité Organizador. Docente universitario e investigador en IA. Cofundador de AiMara Lab.",
-                "affiliation": "AiMara Lab"
-            }
-        ]
-    },
-    {
-        "name_es": "Comité de Programa",
-        "name_en": "Program Committee",
-        "members": [
+        "coordinator": {
+            "name": "Honorio Apaza Alanoca",
+            "role_es": "Director del Comité Organizador",
+            "role_en": "Organizing Committee Director",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+            "bio": "Director del Comité Organizador. Docente universitario e investigador en IA. Cofundador de AiMara Lab.",
+            "affiliation": "AiMara Lab"
+        },
+        "leads": [
             {
                 "name": "Allison Inguer Reynoso Serra",
-                "role": "Coordinadora de Contenido y Programación",
+                "role_es": "Coordinadora de Contenido y Programación",
+                "role_en": "Content & Programming Coordinator",
                 "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
                 "bio": "Coordinadora de Contenido y Programación. Experta en NLP, HTR y traducción automática neuronal para el aymara.",
                 "affiliation": "AiMara Lab"
-            }
-        ],
-        "subgroups": [
-            {
-                "name_es": "Evaluación de Proyectos",
-                "name_en": "Project Evaluation",
-                "members": []
-            }
-        ]
-    },
-    {
-        "name_es": "Comité de Outreach y Comunidad",
-        "name_en": "Outreach & Community Committee",
-        "members": [
+            },
             {
                 "name": "Brigida Huahualuque Mamani",
-                "role": "Coordinadora Outreach Comunitario",
+                "role_es": "Coordinadora Outreach Comunitario",
+                "role_en": "Community Outreach Coordinator",
                 "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
                 "bio": "Intérprete, traductora y líder aymara reconocida por el Ministerio de Cultura.",
                 "affiliation": "Líder Comunitario"
             }
         ],
-        "subgroups": [
+        "support": []
+    },
+    {
+        "name_es": "Comunicaciones",
+        "name_en": "Communications",
+        "coordinator": {
+            "name": "Jose Paye",
+            "role_es": "Coordinador General",
+            "role_en": "General Coordinator",
+            "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
+            "bio": "Coordinador General del área de Comunicaciones.",
+            "affiliation": "KHIPUx"
+        },
+        "leads": [
             {
-                "name_es": "Voluntarios Locales",
-                "name_en": "Local Volunteers",
-                "members": [
-                    {
-                        "name": "Voluntario 1",
-                        "role": "Logística",
-                        "image": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=500&fit=crop",
-                        "bio": "Estudiante de Ingeniería de Sistemas.",
-                        "affiliation": "UNAM"
-                    }
-                ]
+                "name": "Mirian Cayo",
+                "role_es": "Responsable de Diseño",
+                "role_en": "Design Lead",
+                "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
+                "bio": "Responsable del diseño gráfico y visual del evento.",
+                "affiliation": "KHIPUx"
+            },
+            {
+                "name": "Elmer Collanqui",
+                "role_es": "Responsable de Web",
+                "role_en": "Web Lead",
+                "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
+                "bio": "Responsable del desarrollo y mantenimiento web.",
+                "affiliation": "KHIPUx"
+            },
+            {
+                "name": "Jamir Balcona",
+                "role_es": "Responsable de Contenido",
+                "role_en": "Content Lead",
+                "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
+                "bio": "Responsable de la creación y gestión de contenido.",
+                "affiliation": "KHIPUx"
+            },
+            {
+                "name": "Michael",
+                "role_es": "Responsable de Redes Sociales",
+                "role_en": "Social Media Lead",
+                "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+                "bio": "Responsable de la gestión de redes sociales y canal WhatsApp.",
+                "affiliation": "KHIPUx"
+            }
+        ],
+        "support": [
+            {
+                "name": "Hans",
+                "role_es": "Apoyo",
+                "role_en": "Support",
+                "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
+                "bio": "Apoyo en la gestión de redes sociales.",
+                "affiliation": "KHIPUx"
             }
         ]
     }

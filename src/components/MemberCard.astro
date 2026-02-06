@@ -1,9 +1,29 @@
 ---
-const { member } = Astro.props;
+interface Props {
+    member: {
+        name: string;
+        role?: string;
+        role_es?: string;
+        role_en?: string;
+        image: string;
+        bio: string;
+        affiliation: string;
+    };
+    locale?: string;
+}
+
+const { member, locale = "es" } = Astro.props;
+const isEs = locale === "es";
+const role =
+    member.role_es && member.role_en
+        ? isEs
+            ? member.role_es
+            : member.role_en
+        : member.role;
 ---
 
 <div class="group relative flex flex-col items-center">
-    <div class="relative w-40 h-40 md:w-48 md:h-48 mb-6">
+    <div class="relative w-30 h-30 md:w-40 md:h-40 mb-6">
         {/* Decorative Margin Frame */}
         <div
             class="absolute inset-[-25%] z-0 pointer-events-none transition-all duration-700 ease-in-out scale-100 opacity-100 group-hover:scale-50 group-hover:opacity-0 group-hover:rotate-12 origin-center"
@@ -46,14 +66,14 @@ const { member } = Astro.props;
     {/* Member Name & Role */}
     <div class="text-center z-20">
         <h3
-            class="font-bold text-base md:text-lg text-white mb-1 group-hover:text-primary-400 transition-colors uppercase tracking-tight"
+            class="font-bold text-base text-white mb-1 group-hover:text-primary-400 transition-colors uppercase tracking-tight"
         >
             {member.name}
         </h3>
         <p
             class="text-[10px] md:text-xs text-primary-500 font-bold uppercase tracking-widest mb-1"
         >
-            {member.role}
+            {role}
         </p>
         <p
             class="text-[10px] text-gray-400 font-medium uppercase tracking-wide"

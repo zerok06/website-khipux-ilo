@@ -61,43 +61,57 @@ const isEs = lang === "es";
                                 <div class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
                             </div>
 
-                            {/* Main Members */}
-                            {commission.members &&
-                                commission.members.length > 0 && (
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 justify-items-center mb-16">
-                                        {commission.members.map((member) => (
-                                            <MemberCard member={member} />
-                                        ))}
+                            {/* 1. Coordinator (Top - Centered) */}
+                            {commission.coordinator && (
+                                <div class="flex justify-center mb-16">
+                                    <MemberCard
+                                        member={commission.coordinator}
+                                        locale={lang}
+                                    />
+                                </div>
+                            )}
+
+                            {/* 2. Leads (Middle Row) */}
+                            {commission.leads &&
+                                commission.leads.length > 0 && (
+                                    <div class="mb-12">
+                                        <h3 class="text-sm font-bold text-primary-400 uppercase tracking-widest mb-20 text-center flex items-center justify-center gap-4">
+                                            <span class="w-8 h-px bg-primary-500/50" />
+                                            {isEs
+                                                ? "Responsables de Área"
+                                                : "Area Leads"}
+                                            <span class="w-8 h-px bg-primary-500/50" />
+                                        </h3>
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 justify-items-center">
+                                            {commission.leads.map((member) => (
+                                                <MemberCard
+                                                    member={member}
+                                                    locale={lang}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 )}
 
-                            {/* Subgroups */}
-                            {commission.subgroups &&
-                                commission.subgroups.length > 0 && (
-                                    <div class="space-y-16 mt-16 pl-0 md:pl-12 border-l-0 md:border-l border-white/10 ml-0 md:ml-6">
-                                        {commission.subgroups.map(
-                                            (subgroup) => (
-                                                <div class="relative">
-                                                    <h3 class="text-lg font-bold text-primary-400 uppercase tracking-widest mb-10 flex items-center gap-4">
-                                                        <span class="w-2 h-2 rounded-full bg-primary-500" />
-                                                        {isEs
-                                                            ? subgroup.name_es
-                                                            : subgroup.name_en}
-                                                    </h3>
-                                                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
-                                                        {subgroup.members.map(
-                                                            (member) => (
-                                                                <MemberCard
-                                                                    member={
-                                                                        member
-                                                                    }
-                                                                />
-                                                            ),
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            ),
-                                        )}
+                            {/* 3. Support (Bottom Row) */}
+                            {commission.support &&
+                                commission.support.length > 0 && (
+                                    <div class="mt-12 pt-8 border-t border-white/10">
+                                        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-8 text-center flex items-center justify-center gap-4">
+                                            <span class="w-8 h-px bg-gray-700" />
+                                            {isEs ? "Apoyo" : "Support"}
+                                            <span class="w-8 h-px bg-gray-700" />
+                                        </h3>
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 justify-items-center">
+                                            {commission.support.map(
+                                                (member) => (
+                                                    <MemberCard
+                                                        member={member}
+                                                        locale={lang}
+                                                    />
+                                                ),
+                                            )}
+                                        </div>
                                     </div>
                                 )}
                         </div>

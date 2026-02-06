@@ -44,7 +44,7 @@ const isEs = locale === "es";
             .filter((s) => s.type === "keynote" || s.type === "speaker")
             .map((speaker) => (
             <div class="group relative flex flex-col items-center">
-              <div class="relative w-36 h-36 md:w-48 md:h-48 mb-8">
+              <div class="relative w-30 h-30 md:w-40 md:h-40 mb-8">
                 <!-- Decorative Margin Frame (Inverse propagation effect) -->
                 <div class="absolute inset-[-25%] z-0 pointer-events-none transition-all duration-700 ease-in-out scale-100 opacity-100 group-hover:scale-50 group-hover:opacity-0 group-hover:rotate-12 origin-center">
                   <img
@@ -75,10 +75,10 @@ const isEs = locale === "es";
 
               <!-- Speaker Info (Outside for better legibility) -->
               <div class="text-center z-20">
-                <h3 class="font-bold text-lg md:text-xl text-white mb-2 group-hover:text-primary-400 transition-colors uppercase tracking-tight">
+                <h3 class="font-bold text-md md:text-lg text-white mb-2 group-hover:text-primary-400 transition-colors uppercase tracking-tight">
                   {speaker.name}
                 </h3>
-                <p class="text-[10px] md:text-xs text-primary-500 font-bold uppercase tracking-[0.2em]">
+                <p class="text-[10px] md:text-xs text-primary-500 font-bold uppercase">
                   {speaker.role}
                 </p>
               </div>
