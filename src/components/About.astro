@@ -8,10 +8,10 @@ const isEs = locale === "es";
 
 const content = {
   es: {
-    tagline: "IA + Comunidad Aymara",
+    tagline: "IA + comunidades Indígenas",
     title: "Donde la tecnología se encuentra con la tradición",
     description:
-      "KHIPUx Ilo fusiona la Inteligencia Artificial con la comunidad Aymara de Perú, Bolivia, Argentina y Chile. Exploramos cómo la IA puede preservar lenguas, revitalizar culturas y empoderar comunidades originarias.",
+      "KHIPUx Ilo fusiona la Inteligencia Artificial con las comunidades Indígenas del Perú y América Latina. Exploramos cómo la IA puede preservar lenguas, revitalizar culturas y empoderar comunidades originarias.",
     highlights: [
       "Preservación de lenguas mediante IA",
       "NLP para lenguas de bajos recursos",
@@ -20,10 +20,10 @@ const content = {
     organizer: "Organizado por",
   },
   en: {
-    tagline: "AI + Aymara Community",
+    tagline: "AI + Indigenous Communities",
     title: "Where technology meets tradition",
     description:
-      "KHIPUx Ilo merges Artificial Intelligence with the Aymara community from Peru, Bolivia, Argentina, and Chile. We explore how AI can preserve languages, revitalize cultures, and empower indigenous communities.",
+      "KHIPUx Ilo merges Artificial Intelligence with the Indigenous communities from Peru and Latin America. We explore how AI can preserve languages, revitalize cultures, and empower indigenous communities.",
     highlights: [
       "Language preservation through AI",
       "NLP for low-resource languages",
@@ -38,36 +38,6 @@ import Wrapper from "./Wrapper.astro";
 ---
 
 <section id="about" class="py-32 bg-bg relative overflow-hidden">
-  <!-- Geometric background element -->
-  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-5">
-    <svg viewBox="0 0 400 400" class="w-full h-full">
-      <circle
-        cx="200"
-        cy="200"
-        r="150"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-        class="text-primary-500"></circle>
-      <circle
-        cx="200"
-        cy="200"
-        r="100"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-        class="text-primary-500"></circle>
-      <circle
-        cx="200"
-        cy="200"
-        r="50"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-        class="text-primary-500"></circle>
-    </svg>
-  </div>
-
   <Wrapper class="relative z-10">
     <div class="grid lg:grid-cols-5 gap-16 items-start">
       <!-- Left Column: Main Content (3/5) -->
@@ -104,46 +74,70 @@ import Wrapper from "./Wrapper.astro";
         </div>
       </div>
 
-      <!-- Right Column: Stats + Organizer (2/5) -->
-      <div class="lg:col-span-2 space-y-8">
-        <!-- Large Stats -->
-        <div class="grid grid-cols-2 gap-6">
+      <!-- Right Column: Image Carousel + Stats (2/5) -->
+      <div class="lg:col-span-2 space-y-2">
+        <!-- Image Carousel (Auto-rotating) -->
+        <div
+          class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface border border-border"
+        >
+          <div class="carousel-container absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=450&fit=crop"
+              alt="Community gathering"
+              class="carousel-slide absolute inset-0 w-full h-full object-cover"
+              style="animation-delay: 0s;"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop"
+              alt="Tech collaboration"
+              class="carousel-slide absolute inset-0 w-full h-full object-cover"
+              style="animation-delay: 4s;"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=450&fit=crop"
+              alt="Conference session"
+              class="carousel-slide absolute inset-0 w-full h-full object-cover"
+              style="animation-delay: 8s;"
+            />
+          </div>
+          <!-- Gradient overlay -->
           <div
-            class="p-6 bg-surface border border-border rounded-2xl text-center"
+            class="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent"
           >
-            <div class="text-5xl font-black text-primary-500 font-heading">
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-3 gap-2">
+          <div
+            class="p-4 bg-surface border border-border rounded-xl text-center"
+          >
+            <div class="text-xl font-semibold text-primary-500 font-heading">
               150+
             </div>
-            <div class="text-sm text-text-muted mt-2 uppercase tracking-wider">
+            <div class="text-xs text-text-muted mt-1 uppercase tracking-wider">
               {isEs ? "Presencial" : "In-Person"}
             </div>
           </div>
           <div
-            class="p-6 bg-surface border border-border rounded-2xl text-center"
+            class="p-4 bg-surface border border-border rounded-xl text-center"
           >
-            <div class="text-5xl font-black text-primary-500 font-heading">
+            <div class="text-xl font-semibold text-primary-500 font-heading">
               100+
             </div>
-            <div class="text-sm text-text-muted mt-2 uppercase tracking-wider">
+            <div class="text-xs text-text-muted mt-1 uppercase tracking-wider">
               Virtual
             </div>
           </div>
-        </div>
-
-        <!-- Countries -->
-        <div class="p-6 bg-surface border border-border rounded-2xl">
           <div
-            class="text-6xl font-black text-primary-500 font-heading text-center"
+            class="p-4 bg-surface border border-border rounded-xl text-center"
           >
-            4
-          </div>
-          <div
-            class="text-sm text-text-muted mt-2 uppercase tracking-wider text-center"
-          >
-            {isEs ? "Países" : "Countries"}
-          </div>
-          <div class="flex justify-center gap-3 mt-4 text-2xl">
-            <span>🇵🇪</span><span>🇧🇴</span><span>🇦🇷</span><span>🇨🇱</span>
+            <div class="text-xl font-semibold text-primary-500 font-heading">
+              4
+            </div>
+            <div class="text-xs text-text-muted mt-1 uppercase tracking-wider">
+              {isEs ? "Países" : "Countries"}
+            </div>
           </div>
         </div>
 
@@ -165,3 +159,25 @@ import Wrapper from "./Wrapper.astro";
     </div>
   </Wrapper>
 </section>
+
+<style>
+  .carousel-slide {
+    opacity: 0;
+    animation: carousel-fade 12s infinite;
+  }
+
+  @keyframes carousel-fade {
+    0%,
+    8% {
+      opacity: 0;
+    }
+    10%,
+    30% {
+      opacity: 1;
+    }
+    33%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
