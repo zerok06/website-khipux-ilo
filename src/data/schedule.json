@@ -7,17 +7,17 @@
             "sessions": [
                 {
                     "time": "09:00 - 09:30",
-                    "title_es": "Sesión de Apertura y Bienvenida",
-                    "title_en": "Opening Session & Welcome",
-                    "description": "Presentación de KHIPUx Ilo y visión del KHIPU.",
+                    "title_es": "Sesión de Apertura: Bienvenida y visión del KHIPU",
+                    "title_en": "Opening Session: Welcome & KHIPU Vision",
+                    "description": "Presentación de Organizadores KHIPUx Ilo.",
                     "type": "logistics",
                     "location": "Main Hall"
                 },
                 {
                     "time": "09:30 - 10:30",
-                    "title_es": "Conferencia Magistral: El Rol de la IA en la Preservación y Revitalización de Lenguas Indígenas",
+                    "title_es": "Conferencia magistral: El Rol de la IA en la Preservación y Revitalización de Lenguas Indígenas",
                     "title_en": "Keynote: The Role of AI in the Preservation and Revitalization of Indigenous Languages",
-                    "description": "Norman Valdez es un líder indígena (Aymara) y estratega en IA Responsable, actualmente CEO de Brain Trainr y Fellow de Tecnologías Emergentes en Community Foundations of Canada. Con una sólida base académica que incluye una Maestría en Sistemas de Información por la Universidad de Toronto y estudios en Comunicaciones Digitales en Sheridan College.",
+                    "description": "Norman Valdez (Líder indígena Aymara, CEO de Brain Trainr, Fellow de Tecnologías Emergentes)",
                     "speaker_id": "1",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -25,12 +25,10 @@
                 },
                 {
                     "time": "10:30 - 11:30",
-                    "title_es": "Panel de Discusión: Desafíos y Oportunidades: Implementando IA en Contextos Culturales Indígenas",
-                    "title_en": "Panel Discussion: Challenges & Opportunities: Implementing AI in Indigenous Cultural Contexts",
-                    "description": "Investigadores del proyecto Traducción para las lenguas Nativas Peruanas. Expertos en proyectos de traducción Aymara, Quechua y Shipibo-Conibo.",
+                    "title_es": "Panel: Desafíos y Oportunidades: Implementando IA en Contextos Culturales Indígenas",
+                    "title_en": "Panel: Challenges & Opportunities: Implementing AI in Indigenous Cultural Contexts",
+                    "description": "Investigadores de proyectos de Traducción para Lenguas Nativas Peruanas (Aymara, Quechua y Shipibo-Conibo)",
                     "speaker_ids": [
-                        "4",
-                        "3",
                         "5"
                     ],
                     "type": "panel",
@@ -46,9 +44,9 @@
                 },
                 {
                     "time": "12:00 - 13:30",
-                    "title_es": "Conferencia Magistral: Desarrollo de PNL para Lenguas Latinoamérica",
+                    "title_es": "Conferencia magistral: Desarrollo de PNL para Lenguas Latinoamérica",
                     "title_en": "Keynote: NLP Development for Latin American Languages",
-                    "description": "Omar Flórez es un científico peruano y líder global en Inteligencia Artificial, reconocido por cofundar LatinX in AI y dirigir actualmente el pre-entrenamiento de LatamGPT en CENIA. Egresado de la Universidad Nacional de San Agustín (UNSA) de Arequipa y Doctor en Ciencias de la Computación por la Utah State University. Omar ha llevado su talento a gigantes como Twitter Cortex, Intel Labs y Capital One, enfocándose hoy en desarrollar modelos fundacionales que respeten y representen la diversidad cultural y lingüística de Latinoamérica.",
+                    "description": "Omar Flórez (Científico peruano, Cofundador de LatinX in AI, Director de LatamGPT en CENIA)",
                     "speaker_id": "3",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -63,9 +61,9 @@
                 },
                 {
                     "time": "14:30 - 16:00",
-                    "title_es": "Taller: Introducción a la IA para el Lenguaje Natural: Conceptos Básicos y Herramientas",
+                    "title_es": "Taller: Introducción a la IA para el lenguaje natural: Conceptos Básicos y Herramientas",
                     "title_en": "Workshop: Introduction to AI for Natural Language: Basic Concepts and Tools",
-                    "description": "Sesión práctica y didáctica.",
+                    "description": "Sesión práctica y didáctica (Desarrollado por Embajador de NVIDIA - Israel Chaparro)",
                     "speaker_id": "6",
                     "type": "workshop",
                     "location": "Workshop Room",
@@ -73,8 +71,8 @@
                 },
                 {
                     "time": "16:00 - 17:00",
-                    "title_es": "Sesión de Pósters y Demostraciones de Prototipos",
-                    "title_en": "Poster Session & Prototype Demos",
+                    "title_es": "Networking y Exhibición: Sesión de Pósters y Demostraciones de Prototipos",
+                    "title_en": "Networking and Exhibition: Poster Session & Prototype Demos",
                     "description": "Incluyendo el prototipo del 'Neural Machine Translator for Native Language Aimara'.",
                     "type": "networking",
                     "location": "Exhibition Hall"
@@ -88,22 +86,21 @@
             "sessions": [
                 {
                     "time": "09:00 - 10:00",
-                    "title_es": "Conferencia Magistral: Ética de la IA y Soberanía de Datos en Comunidades Indígenas",
+                    "title_es": "Conferencia magistral: Ética de la IA y Soberanía de Datos en Comunidades Indígenas",
                     "title_en": "Keynote: AI Ethics and Data Sovereignty in Indigenous Communities",
-                    "description": "Elías Reynaldo Ajata Rivera es un lingüista y activista aymara boliviano, nacido en la provincia de Pacajes. Formado en Lingüística e Idiomas en la Universidad Pública de El Alto (UPEA), donde también ejerció como Presidente del Consejo Universitario, Elías se ha destacado por su incansable labor en la revitalización del idioma aymara a través del activismo digital y la enseñanza. Su trabajo combina la investigación académica con el uso de nuevas tecnologías y plataformas sociales para fortalecer y difundir la lengua y cultura ancestral en el contexto contemporáneo.",
+                    "description": "Elías Reynaldo Ajata Rivera (Lingüista y activista aymara boliviano, UPEA)",
                     "speaker_id": "2",
                     "type": "keynote",
                     "location": "Main Hall",
-                    "status": "pending"
+                    "status": "confirmed"
                 },
                 {
                     "time": "10:00 - 11:30",
-                    "title_es": "Panel de Liderazgo Comunitario: Visión de Lenguas Indígenas: ¿Cómo la IA puede potenciar el futuro de las comunidades indígenas?",
-                    "title_en": "Community Leadership Panel: Indigenous Languages Vision: How can AI empower the future of indigenous communities?",
-                    "description": "Líderes y representantes influyentes de la comunidad Aymara. Brisayda Aruahuanca, Quechua, IA, NLP.",
+                    "title_es": "Panel de Liderazgo Comunitario: Visión de Lenguas Indígenas: ¿Cómo la IA puede potenciar el futuro de las comunidades?",
+                    "title_en": "Community Leadership Panel: Indigenous Languages Vision: How can AI empower the future of communities?",
+                    "description": "Líderes y representantes influyentes de la comunidad Aymara (Brisayda Aruahuanca), Quechua, IA, NLP.",
                     "speaker_ids": [
                         "7",
-                        "2",
                         "8"
                     ],
                     "type": "panel",
@@ -119,9 +116,9 @@
                 },
                 {
                     "time": "12:00 - 13:30",
-                    "title_es": "Conferencia Magistral: El Perú es Multilingüe, su Inteligencia Artificial también debería serlo: Desafíos de la Traducción Automática Inclusiva",
+                    "title_es": "Conferencia magistral: El Perú es Multilingüe, su Inteligencia Artificial también debería serlo: Desafíos de la Traducción Automática Inclusiva",
                     "title_en": "Keynote: Peru is Multilingual, its AI should be too: Challenges of Inclusive Machine Translation",
-                    "description": "Arturo Oncevay es un destacado investigador peruano en Inteligencia Artificial, especializado en el Procesamiento de Lenguaje Natural para lenguas de bajos recursos. Ingeniero Informático y Magíster por la Pontificia Universidad Católica del Perú (PUCP), y Doctor en Informática por la Universidad de Edimburgo. Arturo se desempeña actualmente como AI Researcher Senior en JPMorgan Chase en Londres. Su trabajo es fundamental para la democratización tecnológica en los Andes, liderando proyectos de traducción automática que integran la riqueza lingüística del Perú en la era digital.",
+                    "description": "Arturo Oncevay (Investigador peruano en PNL, AI Researcher Senior en JPMorgan Chase)",
                     "speaker_id": "4",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -136,9 +133,9 @@
                 },
                 {
                     "time": "14:30 - 16:00",
-                    "title_es": "Taller: Identificación de Proyectos y Oportunidades de Colaboración con Comunidades Nativas",
+                    "title_es": "Taller: Identificación de Proyectos y Oportunidades de Colaboración comunidades nativas",
                     "title_en": "Workshop: Identifying Projects and Collaboration Opportunities with Native Communities",
-                    "description": "Sesión de ideación y planificación de proyectos.",
+                    "description": "Sesión de ideación y planificación de proyectos (Liderado por Keny Lazo, perfil experto nacional)",
                     "speaker_id": "9",
                     "type": "workshop",
                     "location": "Workshop Room",
@@ -146,9 +143,8 @@
                 },
                 {
                     "time": "16:00 - 17:00",
-                    "title_es": "Mesa Redonda: Próximos Pasos y Construcción de la Comunidad KHIPUx Aimara",
+                    "title_es": "Mesa redonda: Próximos Pasos y Construcción de la Comunidad KHIPUx Aimara",
                     "title_en": "Roundtable: Next Steps and Building the KHIPUx Aymara Community",
-                    "description": "Discusión final sobre el futuro de la comunidad.",
                     "type": "panel",
                     "location": "Main Hall"
                 },

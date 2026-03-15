@@ -12,23 +12,27 @@
     "platinum": [
         {
             "name": "Google",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png"
+            "logo": "/sponsors/google.png"
+        },
+        {
+            "name": "Google DeepMind",
+            "logo": "/sponsors/deepmind-white.webp"
         }
     ],
     "gold": [
         {
-            "name": "Southern Copper Peru",
-            "logo": null
+            "name": "Centro Nacional de Inteligencia Artificial",
+            "logo": "/sponsors/Logo-CENIA-v1-1-1024x434.png"
         }
     ],
     "silver": [
         {
-            "name": "Anglo American Quellaveco",
-            "logo": null
+            "name": "NVIDIA Deep Learning Institute",
+            "logo": "/sponsors/DLI-Logo.png"
         },
         {
-            "name": "NVIDIA Deep Learning Institute",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/320px-Nvidia_logo.svg.png"
+            "name": "Comunidad",
+            "logo": "/sponsors/WhatsApp Image 2026-03-15 at 11.13.23 AM.jpeg"
         }
     ],
     "bronze": []

@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 ---
 
-<Layout title={siteData.title} lang={lang}>
+<Layout title={siteData.title} lang={lang || "es"} description={siteData.description}>
   <Hero locale={lang} />
   <About locale={lang} />
   <Speakers locale={lang} />

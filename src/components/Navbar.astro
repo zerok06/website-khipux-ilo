@@ -47,7 +47,7 @@ const isEs = locale === "es";
       <div class="flex items-center gap-3">
         <LanguagePicker locale={locale} />
         <a
-          href="#"
+          href="mailto:contact@aimaralab.com"
           class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium bg-primary-500 hover:bg-primary-600 rounded-full transition-colors shadow-lg shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-black text-gray-800"
         >
           {isEs ? "Apóyanos" : "Support Us"}
@@ -94,10 +94,10 @@ const isEs = locale === "es";
         ))
       }
       <a
-        href="#"
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-full transition-colors mt-4"
+        href="mailto:contact@aimaralab.com"
+        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-full transition-colors mt-4 text-center w-full"
       >
-        Support Us
+        {isEs ? "Apóyanos" : "Support Us"}
       </a>
     </div>
   </div>

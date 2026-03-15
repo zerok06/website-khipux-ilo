@@ -54,7 +54,7 @@ const speakers = speakersData.filter((s) => s.type === "speaker");
                 <div class="relative">
                     <div class="flex items-center gap-6 mb-16">
                         <div
-                            class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"
+                            class="h-px flex-1 bg-linear-to-r from-transparent via-primary-500/50 to-transparent"
                         >
                         </div>
                         <h2
@@ -63,18 +63,18 @@ const speakers = speakersData.filter((s) => s.type === "speaker");
                             {isEs ? "Keynote Speakers" : "Keynote Speakers"}
                         </h2>
                         <div
-                            class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"
+                            class="h-px flex-1 bg-linear-to-r from-transparent via-primary-500/50 to-transparent"
                         >
                         </div>
                     </div>
 
                     <div
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 justify-items-center"
+                        class="flex flex-col gap-12 max-w-5xl mx-auto w-full"
                     >
                         {
-                            keynotes.map((speaker) => (
-                                <div class="scale-110 transform">
-                                    <MemberCard member={speaker} />
+                            keynotes.map((speaker, index) => (
+                                <div class="w-full">
+                                    <MemberCard member={speaker} variant="horizontal" />
                                 </div>
                             ))
                         }
@@ -85,7 +85,7 @@ const speakers = speakersData.filter((s) => s.type === "speaker");
                 <div class="relative">
                     <div class="flex items-center gap-6 mb-16">
                         <div
-                            class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                            class="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent"
                         >
                         </div>
                         <h2
@@ -94,7 +94,7 @@ const speakers = speakersData.filter((s) => s.type === "speaker");
                             {isEs ? "Speakers Invitados" : "Guest Speakers"}
                         </h2>
                         <div
-                            class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                            class="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent"
                         >
                         </div>
                     </div>

@@ -104,7 +104,7 @@ const features = isEs
           {
             features.map((feature) => (
               <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0 transition-all group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/25">
+                <div class="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-xl flex items-center justify-center shrink-0 transition-all group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/25">
                   {feature.icon === "wifi" && (
                     <svg
                       class="w-6 h-6 text-primary-500 group-hover:text-white transition-colors"
@@ -164,7 +164,7 @@ const features = isEs
           class="absolute inset-0"></iframe>
 
         <div
-          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 pointer-events-none"
+          class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black to-transparent p-6 pointer-events-none"
         >
           <div
             class="inline-flex items-center gap-2 bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-gray-800 text-sm font-medium text-white pointer-events-auto"
