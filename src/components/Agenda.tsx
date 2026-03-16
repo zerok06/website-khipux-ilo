@@ -6,7 +6,8 @@ interface Session {
   time: string;
   title_es: string;
   title_en: string;
-  description?: string;
+  description_es?: string;
+  description_en?: string;
   type: string;
   location: string;
   speaker_id?: string;
@@ -153,7 +154,8 @@ export default function Agenda({ days, locale }: AgendaProps) {
               const config = typeConfig[session.type] || typeConfig.logistics;
               const isExpanded = expandedSession === idx;
               const speakers = getSpeakers(session);
-              const hasDetails = session.description || speakers.length > 0;
+              const activeDescription = isEs ? session.description_es : session.description_en;
+              const hasDetails = activeDescription || speakers.length > 0;
 
               return (
                 <motion.div
@@ -245,7 +247,7 @@ export default function Agenda({ days, locale }: AgendaProps) {
                               {isEs ? 'Acerca de la sesión' : 'About the session'}
                             </h4>
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                              {session.description}
+                              {activeDescription}
                             </p>
                           </div>
 

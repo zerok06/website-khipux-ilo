@@ -196,7 +196,7 @@ import Wrapper from "./Wrapper.astro";
                     </svg>
                   ))}
                 </div>
-                <p class="text-primary-400 font-semibold">{hotel.price}</p>
+                <p class="text-primary-400 font-semibold">{hotel.price.replace('/noche', isEs ? '/noche' : '/night')}</p>
               </div>
               <div class="flex items-center">
                 <span class="text-gray-500 group-hover:text-primary-400 transition-colors">
