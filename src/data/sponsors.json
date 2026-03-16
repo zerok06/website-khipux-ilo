@@ -6,7 +6,7 @@
         },
         {
             "name": "Universidad Nacional de Moquegua",
-            "logo": "/unam.webp"
+            "logo": "/sponsors/unam.png"
         }
     ],
     "platinum": [
@@ -17,12 +17,36 @@
         {
             "name": "Google DeepMind",
             "logo": "/sponsors/deepmind-white.webp"
+        },
+        {
+            "name": "Microsoft",
+            "logo": "/sponsors/microsoft.webp"
+        },
+        {
+            "name": "Apple",
+            "logo": "/sponsors/apple.png"
         }
     ],
     "gold": [
         {
             "name": "Centro Nacional de Inteligencia Artificial",
             "logo": "/sponsors/Logo-CENIA-v1-1-1024x434.png"
+        },
+        {
+            "name": "AMD",
+            "logo": "/sponsors/amd.avif"
+        },
+        {
+            "name": "Cohere",
+            "logo": "/sponsors/cohere.png"
+        },
+        {
+            "name": "Mistral AI",
+            "logo": "/sponsors/mistral.svg"
+        },
+        {
+            "name": "AnyoneAI",
+            "logo": "/sponsors/anyoneai-logo.png"
         }
     ],
     "silver": [
@@ -31,8 +55,8 @@
             "logo": "/sponsors/DLI-Logo.png"
         },
         {
-            "name": "Comunidad",
-            "logo": "/sponsors/WhatsApp Image 2026-03-15 at 11.13.23 AM.jpeg"
+            "name": "Brain Trainr",
+            "logo": "/sponsors/braintrainr.jpeg"
         }
     ],
     "bronze": []

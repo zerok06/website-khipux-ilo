@@ -7,9 +7,9 @@
             "sessions": [
                 {
                     "time": "09:00 - 09:30",
-                    "title_es": "Sesión de Apertura: Bienvenida y visión del KHIPU",
+                    "title_es": "Sesión de Apertura y Bienvenida",
                     "title_en": "Opening Session: Welcome & KHIPU Vision",
-                    "description": "Presentación de Organizadores KHIPUx Ilo.",
+                    "description": "Presentación de KHIPUx Ilo y visión del KHIPU.",
                     "type": "logistics",
                     "location": "Main Hall"
                 },
@@ -25,11 +25,13 @@
                 },
                 {
                     "time": "10:30 - 11:30",
-                    "title_es": "Panel: Desafíos y Oportunidades: Implementando IA en Contextos Culturales Indígenas",
+                    "title_es": "Panel de Discusión: Desafíos y Oportunidades: Implementando IA en Contextos Culturales Indígenas",
                     "title_en": "Panel: Challenges & Opportunities: Implementing AI in Indigenous Cultural Contexts",
-                    "description": "Investigadores de proyectos de Traducción para Lenguas Nativas Peruanas (Aymara, Quechua y Shipibo-Conibo)",
+                    "description": "Investigadores del proyectos Traduccion para las lenguas Nativas Peruanas. Tentativos: Expertos en proyectos de traducción Aymara, Quechua y Shipibo-Conibo.",
                     "speaker_ids": [
-                        "5"
+                        "5",
+                        "4",
+                        "3"
                     ],
                     "type": "panel",
                     "location": "Main Hall",
@@ -37,16 +39,16 @@
                 },
                 {
                     "time": "11:30 - 12:00",
-                    "title_es": "Pausa para Café y Networking",
-                    "title_en": "Coffee Break & Networking",
+                    "title_es": "Pausa para Café y Networking (jugos naturales)",
+                    "title_en": "Coffee Break & Networking (Natural Juices)",
                     "type": "networking",
                     "location": "Lobby"
                 },
                 {
-                    "time": "12:00 - 13:30",
-                    "title_es": "Conferencia magistral: Desarrollo de PNL para Lenguas Latinoamérica",
+                    "time": "12:00 - 13:00",
+                    "title_es": "Conferencia Magistra: Desarrollo de PNL para Lenguas Latinoamérica",
                     "title_en": "Keynote: NLP Development for Latin American Languages",
-                    "description": "Omar Flórez (Científico peruano, Cofundador de LatinX in AI, Director de LatamGPT en CENIA)",
+                    "description": "Omar Flórez es un científico peruano y líder global en Inteligencia Artificial, reconocido por cofundar LatinX in AI y dirigir actualmente el pre-entrenamiento de LatamGPT en CENIA. Egresado de la Universidad Nacional de San Agustín (UNSA) de Arequipa y Doctor en Ciencias de la Computación por la Utah State University Omar ha llevado su talento a gigantes como Twitter Cortex, Intel Labs y Capital One, enfocándose hoy en desarrollar modelos fundacionales que respeten y representen la diversidad cultural y lingüística de Latinoamérica.",
                     "speaker_id": "3",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -86,9 +88,9 @@
             "sessions": [
                 {
                     "time": "09:00 - 10:00",
-                    "title_es": "Conferencia magistral: Ética de la IA y Soberanía de Datos en Comunidades Indígenas",
+                    "title_es": "Conferencia Invitada: Ética de la IA y Soberanía de Datos en Comunidades Indígenas",
                     "title_en": "Keynote: AI Ethics and Data Sovereignty in Indigenous Communities",
-                    "description": "Elías Reynaldo Ajata Rivera (Lingüista y activista aymara boliviano, UPEA)",
+                    "description": "Elías Reynaldo Ajata Rivera es un lingüista y activista aymara boliviano, nacido en la provincia de Pacajes. Formado en Lingüística e Idiomas en la Universidad Pública de El Alto (UPEA), donde también ejerció como Presidente del Consejo Universitario, Elías se ha destacado por su incansable labor en la revitalización del idioma aymara a través del activismo digital y la enseñanza. Su trabajo combina la investigación académica con el uso de nuevas tecnologías y plataformas sociales para fortalecer y difundir la lengua y cultura ancestral en el contexto contemporáneo.",
                     "speaker_id": "2",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -98,9 +100,10 @@
                     "time": "10:00 - 11:30",
                     "title_es": "Panel de Liderazgo Comunitario: Visión de Lenguas Indígenas: ¿Cómo la IA puede potenciar el futuro de las comunidades?",
                     "title_en": "Community Leadership Panel: Indigenous Languages Vision: How can AI empower the future of communities?",
-                    "description": "Líderes y representantes influyentes de la comunidad Aymara (Brisayda Aruahuanca), Quechua, IA, NLP.",
+                    "description": "Confirmados: Líderes y representantes influyentes de la comunidad Aymara (Brisayda Aruahuanca), Quechua, IA, NLP.",
                     "speaker_ids": [
                         "7",
+                        "2",
                         "8"
                     ],
                     "type": "panel",
@@ -109,8 +112,8 @@
                 },
                 {
                     "time": "11:30 - 12:00",
-                    "title_es": "Pausa para Café",
-                    "title_en": "Coffee Break",
+                    "title_es": "Pausa para Café (jugos naturales)",
+                    "title_en": "Coffee Break (Natural Juices)",
                     "type": "networking",
                     "location": "Lobby"
                 },
@@ -118,7 +121,7 @@
                     "time": "12:00 - 13:30",
                     "title_es": "Conferencia magistral: El Perú es Multilingüe, su Inteligencia Artificial también debería serlo: Desafíos de la Traducción Automática Inclusiva",
                     "title_en": "Keynote: Peru is Multilingual, its AI should be too: Challenges of Inclusive Machine Translation",
-                    "description": "Arturo Oncevay (Investigador peruano en PNL, AI Researcher Senior en JPMorgan Chase)",
+                    "description": "Arturo Oncevay es un destacado investigador peruano en Inteligencia Artificial, especializado en el Procesamiento de Lenguaje Natural para lenguas de bajos recursos. Ingeniero Informático y Magíster por la Pontificia Universidad Católica del Perú (PUCP), y Doctor en Informática por la Universidad de Edimburgo, Arturo se desempeña actualmente como AI Researcher Senior en JPMorgan Chase en Londres. Su trabajo es fundamental para la democratización tecnológica en los Andes, liderando proyectos de traducción automática que integran la riqueza lingüística del Perú en la era digital.",
                     "speaker_id": "4",
                     "type": "keynote",
                     "location": "Main Hall",
@@ -133,9 +136,9 @@
                 },
                 {
                     "time": "14:30 - 16:00",
-                    "title_es": "Taller: Identificación de Proyectos y Oportunidades de Colaboración comunidades nativas",
+                    "title_es": "Identificación de Proyectos y Oportunidades de Colaboración comunidades nativas.",
                     "title_en": "Workshop: Identifying Projects and Collaboration Opportunities with Native Communities",
-                    "description": "Sesión de ideación y planificación de proyectos (Liderado por Keny Lazo, perfil experto nacional)",
+                    "description": "Sesión de ideación y planificación de proyectos. ()",
                     "speaker_id": "9",
                     "type": "workshop",
                     "location": "Workshop Room",
@@ -143,14 +146,14 @@
                 },
                 {
                     "time": "16:00 - 17:00",
-                    "title_es": "Mesa redonda: Próximos Pasos y Construcción de la Comunidad KHIPUx Aimara",
+                    "title_es": "Próximos Pasos y Construcción de la Comunidad KHIPUx Aimara.",
                     "title_en": "Roundtable: Next Steps and Building the KHIPUx Aymara Community",
                     "type": "panel",
                     "location": "Main Hall"
                 },
                 {
                     "time": "17:00 - 17:30",
-                    "title_es": "Cierre y Agradecimientos",
+                    "title_es": "Cierre y Agradecimientos.",
                     "title_en": "Closing & Acknowledgments",
                     "type": "logistics",
                     "location": "Main Hall"

@@ -39,7 +39,7 @@
         "id": "9",
         "name": "Keny Lazo",
         "role": "Fundador Code en mi Cole | Sumatec",
-        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
+        "image": "/keynotes/kennylazo.jpeg",
         "bio": "Promotor de innovación. Taller: 'Identificación de Proyectos y Oportunidades'. Puente para que las ideas se conviertan en soluciones tecnológicas viables para las comunidades nativas.",
         "type": "keynote",
         "status": "confirmed"
@@ -48,8 +48,17 @@
         "id": "5",
         "name": "Honorio Apaza",
         "role": "AiMara Lab | Investigador IA",
-        "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
+        "image": "/keynotes/honorioapaza.jpg",
         "bio": "Docente universitario e investigador en IA. Cofundador de AiMara Lab. Investigador del proyecto de Traducción para las lenguas Nativas Peruanas.",
+        "type": "speaker",
+        "status": "confirmed"
+    },
+    {
+        "id": "6",
+        "name": "Israel Chaparro",
+        "role": "Embajador de NVIDIA | Speaker Invitado",
+        "image": "/keynotes/israel.jpeg",
+        "bio": "Taller: 'Introducción a la IA para el lenguaje natural: Conceptos Básicos y Herramientas'. Sesión práctica y didáctica para adentrarse en la IA.",
         "type": "speaker",
         "status": "confirmed"
     },
@@ -57,7 +66,7 @@
         "id": "7",
         "name": "Brisayda Aruancca",
         "role": "Investigadora Quechua | IA y NLP",
-        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop",
+        "image": "/keynotes/brisaydaaruancca.jpg",
         "bio": "Especialista en IA y NLP para lengua Quechua. Líder influyente en la comunidad indígena.",
         "type": "speaker",
         "status": "confirmed"
@@ -66,7 +75,7 @@
         "id": "8",
         "name": "Brigida Huahualuque",
         "role": "Líder Comunitario Aymara",
-        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
+        "image": "/keynotes/brigidahuahualuque.jpg",
         "bio": "Coordinadora Outreach Comunitario. Intérprete, traductora y líder aymara reconocida por el Ministerio de Cultura.",
         "type": "community",
         "status": "confirmed"
