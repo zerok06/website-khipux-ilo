@@ -1,38 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const images = [
-  {
-    src: "/venue/5-glorieta.jpg",
-    title: { es: "Glorieta José Gálvez", en: "José Gálvez Gazebo" },
-    desc: { es: "Símbolo icónico de Ilo con vista al océano.", en: "Iconic symbol of Ilo overlooking the ocean." }
-  },
-  {
-    src: "/venue/4-malecon.jpg",
-    title: { es: "Malecón Costero", en: "Coastal Boardwalk" },
-    desc: { es: "El paseo marítimo perfecto para disfrutar del atardecer.", en: "The perfect boardwalk to enjoy the sunset." }
-  },
-  {
-    src: "/venue/2-museo.jpg",
-    title: { es: "Museo Chiribaya", en: "Chiribaya Museum" },
-    desc: { es: "Historia milenaria de nuestros ancestros.", en: "Millennial history of our ancestors." }
-  },
-  {
-    src: "/venue/7-algarrobal.jpg",
-    title: { es: "Valle de El Algarrobal", en: "El Algarrobal Valley" },
-    desc: { es: "Tierra de olivos centenarios y tradición.", en: "Land of century-old olive trees and tradition." }
-  },
-  {
-    src: "/venue/3-ciudad.jpg",
-    title: { es: "Ciudad Puerto", en: "Port City" },
-    desc: { es: "Modernidad y tradición frente al mar.", en: "Modernity and tradition facing the sea." }
-  },
-  {
-    src: "/venue/1-punta-coles.jpg",
-    title: { es: "Reserva Punta Coles", en: "Punta Coles Reserve" },
-    desc: { es: "Santuario natural de vida marina y aves guaneras.", en: "Natural sanctuary for marine life and guano birds." }
-  }
-];
+import venueData from "../data/venue.json";
+
+const images = venueData.gallery.map(item => ({
+  src: item.image,
+  title: { es: item.title_es, en: item.title_en },
+  desc: { es: item.description_es, en: item.description_en }
+}));
+
 
 export default function VenueGallery({ locale }: { locale: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,7 +42,7 @@ export default function VenueGallery({ locale }: { locale: string }) {
             className="w-full h-full object-cover"
           />
           {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 

@@ -1,5 +1,5 @@
 ---
-import siteData from "../data/site.json";
+import venueData from "../data/venue.json";
 import VenueGallery from "./VenueGallery";
 import Wrapper from "./Wrapper.astro";
 
@@ -10,41 +10,11 @@ interface Props {
 const { locale = "en" } = Astro.props;
 const isEs = locale === "es";
 
-const features = isEs
-  ? [
-      {
-        icon: "wifi",
-        title: "Evento Híbrido",
-        desc: "Participación presencial en Ilo, Moquegua y conexión virtual para participantes remotos.",
-      },
-      {
-        icon: "food",
-        title: "Networking y Catering",
-        desc: "Almuerzo y coffee breaks incluidos para mantener la energía y facilitar conexiones.",
-      },
-      {
-        icon: "hotel",
-        title: "Universidad Nacional de Moquegua",
-        desc: "Instalaciones de primer nivel proporcionadas por nuestro partner universitario.",
-      },
-    ]
-  : [
-      {
-        icon: "wifi",
-        title: "Hybrid Event",
-        desc: "In-person participation in Ilo, Moquegua and virtual connection for remote attendees.",
-      },
-      {
-        icon: "food",
-        title: "Networking & Catering",
-        desc: "Lunch and coffee breaks included to keep energy up and facilitate connections.",
-      },
-      {
-        icon: "hotel",
-        title: "Universidad Nacional de Moquegua",
-        desc: "First-class facilities provided by our university partner.",
-      },
-    ];
+const features = venueData.features.map(f => ({
+  icon: f.icon,
+  title: isEs ? f.title_es : f.title_en,
+  desc: isEs ? f.description_es : f.description_en
+}));
 ---
 
 <section id="venue" class="py-24 bg-dark-bg relative overflow-hidden">
@@ -156,7 +126,7 @@ const features = isEs
         class="relative h-full min-h-[400px] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30456.!2d-71.34!3d-17.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x914148e8d5c9c0c1%3A0x!2sIlo%2C%20Peru!5e0!3m2!1sen!2spe!4v1600000000000!5m2!1sen!2spe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30456.!2d-71.3409648!3d-17.6018648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91445c85cd541421%3A0x430096ea6da2b877!2sUniversidad%20Nacional%20de%20Moquegua!5e0!3m2!1sen!2spe!4v1710000000000!5m2!1sen!2spe"
           width="100%"
           height="100%"
           style="border:0; filter: invert(90%) hue-rotate(180deg); min-height: 400px;"
@@ -187,7 +157,7 @@ const features = isEs
                 stroke-width="2"
                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
-            {siteData.location.name}
+            {venueData.university.name}
           </div>
         </div>
       </div>

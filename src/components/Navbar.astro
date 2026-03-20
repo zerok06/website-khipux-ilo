@@ -27,7 +27,7 @@ const isEs = locale === "es";
         href={getRelativeLocaleUrl(locale, "/")}
         class="flex items-center gap-2"
       >
-        <img src="/logo-khipux-x-naranja.svg" alt="Logo" class="w-64 h-16" />
+        <img src="/khipu_logo.png" alt="Logo" class="w-64 h-16" />
       </a>
 
       <!-- Desktop Navigation -->
@@ -36,7 +36,7 @@ const isEs = locale === "es";
           navLinks.map((link) => (
             <a
               href={link.href}
-              class="text-sm font-medium text-gray-300 hover:text-primary-400 transition-colors"
+              class="nav-link text-sm font-medium transition-colors hover:text-primary-400"
             >
               {link.label}
             </a>
@@ -58,7 +58,7 @@ const isEs = locale === "es";
         <button
           id="mobile-menu-btn"
           type="button"
-          class="md:hidden p-2 text-gray-400 hover:text-gray-200"
+          class="md:hidden p-2 nav-link hover:text-gray-200"
           aria-label="Open menu"
         >
           <svg
@@ -86,12 +86,12 @@ const isEs = locale === "es";
     <div class="px-4 py-4 space-y-3">
       {
         navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="block text-base font-medium hover:text-primary-500 text-gray-300 py-2"
-          >
-            {link.label}
-          </a>
+        <a
+          href={link.href}
+          class="nav-link block text-base font-medium py-2 hover:text-primary-500"
+        >
+          {link.label}
+        </a>
         ))
       }
       <a
@@ -119,11 +119,50 @@ const isEs = locale === "es";
     if (window.scrollY > 20) {
       // Scrolled down: add glassmorphic black background
       mainNav?.classList.remove("bg-transparent", "border-transparent");
-      mainNav?.classList.add("bg-black/95", "backdrop-blur-md", "border-gray-800");
+      mainNav?.classList.add(
+        "bg-black/95",
+        "backdrop-blur-md",
+        "border-gray-800",
+        "is-scrolled"
+      );
     } else {
       // Top of page: transparent
-      mainNav?.classList.remove("bg-black/95", "backdrop-blur-md", "border-gray-800");
+      mainNav?.classList.remove(
+        "bg-black/95",
+        "backdrop-blur-md",
+        "border-gray-800",
+        "is-scrolled"
+      );
       mainNav?.classList.add("bg-transparent", "border-transparent");
     }
   });
 </script>
+
+<style>
+  /* Header text color logic */
+  .nav-link {
+    color: white; /* text-white */
+    transition: color 0.3s ease;
+  }
+
+  #main-nav.is-scrolled .nav-link {
+    color: #d1d5db; /* text-gray-300 */
+  }
+
+  #main-nav.is-scrolled .nav-link:hover {
+    color: #ff743f; /* text-primary-400 - using hex for robustness */
+  }
+
+  /* Handle LanguagePicker children */
+  #main-nav:not(.is-scrolled) :global(.lang-link span) {
+     color: rgba(255, 255, 255, 0.9);
+  }
+  
+  #main-nav.is-scrolled :global(.lang-link) {
+     color: #d1d5db;
+  }
+  
+  #main-nav:not(.is-scrolled) :global(.lang-link) {
+     color: white;
+  }
+</style>

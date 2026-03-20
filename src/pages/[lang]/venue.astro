@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import siteData from "../../data/site.json";
+import venueData from "../../data/venue.json";
 
 export function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -10,124 +10,16 @@ const { lang } = Astro.params;
 const isEs = lang === "es";
 const title = isEs ? "Venue - KHIPUx Ilo 2026" : "Venue - KHIPUx Ilo 2026";
 
-// Gallery images with descriptions
-// Gallery images with descriptions
-const galleryImages = [
-  {
-    id: 1,
-    title_es: "Glorieta José Gálvez",
-    title_en: "José Gálvez Gazebo",
-    image: "/venue/5-glorieta.jpg",
-    description_es: "Símbolo icónico de Ilo. Un mirador histórico con vistas panorámicas del océano y la ciudad.",
-    description_en: "Iconic symbol of Ilo. A historic lookout with panoramic views of the ocean and the city."
-  },
-  {
-    id: 2,
-    title_es: "Malecón Costero",
-    title_en: "Coastal Boardwalk",
-    image: "/venue/4-malecon.jpg",
-    description_es: "El paseo marítimo perfecto para disfrutar del atardecer y la brisa marina.",
-    description_en: "The perfect boardwalk to enjoy the sunset and the sea breeze."
-  },
-  {
-    id: 3,
-    title_es: "Museo Chiribaya",
-    title_en: "Chiribaya Museum",
-    image: "/venue/2-museo.jpg",
-    description_es: "Descubre la historia milenaria de nuestros ancestros y la cultura Chiribaya.",
-    description_en: "Discover the millennial history of our ancestors and the Chiribaya culture."
-  },
-  {
-    id: 4,
-    title_es: "Valle de El Algarrobal",
-    title_en: "El Algarrobal Valley",
-    image: "/venue/7-algarrobal.jpg",
-    description_es: "Tierra de olivos centenarios y tradición agrícola en el corazón del desierto.",
-    description_en: "Land of century-old olive trees and agricultural tradition in the heart of the desert."
-  },
-  {
-    id: 5,
-    title_es: "Ciudad Puerto",
-    title_en: "Port City",
-    image: "/venue/3-ciudad.jpg",
-    description_es: "Modernidad y tradición se unen en este puerto estratégico del sur peruano.",
-    description_en: "Modernity and tradition come together in this strategic southern Peruvian port."
-  },
-  {
-    id: 6,
-    title_es: "Reserva Punta Coles",
-    title_en: "Punta Coles Reserve",
-    image: "/venue/1-punta-coles.jpg",
-    description_es: "Santuario natural de vida marina y aves guaneras. Un tesoro de biodiversidad frente al mar.",
-    description_en: "Natural sanctuary for marine life and guano birds. A biodiversity treasure facing the sea."
-  }
-];
+const { gallery: galleryImages, hotels, university: universityLocation, facts } = venueData;
 
-// Hotels with coordinates for the map
-const hotels = [
-  {
-    name: "Hotel Leyton",
-    rating: 4,
-    price: isEs ? "$60/noche" : "$60/night",
-    address: "Av. Costanera 123",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
-    lat: -17.6394,
-    lng: -71.3375
-  },
-  {
-    name: "Gran Hotel Ilo",
-    rating: 4,
-    price: isEs ? "$80/noche" : "$80/night",
-    address: "Jr. Moquegua 456",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop",
-    lat: -17.6420,
-    lng: -71.3390
-  },
-  {
-    name: "Hotel Pacific",
-    rating: 3,
-    price: isEs ? "$45/noche" : "$45/night",
-    address: "Av. Marítima 789",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=300&fit=crop",
-    lat: -17.6380,
-    lng: -71.3410
-  }
-];
+// Map facts to include labels and values for the current locale
+const quickFacts = facts.map(fact => ({
+  icon: fact.icon,
+  label: isEs ? fact.label_es : fact.label_en,
+  value: isEs ? (fact.value_es || fact.value) : (fact.value_en || fact.value),
+  description: isEs ? fact.description_es : fact.description_en
+}));
 
-// Universidad location
-const universityLocation = {
-  name: "UNAM - Campus Ilo",
-  lat: -17.6450,
-  lng: -71.3350
-};
-
-// Quick facts with SVG icons instead of emojis
-const quickFacts = [
-  {
-    icon: "thermometer",
-    label: isEs ? "Clima" : "Weather",
-    value: "20-25°C",
-    description: isEs ? "Templado todo el año" : "Temperate year-round"
-  },
-  {
-    icon: "clock",
-    label: isEs ? "Zona horaria" : "Timezone",
-    value: "UTC-5",
-    description: isEs ? "Hora de Perú (PET)" : "Peru Time (PET)"
-  },
-  {
-    icon: "plane",
-    label: isEs ? "Aeropuerto" : "Airport",
-    value: "Tacna (TQM)",
-    description: isEs ? "A 2 horas en auto" : "2 hours by car"
-  },
-  {
-    icon: "waves",
-    label: isEs ? "Ubicación" : "Location",
-    value: isEs ? "Costa Sur" : "South Coast",
-    description: isEs ? "Océano Pacífico" : "Pacific Ocean"
-  }
-];
 ---
 
 <Layout 
@@ -179,7 +71,7 @@ const quickFacts = [
         <!-- Carrusel con imagen grande -->
         <div class="relative" id="gallery-carousel">
           <!-- Imagen principal grande -->
-          <div class="relative aspect-[16/9] max-h-[700px] rounded-2xl overflow-hidden group mx-auto">
+          <div class="relative aspect-video max-h-[700px] rounded-2xl overflow-hidden group mx-auto">
             <img
               id="main-gallery-image"
               src={galleryImages[0].image}
@@ -189,10 +81,10 @@ const quickFacts = [
             />
 
             <!-- Overlay degradado con información -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent"></div>
 
             <!-- Línea decorativa -->
-            <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent"></div>
 
             <!-- Contenido del footer de imagen -->
             <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
@@ -271,7 +163,7 @@ const quickFacts = [
                   data-index={idx}
                 >
                   <!-- Hotel Image -->
-                  <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                  <div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
                     <img
                       src={hotel.image}
                       alt={hotel.name}
@@ -281,7 +173,7 @@ const quickFacts = [
                   </div>
 
                   <!-- Hotel Info -->
-                  <div class="flex-grow">
+                  <div class="grow">
                     <div class="flex items-start justify-between">
                       <div>
                         <div class="flex items-center gap-2">
@@ -294,7 +186,7 @@ const quickFacts = [
                         </div>
                         <p class="text-gray-500 text-sm">{hotel.address}</p>
                       </div>
-                      <span class="text-primary-500 font-bold text-lg">{hotel.price}</span>
+                      <span class="text-primary-500 font-bold text-lg">{isEs ? hotel.price_es : hotel.price_en}</span>
                     </div>
                     <!-- Rating -->
                     <div class="flex items-center gap-1 mt-2">
@@ -385,7 +277,7 @@ const quickFacts = [
           <div class="w-8 h-px bg-primary-500"></div>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold font-heading mb-6">
-          {siteData.location.name}
+          {universityLocation.name}
         </h2>
         <p class="text-xl text-gray-300 mb-8 leading-relaxed">
           {isEs
@@ -570,6 +462,8 @@ const quickFacts = [
 
     // Custom icons for hotels
     const hotelMarkers = [];
+    const allMarkers = [uniMarker];
+
     hotels.forEach((hotel, idx) => {
       const hotelIcon = L.divIcon({
         className: 'custom-marker',
@@ -580,10 +474,15 @@ const quickFacts = [
 
       const marker = L.marker([hotel.lat, hotel.lng], { icon: hotelIcon })
         .addTo(map)
-        .bindPopup(`<strong>${hotel.name}</strong><br>${hotel.address}<br><span style="color:#f15b24">${hotel.price}</span>`);
+        .bindPopup(`<strong>${hotel.name}</strong><br>${hotel.address}<br><span style="color:#f15b24">${isEs ? hotel.price_es : hotel.price_en}</span>`);
 
       hotelMarkers.push(marker);
+      allMarkers.push(marker);
     });
+
+    // Fit map to markers
+    const group = new L.featureGroup(allMarkers);
+    map.fitBounds(group.getBounds().pad(0.1));
 
     // Hotel card interactions
     const hotelCards = document.querySelectorAll('.hotel-card');

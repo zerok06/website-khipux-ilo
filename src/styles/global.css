@@ -33,6 +33,7 @@
 
 /* Smooth scrolling */
 html {
+    font-size: clamp(14px, 0.5vw + 12px, 18px);
     scroll-behavior: smooth;
 }
 

@@ -1,0 +1,147 @@
+{
+  "university": {
+    "name": "UNAM - Campus Ilo",
+    "lat": -17.6018648,
+    "lng": -71.3409648
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "title_es": "Glorieta José Gálvez",
+      "title_en": "José Gálvez Gazebo",
+      "image": "/venue/5-glorieta.jpg",
+      "description_es": "Símbolo icónico de Ilo. Un mirador histórico con vistas panorámicas del océano y la ciudad.",
+      "description_en": "Iconic symbol of Ilo. A historic lookout with panoramic views of the ocean and the city."
+    },
+    {
+      "id": 2,
+      "title_es": "Malecón Costero",
+      "title_en": "Coastal Boardwalk",
+      "image": "/venue/4-malecon.jpg",
+      "description_es": "El paseo marítimo perfecto para disfrutar del atardecer y la brisa marina.",
+      "description_en": "The perfect boardwalk to enjoy the sunset and the sea breeze."
+    },
+    {
+      "id": 3,
+      "title_es": "Museo Chiribaya",
+      "title_en": "Chiribaya Museum",
+      "image": "/venue/2-museo.jpg",
+      "description_es": "Descubre la historia milenaria de nuestros ancestros y la cultura Chiribaya.",
+      "description_en": "Discover the millennial history of our ancestors and the Chiribaya culture."
+    },
+    {
+      "id": 4,
+      "title_es": "Valle de El Algarrobal",
+      "title_en": "El Algarrobal Valley",
+      "image": "/venue/7-algarrobal.jpg",
+      "description_es": "Tierra de olivos centenarios y tradición agrícola en el corazón del desierto.",
+      "description_en": "Land of century-old olive trees and agricultural tradition in the heart of the desert."
+    },
+    {
+      "id": 5,
+      "title_es": "Ciudad Puerto",
+      "title_en": "Port City",
+      "image": "/venue/3-ciudad.jpg",
+      "description_es": "Modernidad y tradición se unen en este puerto estratégico del sur peruano.",
+      "description_en": "Modernity and tradition come together in this strategic southern Peruvian port."
+    },
+    {
+      "id": 6,
+      "title_es": "Reserva Punta Coles",
+      "title_en": "Punta Coles Reserve",
+      "image": "/venue/1-punta-coles.jpg",
+      "description_es": "Santuario natural de vida marina y aves guaneras. Un tesoro de biodiversidad frente al mar.",
+      "description_en": "Natural sanctuary for marine life and guano birds. A biodiversity treasure facing the sea."
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sunrise Hotel",
+      "rating": 4,
+      "price_es": "~$43/noche",
+      "price_en": "~$43/night",
+      "address": "Calle Junín (Cerca al centro)",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerNJdPoMAYeFxDQOQ2I6hOHGfFaUwdqVHHBJrruoLiO4CFXuMJJOnglabJGyojz8HK0jLBtZFWi50wkxPdcwssWgrih8RdYRVLCuyccjpY4bMYz8dF9SkyFoCw9UTNz1sc_ejM3Vw1Kxo84=w408-h408-k-no",
+      "lat": -17.6444595,
+      "lng": -71.3431823
+    },
+    {
+      "name": "Hotel Costa del Sur",
+      "rating": 3,
+      "price_es": "~$31/noche",
+      "price_en": "~$31/night",
+      "address": "Malecón Costero",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweq605B8FuDiISWTSLn5aLMuE3P9gXvt_aw8DRyT7eAmwBSlN_RzaFRslg9lMo0ycoV6TMFwee3zrLvqZyIan11zB0ZABpXJsfQccioMPlCLoCHIXLK5-aRa668HsA6N3i1NyprplFylEJ8=w408-h544-k-no",
+      "lat": -17.64329,
+      "lng": -71.3438242
+    },
+    {
+      "name": "Hotel Chiribaya",
+      "rating": 4,
+      "price_es": "~$35/noche",
+      "price_en": "~$35/night",
+      "address": "Jr. Moquegua (Cerca al Malecón)",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweoXflsmw832ZdIgAWMxno7FVyAm9G-mb9QnZwMs3hYfSjM_lgvS0xxL0Bgv5vICBU9D80YrIP1FVdJdN6SI5pL3n8jxb0F3FFBTblQUlyCq_E9HLMX7JfH4SCHDgisfqn3lajtq=w426-h240-k-no",
+      "lat": -17.6320367,
+      "lng": -71.3411962
+    }
+  ],
+  "facts": [
+    {
+      "icon": "thermometer",
+      "label_es": "Clima",
+      "label_en": "Weather",
+      "value": "20-25°C",
+      "description_es": "Templado todo el año",
+      "description_en": "Temperate year-round"
+    },
+    {
+      "icon": "clock",
+      "label_es": "Zona horaria",
+      "label_en": "Timezone",
+      "value": "UTC-5",
+      "description_es": "Hora de Perú (PET)",
+      "description_en": "Peru Time (PET)"
+    },
+    {
+      "icon": "plane",
+      "label_es": "Aeropuerto",
+      "label_en": "Airport",
+      "value": "Tacna (TQM)",
+      "description_es": "A 2 horas en auto",
+      "description_en": "2 hours by car"
+    },
+    {
+      "icon": "waves",
+      "label_es": "Ubicación",
+      "label_en": "Location",
+      "value_es": "Costa Sur",
+      "value_en": "South Coast",
+      "description_es": "Océano Pacífico",
+      "description_en": "Pacific Ocean"
+    }
+  ],
+  "features": [
+    {
+      "icon": "wifi",
+      "title_es": "Evento Híbrido",
+      "title_en": "Hybrid Event",
+      "description_es": "Participación presencial en Ilo, Moquegua y conexión virtual para participantes remotos.",
+      "description_en": "In-person participation in Ilo, Moquegua and virtual connection for remote attendees."
+    },
+    {
+      "icon": "food",
+      "title_es": "Networking y Catering",
+      "title_en": "Networking & Catering",
+      "description_es": "Almuerzo y coffee breaks incluidos para mantener la energía y facilitar conexiones.",
+      "description_en": "Lunch and coffee breaks included to keep energy up and facilitate connections."
+    },
+    {
+      "icon": "hotel",
+      "title_es": "Universidad Nacional de Moquegua",
+      "title_en": "Universidad Nacional de Moquegua",
+      "description_es": "Instalaciones de primer nivel proporcionadas por nuestro partner universitario.",
+      "description_en": "First-class facilities provided by our university partner."
+    }
+  ]
+}

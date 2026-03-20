@@ -16,11 +16,11 @@
                 },
                 {
                     "time": "09:30 - 10:30",
-                    "title_es": "Conferencia magistral: El Rol de la IA en la Preservación y Revitalización de Lenguas Indígenas",
-                    "title_en": "Keynote: The Role of AI in the Preservation and Revitalization of Indigenous Languages",
-                    "description_es": "Norman Valdez (Líder indígena Aymara, CEO de Brain Trainr, Fellow de Tecnologías Emergentes)",
-                    "description_en": "Norman Valdez (Aymara Indigenous Leader, CEO of Brain Trainr, Emerging Technologies Fellow)",
-                    "speaker_id": "1",
+                    "title_es": "Conferencia magistral: El Perú es Multilingüe, su Inteligencia Artificial también debería serlo: Desafíos de la Traducción Automática Inclusiva",
+                    "title_en": "Keynote: Peru is Multilingual, its AI should be too: Challenges of Inclusive Machine Translation",
+                    "description_es": "Arturo Oncevay es un destacado investigador peruano en Inteligencia Artificial, especializado en el Procesamiento de Lenguaje Natural para lenguas de bajos recursos. Ingeniero Informático y Magíster por la Pontificia Universidad Católica del Perú (PUCP), y Doctor en Informática por la Universidad de Edimburgo, Arturo se desempeña actualmente como AI Researcher Senior en JPMorgan Chase en Londres. Su trabajo es fundamental para la democratización tecnológica en los Andes, liderando proyectos de traducción automática que integran la riqueza lingüística del Perú en la era digital.",
+                    "description_en": "Arturo Oncevay is a prominent Peruvian Artificial Intelligence researcher, specialized in Natural Language Processing for low-resource languages. Computer Engineer and Master by the Pontifical Catholic University of Peru (PUCP), and PhD in Informatics by the University of Edinburgh, Arturo currently works as a Senior AI Researcher at JPMorgan Chase in London. His work is fundamental for technological democratization in the Andes, leading machine translation projects that integrate the linguistic wealth of Peru into the digital age.",
+                    "speaker_id": "4",
                     "type": "keynote",
                     "location": "Main Hall",
                     "status": "confirmed"
@@ -127,11 +127,11 @@
                 },
                 {
                     "time": "12:00 - 13:30",
-                    "title_es": "Conferencia magistral: El Perú es Multilingüe, su Inteligencia Artificial también debería serlo: Desafíos de la Traducción Automática Inclusiva",
-                    "title_en": "Keynote: Peru is Multilingual, its AI should be too: Challenges of Inclusive Machine Translation",
-                    "description_es": "Arturo Oncevay es un destacado investigador peruano en Inteligencia Artificial, especializado en el Procesamiento de Lenguaje Natural para lenguas de bajos recursos. Ingeniero Informático y Magíster por la Pontificia Universidad Católica del Perú (PUCP), y Doctor en Informática por la Universidad de Edimburgo, Arturo se desempeña actualmente como AI Researcher Senior en JPMorgan Chase en Londres. Su trabajo es fundamental para la democratización tecnológica en los Andes, liderando proyectos de traducción automática que integran la riqueza lingüística del Perú en la era digital.",
-                    "description_en": "Arturo Oncevay is a prominent Peruvian Artificial Intelligence researcher, specialized in Natural Language Processing for low-resource languages. Computer Engineer and Master by the Pontifical Catholic University of Peru (PUCP), and PhD in Informatics by the University of Edinburgh, Arturo currently works as a Senior AI Researcher at JPMorgan Chase in London. His work is fundamental for technological democratization in the Andes, leading machine translation projects that integrate the linguistic wealth of Peru into the digital age.",
-                    "speaker_id": "4",
+                    "title_es": "Conferencia magistral: El Rol de la IA en la Preservación y Revitalización de Lenguas Indígenas",
+                    "title_en": "Keynote: The Role of AI in the Preservation and Revitalization of Indigenous Languages",
+                    "description_es": "Norman Valdez (Líder indígena Aymara, CEO de Brain Trainr, Fellow de Tecnologías Emergentes)",
+                    "description_en": "Norman Valdez (Aymara Indigenous Leader, CEO of Brain Trainr, Emerging Technologies Fellow)",
+                    "speaker_id": "1",
                     "type": "keynote",
                     "location": "Main Hall",
                     "status": "confirmed"
