@@ -23,9 +23,15 @@ const backgroundSymbols = [
   class="relative min-h-dvh flex items-center justify-center bg-black bg-cover bg-center overflow-hidden pt-28 pb-12"
   style="background-image: url('/venue/3-ciudad.jpg');"
 >
-  <!-- Main Background Overlay -->
+  <!-- Main Background Overlay (Darker) -->
   <div
-    class="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-black z-0 pointer-events-none"
+    class="absolute inset-0 bg-linear-to-b from-black/90 via-black/70 to-black z-0 pointer-events-none"
+  >
+  </div>
+
+  <!-- Content Contrast Overlay (Radial) -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.6)_0%,_transparent_10%)] z-0 pointer-events-none"
   >
   </div>
 
@@ -47,12 +53,12 @@ const backgroundSymbols = [
     >
       <!-- Brand Pill -->
       <div
-        class="inline-flex items-center gap-2 p-1 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
+        class="inline-flex items-center gap-2 p-1 px-4 rounded-full bg-black/40 border border-white/10 backdrop-blur-md shadow-2xl"
       >
         <span class="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"
         ></span>
         <span
-          class="text-[0.6rem] md:text-[0.7rem] uppercase tracking-[0.25em] font-black text-white/80"
+          class="text-[0.6rem] md:text-[0.7rem] uppercase tracking-[0.25em] font-black text-white/90"
         >
           {content.event_type}
         </span>
@@ -61,10 +67,10 @@ const backgroundSymbols = [
       <!-- Main Title -->
       <div class="relative group">
         <h1
-          class="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[0.9] tracking-tighter drop-shadow-2xl font-heading"
+          class="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[0.9] tracking-tighter drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] font-heading"
         >
           KHIPU<span
-            class="text-primary-500 italic inline-block transform -skew-x-6 hover:scale-110 transition-transform duration-500"
+            class="text-primary-500 inline-block transform hover:scale-110 transition-transform duration-500"
             >x</span
           >
           <span class="block mt-2 text-3xl sm:text-5xl md:text-6xl opacity-95"
@@ -72,14 +78,14 @@ const backgroundSymbols = [
           >
         </h1>
         <div
-          class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-0.5 bg-linear-to-r from-transparent via-primary-500 to-transparent opacity-40"
+          class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-0.5 bg-linear-to-r from-transparent via-primary-500 to-transparent opacity-60"
         >
         </div>
       </div>
 
       <!-- Tagline / Description -->
       <p
-        class="text-base md:text-lg text-white font-semibold max-w-2xl leading-relaxed px-4"
+        class="text-base md:text-lg text-white font-semibold max-w-2xl leading-relaxed px-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
       >
         {content.description}
       </p>
